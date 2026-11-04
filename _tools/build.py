@@ -169,7 +169,7 @@ PEOPLE = {
         alt="Michael Whiting, Davies Kelly",
         title="Michael Whiting – Quantum Analysis | Davies Kelly",
         desc="Michael Whiting is a quantum and claims consultant supporting Davies Kelly’s quantum experts with analysis of project records, claims and accounts.",
-        summary=f"Michael Whiting is a quantum expert with over 12 years’ experience in construction and engineering, from commercial management on live projects to quantum work in disputes, across the United Kingdom, the Middle East and North Africa. At Davies Kelly he supports the quantum experts with quantum assessment, document review, analysis of project records and report drafting. He began his career at 16 as an apprentice quantity surveyor with Balfour Beatty.",
+        summary=f"Michael Whiting is a quantum expert with over 12 years’ experience in construction and engineering, from commercial management on live projects to quantum work in disputes, across the United Kingdom, the Middle East and North Africa. He began his career at 16 as an apprentice quantity surveyor with Balfour Beatty.",
         highlights=[
             "Quantum analysis supporting appointed experts in arbitrations in North Africa, the UAE and Oman, in court proceedings in Scotland and in a UK adjudication.",
             "Interim disruption claim valued by measured mile for gas export pipelines in Saudi Arabia.",
@@ -188,7 +188,7 @@ PEOPLE = {
         sectors=["Energy", "Industrial", "Infrastructure", "Construction", "Residential", "Hospital", "Retail", "Hotel", "Education and PFI"],
         regions="United Kingdom, Middle East, North Africa.",
         contracts="JCT, NEC (including NEC4), FIDIC, PFI and bespoke contracts",
-        career=["Avonstowe (UAE), Principal, 2022 to date", "McLaren Construction, London, Commercial Lead, 2019 to 2022", "Balfour Beatty, London, Quantity Surveyor, 2014 to 2019 (joined at 16 as an apprentice)"],
+        career=[],
         quals=["BSc (Hons) Quantity Surveying, London South Bank University", f"RICS Expert Witness Certificate", f"LLB (Hons), University of London (expected 2027)", f"Diploma in Forensic Quantum Analysis, College of Contract Management (in progress)"],
         members=["Member, Society of Construction Law"],
         languages_ph="M8", cv_ph="M10",
@@ -201,7 +201,7 @@ BIO = {
     "michael-roos": "Testifying quantum expert with an LLM in construction law, arbitration and adjudication, appointed as lead quantum expert in international arbitration, court, adjudication and a pre-arbitral expert procedure. Started as a labourer at 16 and ran sites before moving into disputes.",
     "jamie-shafto": "Testifying delay expert with over 25 years in construction and disputes, regularly appointed in international arbitration and cross-examined by King’s Counsel. Planned major projects in London and the Gulf before turning to disputes.",
     "stephen-john": "Chartered civil engineer, European Engineer and Fellow of the Chartered Institute of Arbitrators, with more than 40 years of practice on four continents. Cross-examined in the UK High Court and in international arbitration.",
-    "michael-whiting": "Quantum and claims consultant with over 12 years from commercial management on live projects to quantum in disputes, across the UK, the Middle East and North Africa. Began at 16 as an apprentice quantity surveyor with Balfour Beatty.",
+    "michael-whiting": "Quantum expert with over 12 years from commercial management on live projects to quantum in disputes, across the UK, the Middle East and North Africa. Began at 16 as an apprentice quantity surveyor with Balfour Beatty.",
 }
 TALK = {
     "michael-roos": "quantum, variations, prolongation and final accounts",
@@ -448,7 +448,7 @@ home = f'''<section class="hero" aria-label="Introduction">
 <ul class="ticks grid c3"><li>Oral evidence under cross-examination by King’s Counsel in international arbitration.</li><li>Appointed as quantum, delay and technical experts in ICC, DIAC, DIFC and ICDR arbitrations, the UK High Court and Scottish courts, adjudication, dispute adjudication boards and pre-arbitral expert procedures.</li><li>Written and oral evidence on delay and extensions of time, disruption, prolongation, variations, head office overheads, defects and engineering issues.</li></ul></div></section>
 <section class="section alt"><div class="wrap"><h2>What we do</h2><p class="lead measure">Most of our work is as independent experts appointed by a party or by the tribunal. We also review claims and advise before a dispute starts, and we always tell you which of those two roles we are in.</p>
 <div class="grid c2">{svc_html}</div></div></section>
-<section class="section"><div class="wrap"><h2>Meet the experts</h2><p class="lead measure">Four senior people. The expert you speak to is the one who does the work.</p>
+<section class="section"><div class="wrap"><h2>Meet the experts</h2>
 {team_rotator()}<div class="grid c4 team-grid">{"".join(expert_card(s, show_actions=False) for s in ORDER)}</div></div></section>
 <section class="section alt"><div class="wrap measure"><h2>How we keep our evidence independent</h2>
 <ol class="steps"><li>When we are appointed as experts, our duty is to the tribunal or court, and it overrides any duty to the party that instructs or pays us.</li><li>We say what the evidence supports, we state our assumptions and limits, and we concede points when the evidence requires it.</li><li>We check for conflicts before we read any documents, and we never take on the expert role in a dispute where we have acted as advisers for the same party.</li></ol>
@@ -529,7 +529,7 @@ for slug in ORDER:
 {evidence}
 <h2>Selected experience</h2>{ul(p["experience"])}
 {tribunal}
-<h2>Career</h2>{ul([e(x) for x in p["career"]])}{career_extra}
+{"<h2>Career</h2>" + ul([e(x) for x in p["career"]]) if p["career"] else ""}{career_extra}
 <p class="note">{indep} <a href="/independence/">Read how we work</a>.</p>
 </div><aside class="sticky">{side}</aside></div></div>'''
     ld = PEOPLE[slug]["ld"]
