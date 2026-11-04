@@ -247,3 +247,16 @@ fieldset.group>legend{font:600 var(--fs-h3) var(--ff-h);color:var(--navy-900);ma
 .logo{display:inline-flex;align-items:center;min-height:48px}
 .card h2 a,.card h3 a,.expert-card h3 a,.more{display:inline-flex;align-items:center;min-height:44px}
 select{-webkit-appearance:none;appearance:none;padding-right:40px;background:#fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23286465' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E") right 12px center/18px no-repeat}
+
+/* Phones: headline, line and buttons sit over the photo, so the first screen says what we do */
+@media (max-width:899px){
+ .hero{position:relative}
+ .hero-media{aspect-ratio:auto;height:min(78svh,640px);max-height:none}
+ .hero-media::after{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(20,37,61,.25) 0%,rgba(20,37,61,.55) 35%,rgba(20,37,61,.94) 72%,rgba(20,37,61,.98) 100%)}
+ .hero-text{position:absolute;z-index:2;left:0;right:0;bottom:0;padding:0 var(--gutter) 22px}
+ .hero-text h1{font-size:clamp(1.65rem,7.2vw,2.3rem);line-height:1.15;margin:0 0 10px}
+ .hero-text p{font-size:1rem;line-height:1.45;margin:0}
+ .hero-text .btn-row{margin-top:16px}
+ .hero-controls{top:6px;bottom:auto;left:auto;right:52px;justify-content:flex-end}
+ .pause{top:6px;bottom:auto}
+}

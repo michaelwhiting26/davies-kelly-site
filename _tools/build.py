@@ -114,7 +114,7 @@ PEOPLE = {
     ),
     "stephen-john": dict(
         name="Stephen M John", honorific="Eur Ing", post="BEng (Hons), MBA, LLM, CEng, FICE, FCIArb, MCIHT",
-        role="Partner", role_ph=None, role_text="Partner", city=None, city_ph=("S3", "United Kingdom"), testifying=True,
+        role="Partner, Engineering and Contracts Expert", role_ph=None, role_text="Partner, Engineering and Contracts Expert", city=None, city_ph=("S3", "United Kingdom"), testifying=True,
         tel="+447891784891", tel_d="+44 (0)7891 784 891", tel_ph="S3", mail=None, mail_ph="S3", wa_ph=None, linkedin_ph="S3",
         card_line="Chartered civil engineer, FICE and FCIArb; experienced testifying expert.",
         alt="Stephen M John, Davies Kelly",
@@ -160,7 +160,7 @@ PEOPLE = {
     ),
     "michael-whiting": dict(
         name="Michael Whiting", honorific="", post="BSc (Hons) Quantity Surveying · RICS Expert Witness Certificate",
-        role="Partner", role_ph=None, role_text="Partner", city=None, city_ph=("M2", "city shown"), testifying=False,
+        role="Partner, Quantum and Forensic Analysis", role_ph=None, role_text="Partner, Quantum and Forensic Analysis", city=None, city_ph=("M2", "city shown"), testifying=False,
         tel="+447762124220", tel_d="+44 7762 124220", tel_ph="M6", mail=None, mail_ph="M6", wa_ph="M6", wa="447762124220", linkedin_ph="M7",
         card_line="Quantity surveyor supporting our quantum experts with analysis of records, claims and accounts.",
         alt="Michael Whiting, Davies Kelly",
@@ -272,7 +272,7 @@ def footer():
     return f'''<footer class="site-footer on-navy" id="footer-nav"><div class="wrap">
 <div class="foot-cols">
 <div><span class="foot-logo"><img src="/assets/img/logo/davies-kelly-logo.png" alt="Davies Kelly" width="681" height="147" loading="lazy"></span>
-<p>Independent quantum and delay experts, Dubai.</p><p>{e(ADDRESS)} {ph("F5", "office and floor wording")}</p></div>
+<p>Independent quantum, delay and technical experts, Dubai.</p><p>{e(ADDRESS)} {ph("F5", "office and floor wording")}</p></div>
 <div><h2>Contact</h2><ul><li>Michael Roos <a href="tel:{ROOS_TEL}">{ROOS_TEL_D}</a></li><li>Jamie Shafto <a href="tel:{JAMIE_TEL}">{JAMIE_TEL_D}</a></li></ul></div>
 <div><h2>Experts</h2><ul>{experts}</ul></div>
 <div><h2>Services</h2><ul><li><a href="/services/quantum/">Quantum expert evidence</a></li><li><a href="/services/delay/">Delay expert evidence</a></li><li><a href="/services/technical/">Engineering and contract evidence</a></li><li><a href="/services/advisory/">Claim review and advisory</a></li></ul></div>
@@ -398,7 +398,7 @@ steps4 = '''<ol class="steps row grid"><li><strong>Conflict check.</strong> Tell
 home = f'''<section class="hero" aria-label="Introduction">
 <div class="hero-media" aria-roledescription="carousel" aria-label="Project photographs">{slides}<div class="hero-controls">{dots}</div>{pause_btn}</div>
 <div class="hero-text"><div class="wrap"><div class="inner">
-<h1>Independent quantum and delay experts for construction disputes</h1>
+<h1>Independent quantum, delay and technical experts for construction disputes</h1>
 <p>We are testifying experts based in Dubai. We give clear, evidence-based opinion on delay, quantum and engineering issues in arbitration, court and adjudication across the Middle East, Africa, Asia and Europe.</p>
 <div class="btn-row"><a class="btn light" href="/contact/">Make an enquiry</a><a class="btn ghost" href="/experts/">Meet the experts</a></div>
 </div></div></div></section>
@@ -418,7 +418,7 @@ home = f'''<section class="hero" aria-label="Introduction">
 <section class="section"><div class="wrap"><h2>How an instruction starts</h2>{steps4}<p class="muted" style="margin-top:20px">We aim to reply to every enquiry promptly.</p></div></section>'''
 home_graph = [
     {"@type": "Organization", "@id": f"{SITE}/#org", "name": "Davies Kelly", "url": f"{SITE}/", "logo": {"@type": "ImageObject", "url": f"{SITE}/assets/img/logo/davies-kelly-logo-512.png"}, "image": f"{SITE}/og/og-default.png",
-     "description": "Independent quantum and delay experts for construction and engineering disputes, based in Dubai.",
+     "description": "Independent quantum, delay and technical experts for construction and engineering disputes, based in Dubai.",
      "address": {"@type": "PostalAddress", "streetAddress": "48 Burj Gate Tower, Sheikh Zayed Road, Downtown", "postOfficeBoxNumber": "116171", "addressLocality": "Dubai", "addressCountry": "AE"},
      "areaServed": [{"@type": "Place", "name": n} for n in ("Middle East", "Africa", "Asia", "Europe")],
      "knowsAbout": ["Construction quantum", "Delay analysis", "Expert witness evidence", "International arbitration", "FIDIC contracts", "Construction claims"],
@@ -426,7 +426,7 @@ home_graph = [
     {"@type": "WebSite", "@id": f"{SITE}/#website", "url": f"{SITE}/", "name": "Davies Kelly", "publisher": ORG, "inLanguage": "en-GB"},
 ]
 preload_hero = '<link rel="preload" as="image" type="image/avif" imagesrcset="/assets/img/hero/wind-p-480.avif 480w" imagesizes="100vw" media="(max-width:599px)">'
-page("/", "Davies Kelly | Independent Quantum and Delay Experts, Dubai", "Testifying quantum and delay experts for construction and engineering disputes in arbitration, court and adjudication across the Middle East, Africa and Asia.", home, home_graph, preload=preload_hero)
+page("/", "Davies Kelly | Quantum, Delay and Technical Experts, Dubai", "Testifying quantum and delay experts for construction and engineering disputes in arbitration, court and adjudication across the Middle East, Africa and Asia.", home, home_graph, preload=preload_hero)
 
 # ================================================================ EXPERTS (D.2)
 h, bc = head("Our experts", f"Davies Kelly is deliberately small. Each matter is led by one of the people below, who does the analysis and, where needed, gives the evidence. Michael Roos and Jamie Shafto founded the firm in 2020 {ph('F2', 'founding year')}. Stephen M John and Michael Whiting are partners.", [("Home", "/"), ("Experts", None)])
@@ -543,7 +543,7 @@ service_page("/services/quantum/", "Quantum", "Quantum expert evidence",
              "Quantum is the money in a construction dispute: what the claims and counterclaims are worth, on the contract and on the records. Our quantum experts started on site and in commercial teams, and they value claims the way the contract and the evidence require, not the way either party would like.",
              [("What we assess", ul(["Prolongation and time-related costs", "Disruption and loss of productivity, including measured-mile analysis", "Head office overheads and loss of profit or opportunity", "Variations, measured work and re-measurement", "Preliminaries thickening, acceleration and idle time", "Subcontractor claims and pass-through claims", "Liquidated damages, retention and performance bonds", "Defects, rectification and counterclaims for work not to specification", "Late payment, financing and interest", "Final accounts and accounts reconstructed from first principles", "Early merits and quantum opinions for funders, with sensitivity ranges"])),
               ("Where we give evidence", ul([f"International arbitration {ph('R3', 'under the ICC and DIAC rules')}.", "Court proceedings, including in Scotland, and in support of matters before UAE courts.", "Adjudication in the UK.", "Pre-arbitral expert procedures and expert determination."]))],
-             HOW5, lead_card("michael-roos") + f'<p class="muted" style="margin-top:12px">Supported by <a href="/experts/michael-whiting/">Michael Whiting</a>, Partner.</p>', ("C8", "C9"),
+             HOW5, lead_card("michael-roos") + f'<p class="muted" style="margin-top:12px">Supported by <a href="/experts/michael-whiting/">Michael Whiting</a>, Partner, Quantum and Forensic Analysis.</p>', ("C8", "C9"),
              "Quantum Expert Witness, Dubai | Davies Kelly", "Independent quantum expert evidence on prolongation, disruption, variations, overheads, defects and final accounts in construction arbitration.")
 how_d = HOW5[:2] + ["We build the analysis from the programmes and the progress records, and we state every assumption and every gap in the records."] + HOW5[3:]
 service_page("/services/delay/", "Delay", "Delay expert evidence",
@@ -631,7 +631,7 @@ body = h + f'''<div class="wrap" style="padding-bottom:var(--sec)"><div class="m
 <h2>What we stand for</h2><ol class="steps"><li>Our duty as experts is to the tribunal.</li><li>We say what the evidence supports, including when it is not what the instructing party hoped to hear.</li><li>We use recognised methods and show our working.</li><li>We state our assumptions and the limits of what we were given.</li><li>Senior people do the work.</li><li>We keep our clients’ matters confidential.</li></ol>
 <h2>Our office</h2><p>{e(ADDRESS)} {ph("F5", "office and floor wording")}</p><p><a class="btn secondary" href="{MAPS}" rel="noopener noreferrer">Open in Google Maps</a></p>
 <h2>Our people</h2><div class="grid c2">{strip}</div></div></div>'''
-page("/about/", "About Davies Kelly | Construction Experts, Dubai", "Davies Kelly is a small Dubai firm of independent quantum and delay experts, founded by Michael Roos and Jamie Shafto.", body, [bc])
+page("/about/", "About Davies Kelly | Construction Experts, Dubai", "Davies Kelly is a small Dubai firm of independent quantum, delay and technical experts, founded by Michael Roos and Jamie Shafto.", body, [bc])
 
 # ================================================================ INSIGHTS (D.16) — noindex until live
 h, bc = head("Insights", "Short, practical notes from our experts on quantum, delay and contracts in construction disputes.", [("Home", "/"), ("Insights", None)])
@@ -766,7 +766,7 @@ sm = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps
 open("sitemap.xml", "w").write(sm)
 open("llms.txt", "w").write(f"""# Davies Kelly
 
-> Davies Kelly is a Dubai-based firm of independent quantum and delay experts for construction and engineering disputes. Its experts give written and oral expert evidence in international arbitration, court proceedings and adjudication across the Middle East, Africa, Asia and Europe, and it also reviews claims and advises on contracts before and during disputes. When appointed as experts, its people owe their duty to the tribunal or court.
+> Davies Kelly is a Dubai-based firm of independent quantum, delay and technical experts for construction and engineering disputes. Its experts give written and oral expert evidence in international arbitration, court proceedings and adjudication across the Middle East, Africa, Asia and Europe, and it also reviews claims and advises on contracts before and during disputes. When appointed as experts, its people owe their duty to the tribunal or court.
 
 ## Experts
 - [Michael Roos]({SITE}/experts/michael-roos/): founding partner and testifying quantum expert; BSc (Hons) Quantity Surveying (Glasgow Caledonian University), LLM Construction Law, Arbitration and Adjudication (Robert Gordon University), MCIArb; prolongation, disruption, head office overheads, variations, defects and final accounts; Middle East, North Africa, UK and Europe.
