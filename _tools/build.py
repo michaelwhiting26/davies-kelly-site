@@ -392,7 +392,7 @@ def expert_card(slug, sizes="(min-width:1200px) 25vw, (min-width:600px) 50vw, 10
     acts = f'<div class="actions"><a class="btn" href="/experts/{slug}/" tabindex="-1" aria-hidden="true">Profile</a>{mail}</div>' if show_actions else ""
     city = city_html(p)
     return f'''<article class="expert-card">{picture(slug, sizes, alt=p["alt"])}<div class="body">
-<h3><a href="/experts/{slug}/">{e(p["name"])}</a></h3><p class="role">{role_html(p)}</p><p class="meta">{city} · {e(p["post"])}</p><p class="meta">{e(p["card_line"])}</p><p class="card-bio">{e(BIO[slug])}</p><p class="tr-talk"><span>Talk to {e(first_name(slug))} about</span> {e(TALK[slug])}</p>{acts}</div></article>'''
+<h3><a href="/experts/{slug}/">{e(p["name"])}</a></h3><p class="role">{role_html(p)}</p><p class="meta">{city} · {e(p["post"])}</p><p class="card-bio">{e(BIO[slug])}</p><p class="tr-talk"><span>Talk to {e(first_name(slug))} about</span> {e(TALK[slug])}</p>{acts}</div></article>'''
 
 
 # ================================================================ HOME (D.1)
