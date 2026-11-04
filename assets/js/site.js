@@ -98,7 +98,7 @@
 /* Sticky CTA hides over the footer/contact areas */
 (function () {
   var cta = document.querySelector(".sticky-cta"); if (!cta || !("IntersectionObserver" in window)) return;
-  var targets = document.querySelectorAll("footer, .cta-band, form, .hero, .team-rot, .tr-details"); var visible = new Set();
+  var targets = document.querySelectorAll("footer, .cta-band, form, .hero, .team-rot, .tr-details, .case-rot"); var visible = new Set();
   var io = new IntersectionObserver(function (es) { es.forEach(function (e) { if (e.isIntersecting) visible.add(e.target); else visible.delete(e.target); }); cta.classList.toggle("hide", visible.size > 0); });
   targets.forEach(function (t) { io.observe(t); });
 })();
