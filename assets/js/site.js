@@ -1,0 +1,77 @@
+/* Menu drawer + hero slideshow. No dependencies. */
+(function () {
+  "use strict";
+  // ---- Menu drawer
+  var btn = document.querySelector(".menu-btn"), drawer = document.getElementById("site-menu");
+  if (btn && drawer) {
+    var closeBtn = drawer.querySelector(".menu-close"), main = document.querySelectorAll("body > :not(#site-menu):not(script)");
+    btn.removeAttribute("href"); btn.setAttribute("tabindex", "0");
+    btn.addEventListener("keydown", function (e) { if (e.key === " " || e.key === "Enter") { e.preventDefault(); open(); } });
+    function focusables() { return drawer.querySelectorAll("a[href],button:not([disabled])"); }
+    function open() {
+      drawer.classList.add("open"); drawer.removeAttribute("hidden"); btn.setAttribute("aria-expanded", "true");
+      document.body.classList.add("menu-open");
+      main.forEach(function (el) { el.setAttribute("inert", ""); });
+      var f = focusables(); if (f.length) f[0].focus();
+    }
+    function close() {
+      drawer.classList.remove("open"); btn.setAttribute("aria-expanded", "false");
+      document.body.classList.remove("menu-open");
+      main.forEach(function (el) { el.removeAttribute("inert"); });
+      btn.focus();
+    }
+    btn.addEventListener("click", function (e) { e.preventDefault(); open(); });
+    closeBtn && closeBtn.addEventListener("click", close);
+    drawer.addEventListener("keydown", function (e) {
+      if (e.key === "Escape") { close(); return; }
+      if (e.key !== "Tab") return;
+      var f = focusables(), first = f[0], last = f[f.length - 1];
+      if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+      else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+    });
+  }
+
+  // ---- Hero slideshow
+  var hero = document.querySelector(".hero-media");
+  if (!hero) return;
+  var slides = hero.querySelectorAll(".slide"), dots = hero.querySelectorAll(".dot"), pauseBtn = hero.querySelector(".pause");
+  var i = 0, timer = null, stopped = false;
+  var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  function hydrate(s) {
+    s.querySelectorAll("[data-srcset]").forEach(function (el) { el.setAttribute("srcset", el.getAttribute("data-srcset")); el.removeAttribute("data-srcset"); });
+    var im = s.querySelector("img[data-src]"); if (im) { im.src = im.getAttribute("data-src"); im.removeAttribute("data-src"); }
+  }
+  function go(n) {
+    slides[i].classList.remove("on"); dots[i].removeAttribute("aria-current");
+    slides[i].setAttribute("aria-hidden", "true");
+    i = (n + slides.length) % slides.length;
+    hydrate(slides[i]);
+    slides[i].classList.add("on"); slides[i].removeAttribute("aria-hidden"); dots[i].setAttribute("aria-current", "true");
+  }
+  function play() { if (stopped || reduce) return; clearInterval(timer); timer = setInterval(function () { go(i + 1); }, 7000); }
+  function pause() { clearInterval(timer); timer = null; }
+  function stop() { stopped = true; pause(); setPauseUI(true); }
+  function setPauseUI(p) {
+    if (!pauseBtn) return;
+    pauseBtn.setAttribute("aria-label", p ? "Play slideshow" : "Pause slideshow");
+    pauseBtn.innerHTML = p ? '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>' : '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6 5h4v14H6zM14 5h4v14h-4z"/></svg>';
+  }
+  dots.forEach(function (d, k) { d.addEventListener("click", function () { go(k); stop(); }); });
+  if (pauseBtn) pauseBtn.addEventListener("click", function () {
+    if (stopped) { stopped = false; setPauseUI(false); go(i + 1); play(); } else { stop(); }
+  });
+  hero.addEventListener("mouseenter", pause); hero.addEventListener("mouseleave", play);
+  hero.addEventListener("focusin", pause); hero.addEventListener("focusout", play);
+  document.addEventListener("visibilitychange", function () { document.hidden ? pause() : play(); });
+  var x0 = null;
+  hero.addEventListener("pointerdown", function (e) { x0 = e.clientX; });
+  hero.addEventListener("pointerup", function (e) {
+    if (x0 === null) return; var dx = e.clientX - x0; x0 = null;
+    if (Math.abs(dx) > 40) { go(dx < 0 ? i + 1 : i - 1); stop(); }
+  });
+  if (reduce) { setPauseUI(true); stopped = true; }
+  window.addEventListener("load", function () {
+    setTimeout(function () { slides.forEach(function (s, k) { if (k) hydrate(s); }); }, 1500);
+    play();
+  });
+})();

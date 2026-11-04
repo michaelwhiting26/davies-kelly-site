@@ -1,0 +1,22 @@
+{
+ "michael-roos": {
+  "name": "Michael Roos",
+  "tel_d": "+971 (0)55 869 5337",
+  "mail": "michael.roos@davieskelly.com"
+ },
+ "jamie-shafto": {
+  "name": "Jamie Shafto",
+  "tel_d": "+971 (0)58 569 3416",
+  "mail": "jamie.shafto@davieskelly.com"
+ },
+ "stephen-john": {
+  "name": "Stephen M John",
+  "tel_d": "+44 (0)7891 784 891",
+  "mail": null
+ },
+ "michael-whiting": {
+  "name": "Michael Whiting",
+  "tel_d": "+44 7762 124220",
+  "mail": null
+ }
+}
