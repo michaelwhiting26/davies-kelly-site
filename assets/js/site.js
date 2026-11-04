@@ -92,7 +92,7 @@
   root.addEventListener("pointerleave", function (e) { if (e.pointerType === "mouse") paused = false; });
   root.addEventListener("focusin", function () { paused = true; });
   root.addEventListener("focusout", function () { paused = false; });
-  show(Math.floor(Math.random() * n)); start();
+  show(0); start();
 })();
 
 /* Sticky CTA hides over the footer/contact areas */
