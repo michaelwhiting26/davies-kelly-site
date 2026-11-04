@@ -41,16 +41,16 @@ PEOPLE = {
         alt="Michael Roos, Founding Partner, Davies Kelly",
         title="Michael Roos – Quantum Expert, Dubai | Davies Kelly",
         desc="Michael Roos, founding partner of Davies Kelly, is a testifying quantum expert who has given written and oral testimony in construction disputes.",
-        summary=f"Michael Roos is a founding partner of Davies Kelly and a testifying quantum expert with around 20 years in the construction industry {ph('R2','years of experience')}. He has been appointed as lead quantum expert in international arbitration, court proceedings, adjudication and a pre-arbitral expert procedure, and has given written and oral testimony. He started in construction as a labourer at 16 and worked as a foreman, site manager, quantity surveyor and project manager before moving into disputes.",
+        summary=f"Michael Roos is a founding partner of Davies Kelly and a testifying quantum expert with around 20 years in the construction industry. He has been appointed as lead quantum expert in international arbitration, court proceedings, adjudication and a pre-arbitral expert procedure, and has given written and oral testimony. He started in construction as a labourer at 16 and worked as a foreman, site manager, quantity surveyor and project manager before moving into disputes.",
         highlights=[
             "Lead quantum expert in arbitrations on process plants, oil and gas, desalination, hospitality and infrastructure projects in the Gulf and North Africa.",
-            f"Written and oral testimony as quantum expert {ph('R4','add “under cross-examination” and the forums')}.",
+            f"Written and oral testimony as quantum expert.",
             "LLM in Construction Law, Arbitration and Adjudication; Member of the Chartered Institute of Arbitrators.",
-            f"Commercial team of the Engineer’s Representative on a USD 5.5bn railway project in Saudi Arabia, managing twelve quantity surveyors {ph('R11','name the project or keep it anonymised')}.",
+            f"Commercial team of the Engineer’s Representative on a USD 5.5bn railway project in Saudi Arabia, managing twelve quantity surveyors.",
         ],
         evidence=[
             "Role: party-appointed quantum expert, appointed by main contractors, subcontractors and developers.",
-            f"Forums: international arbitration {ph('R3','institutions, e.g. ICC')}; court proceedings (Scotland); adjudication (England); a non-binding expert procedure before arbitration.",
+            f"Forums: international arbitration; court proceedings (Scotland); adjudication (England); a non-binding expert procedure before arbitration.",
             "Evidence: expert reports and joint statements; written and oral testimony.",
         ],
         experience=[
@@ -59,14 +59,14 @@ PEOPLE = {
             "Quantum expert in an arbitration on a landmark hotel in the UAE: variations, prolongation and disruption across MEP packages, and alleged scope creep.",
             "Quantum expert for a main contractor in an arbitration on a desalination plant in Saudi Arabia: contract balance, retention, additional man-hours, performance bonds, liquidated damages, non-compliant work and defects.",
             "Quantum expert for a subcontractor in an arbitration on an oil and gas process plant in the UAE: prolongation, disruption and idle time.",
-            f"Quantum expert for a developer in court proceedings on an office refurbishment in Scotland {ph('R17','is the matter concluded?')}, and in an adjudication on a retirement complex in England {ph('R12','party description')}.",
+            f"Quantum expert for a developer in court proceedings on an office refurbishment in Scotland, and in an adjudication on a retirement complex in England.",
             "Early merits and quantum note for a litigation funder in the UAE, with sensitivity ranges and an assessment of whether the documents were sufficient.",
             "Assistant to quantum experts on airport MEP and systems disputes in Qatar, the UAE and Oman, and on energy disputes in Saudi Arabia, Abu Dhabi and Egypt.",
         ],
         expertise=["Prolongation", "Disruption and productivity loss", "Measured mile", "Head office overheads", "Variations", "Measured work and re-measurement", "Preliminaries thickening", "Subcontractor claims", "Liquidated damages", "Performance bonds and retention", "Defects counterclaims", "Late payment", "Final accounts", "First-principles valuation", "Funder merits notes", "Contract risk review"],
         sectors=["Aviation", "Oil and gas", "Rail", "Residential complexes", "Marine infrastructure", "Retail", "Hospitality", "Healthcare", "Infrastructure", "Water desalination"],
         regions="UK, Europe, the Middle East and North Africa. Countries: Saudi Arabia, UAE, Qatar, Oman, Morocco, Egypt, United Kingdom and Denmark.",
-        contracts=f"FIDIC {ph('R14','any other forms')}",
+        contracts=f"FIDIC",
         career=["Davies Kelly, Founding Partner and Testifying Expert Witness, 2020 to date", "Berkeley Research Group, Senior Managing Consultant, 2018 to 2020", "Arcadis (formerly EC Harris), Senior Consultant, 2015 to 2018", "Engineer’s Representative joint venture (Louis Berger, Canarail, Systra, Khatib Alami), Quantity Surveyor, 2014 to 2015", "Veitchi Group, Project QS and Commercial Manager, 2012 to 2014", "Earlier: project manager and quantity surveyor roles in Scotland and Denmark, and site roles from labourer to site manager"],
         quals=["LLM, Construction Law, Arbitration and Adjudication, Robert Gordon University", "BSc (Hons), Quantity Surveying, Glasgow Caledonian University"],
         members=["Member, Chartered Institute of Arbitrators (MCIArb)", "Member, Society of Construction Law"],
@@ -81,12 +81,12 @@ PEOPLE = {
         alt="Jamie Shafto, Founding Partner, Davies Kelly",
         title="Jamie Shafto – Delay Expert, Dubai | Davies Kelly",
         desc="Jamie Shafto, founding partner of Davies Kelly, is a testifying delay expert cross-examined by King’s Counsel in ICC and DIAC arbitrations.",
-        summary=f"Jamie Shafto is a founding partner of Davies Kelly and a testifying delay expert with over 25 years’ experience in dispute resolution and the delivery of complex construction projects {ph('J2','years of experience')}. He is regularly appointed in international and domestic arbitrations and has given written and oral evidence under cross-examination by King’s Counsel, barristers and lawyers. Before turning to disputes he planned and programmed major projects in London and the Gulf, from airports and hospitals to towers and rail.",
+        summary=f"Jamie Shafto is a founding partner of Davies Kelly and a testifying delay expert with over 25 years’ experience in dispute resolution and the delivery of complex construction projects. He is regularly appointed in international and domestic arbitrations and has given written and oral evidence under cross-examination by King’s Counsel, barristers and lawyers. Before turning to disputes he planned and programmed major projects in London and the Gulf, from airports and hospitals to towers and rail.",
         highlights=[
             "Delay expert in ICC and DIAC arbitrations on oil and gas, power, hospitality, healthcare, transport and aviation projects.",
             "Oral evidence under cross-examination by King’s Counsel.",
             "Independent determinations of extension of time claims and third-party reviews of contractors’ delay claims.",
-            f"Seminars for lawyers, contractors and consultants on delay, contracts and project governance {ph('J11','seminar titles and hosts')}.",
+            f"Seminars for lawyers, contractors and consultants on delay, contracts and project governance.",
         ],
         evidence=[
             "Role: party-appointed delay expert.",
@@ -110,7 +110,7 @@ PEOPLE = {
         contracts="",
         career=["Davies Kelly (Founding Partner)", "Berkeley Research Group", "Navigant Consulting (now Ankura)", "Arcadis (formerly EC Harris)", "Bovis Lend Lease", "ALEC", "Osoul", "SCS", "Kele Contracting", "First Line Consultancy", "ISG plc", "Bouygues UK", "Structure Tone UK"],
         career_ph=("J16", "employment dates"),
-        quals=[f"BSc in Construction Management {ph('J3','institution and year')}", "Higher National Certificate in Building Studies", "National Certificate in Building Studies"],
+        quals=[f"BSc in Construction Management", "Higher National Certificate in Building Studies", "National Certificate in Building Studies"],
         members_ph="J4", languages_ph="J9", cv_ph="J12",
         ld=dict(alumni=[], creds=[("degree", "BSc Construction Management"), ("certificate", "Higher National Certificate in Building Studies"), ("certificate", "National Certificate in Building Studies")], member=[], knows=["Delay analysis", "Forensic delay analysis", "Disruption analysis", "Extension of time", "International arbitration"]),
     ),
@@ -122,7 +122,7 @@ PEOPLE = {
         alt="Stephen M John, Davies Kelly",
         title="Stephen M John – Engineering Expert | Davies Kelly",
         desc="Eur Ing Stephen M John is a chartered civil engineer, FICE and FCIArb, giving independent technical and contract evidence in construction disputes.",
-        summary=f"Stephen John is a chartered civil engineer and registered European Engineer with more than 40 years of practice {ph('S12','wording')}, a Fellow of the Institution of Civil Engineers and of the Chartered Institute of Arbitrators, and an experienced testifying expert. He gives independent evidence on engineering, contract administration and claims, and has been cross-examined in the UK High Court and in arbitration in the DIFC, the ICDR in London and other seats {ph('S5','courts and seats for use on DK')}. He has worked on four continents.",
+        summary=f"Stephen John is a chartered civil engineer and registered European Engineer with more than 40 years of practice, a Fellow of the Institution of Civil Engineers and of the Chartered Institute of Arbitrators, and an experienced testifying expert. He gives independent evidence on engineering, contract administration and claims, and has been cross-examined in the UK High Court and in arbitration in the DIFC, the ICDR in London and other seats. He has worked on four continents.",
         highlights=[
             "Technical expert witness in four arbitrations on works in Qatar for a major international sporting event.",
             "Technical expert in a DIAC arbitration on post-tensioning of eleven high-rise tower blocks in Dubai.",
@@ -131,15 +131,15 @@ PEOPLE = {
         ],
         evidence=[
             "Roles: independent expert witness; technical expert; contract administration and claims expert.",
-            f"Forums: UK High Court; arbitration in the DIFC, the ICDR London, DIAC and other seats {ph('S5','confirm')}.",
+            f"Forums: UK High Court; arbitration in the DIFC, the ICDR London, DIAC and other seats.",
             "Training: Bond Solon expert witness training; Advanced Professional Certificate in Expert Evidence (Legal Experience Training, London).",
         ],
         experience=[
             "Technical expert witness in four arbitrations on works in Qatar for a major international sporting event.",
             "Technical expert in a DIAC arbitration about the post-tensioning of eleven tower blocks in Dubai.",
             "FIDIC contract administration and claims expert in a high-value airport arbitration in the Middle East.",
-            f"Expert in arbitrations on a waterfront development in the Gulf and on slip-formed LNG tanks in Australia, and in High Court proceedings on the insolvency of a UK marina construction project {ph('S6','keep the Gulf development anonymised')}.",
-            f"Adviser to the employer and its representative at contested FIDIC dispute adjudication board hearings on a 28 km hard-rock water tunnel in South Asia. The board accepted the employer’s defence and rejected the contractor’s claims {ph('S14','anonymised on DK')}.",
+            f"Expert in arbitrations on a waterfront development in the Gulf and on slip-formed LNG tanks in Australia, and in High Court proceedings on the insolvency of a UK marina construction project.",
+            f"Adviser to the employer and its representative at contested FIDIC dispute adjudication board hearings on a 28 km hard-rock water tunnel in South Asia. The board accepted the employer’s defence and rejected the contractor’s claims.",
             "Brought in by the funders to recover two wastewater treatment plants and networks in South Asia. He recovered contract administration, managed the call on the performance bond when the contractor became insolvent, prepared for arbitration and helped reach a negotiated settlement.",
             "Dispute advice and representation for the employer on a 6 × 75 MW hydro turbine refurbishment in Eastern Europe.",
         ],
@@ -148,14 +148,14 @@ PEOPLE = {
             "Construction adjudicator listed on the ICE, CIC and UK Adjudicators panels. Appointments include disputes over a wind farm, a high-speed rail contract, design fees, fibre optics, ground anchors, hotel roofing, an oil storage tank and rail signage.",
             "Expert determiner on a UK land development dispute; DRBF-trained and certified dispute board member; CEDR- and NADR-trained mediator.",
             "Chair of the conduct and complaints panel of a UK professional body.",
-            f"Stephen’s tribunal appointments are taken through his own practice and are included in every Davies Kelly conflict check {ph('S7','confirm')}.",
+            f"Stephen’s tribunal appointments are taken through his own practice and are included in every Davies Kelly conflict check.",
         ],
         expertise=["Design, buildability and value engineering", "Defects", "Replanning and scheduling", "Project recovery", "Cold-eyes reviews", "FIDIC contract administration", "Claims preparation and defence", "Dispute boards (DAB)", "Technical expert evidence"],
         sectors=["Engineering and design", "Construction", "Contract administration and management", "Infrastructure: roads, tunnels, water, airports and ports", "Buildings and structures", "Oil, gas and LNG", "Energy, process and hydro"],
         regions="UK, Middle East and internationally; four continents.",
         contracts="FIDIC",
         career=["Principal, SMJ Professional Services Limited", "Interim contract, claims and disputes lead, Arcadis, Qatar", "Owner’s contracts manager, LNG projects in Australia and the UK", "Director with full technical and P&L responsibility for a national consultancy office (now part of AECOM), seven years", "Professionally qualified 1984"],
-        quals=[f"LLM, University of Glamorgan Law School {ph('S4','exact LLM title')}", "MBA (International Business), Cardiff Business School", "BEng (Hons) Civil Engineering, University of Wales School of Engineering", "Chartered Engineer (CEng); Registered European Engineer (Eur Ing)", "Advanced Professional Certificate in Expert Evidence", "ICE Contract Law and Procedure Certificate", "CEDR Foundation Course in Mediation Skills; DRBF dispute board training"],
+        quals=[f"LLM, University of Glamorgan Law School", "MBA (International Business), Cardiff Business School", "BEng (Hons) Civil Engineering, University of Wales School of Engineering", "Chartered Engineer (CEng); Registered European Engineer (Eur Ing)", "Advanced Professional Certificate in Expert Evidence", "ICE Contract Law and Procedure Certificate", "CEDR Foundation Course in Mediation Skills; DRBF dispute board training"],
         members=["Fellow, Institution of Civil Engineers (FICE), since 1996", "Fellow, Chartered Institute of Arbitrators (FCIArb)", "Member, Chartered Institution of Highways and Transportation (MCIHT)"],
         languages_ph="S10", cv_ph="S11",
         ld=dict(alumni=["University of Wales", "Cardiff Business School", "University of Glamorgan"], creds=[("degree", "BEng (Hons) Civil Engineering"), ("degree", "MBA"), ("degree", "LLM"), ("professional", "Chartered Engineer (CEng)")], member=["Institution of Civil Engineers", "Chartered Institute of Arbitrators", "Chartered Institution of Highways and Transportation"], knows=["Civil engineering", "FIDIC contract administration", "Construction defects", "Dispute boards", "Technical expert evidence"]),
@@ -168,7 +168,7 @@ PEOPLE = {
         alt="Michael Whiting, Davies Kelly",
         title="Michael Whiting – Quantum Analysis | Davies Kelly",
         desc="Michael Whiting is a quantity surveyor supporting Davies Kelly’s quantum experts with analysis of project records, claims and accounts.",
-        summary=f"Michael Whiting is a quantity surveyor with over 12 years’ experience in construction and engineering, from commercial management on live projects to quantum work in disputes, across the United Kingdom, the Middle East and North Africa {ph('M3','summary wording')}. At Davies Kelly he supports the quantum experts with quantum assessment, document review, analysis of project records and report drafting. He began his career at 16 as an apprentice quantity surveyor with Balfour Beatty.",
+        summary=f"Michael Whiting is a quantity surveyor with over 12 years’ experience in construction and engineering, from commercial management on live projects to quantum work in disputes, across the United Kingdom, the Middle East and North Africa. At Davies Kelly he supports the quantum experts with quantum assessment, document review, analysis of project records and report drafting. He began his career at 16 as an apprentice quantity surveyor with Balfour Beatty.",
         highlights=[
             "Quantum analysis supporting appointed experts in arbitrations in North Africa, the UAE and Oman, in court proceedings in Scotland and in a UK adjudication.",
             "Interim disruption claim valued by measured mile for gas export pipelines in Saudi Arabia.",
@@ -179,7 +179,7 @@ PEOPLE = {
             "Quantum analysis for the appointed expert in an arbitration between contractor and subcontractor on phosphate plants in North Africa: prolongation, disruption, measured work, variations, loss of opportunity and head office overheads.",
             "Quantum analysis for the appointed expert in an arbitration between contractor and MEP subcontractor on a luxury hotel in the UAE.",
             "Quantum analysis for the appointed expert in an arbitration on a slaughterhouse and associated infrastructure in Oman: prolongation, disruption, variations, late payment and head office overheads.",
-            f"Quantum analysis for the appointed expert in court proceedings in Scotland between a building owner and its architect: remediation and additional works, prolongation, funding and financing, energy and operating costs, and internal management costs {ph('R17','is the matter concluded?')}.",
+            f"Quantum analysis for the appointed expert in court proceedings in Scotland between a building owner and its architect: remediation and additional works, prolongation, funding and financing, energy and operating costs, and internal management costs.",
             "Interim disruption claim valued by measured mile for a contractor on gas export pipelines in Saudi Arabia, deriving disrupted labour and plant hours by activity.",
             "Reconstruction from first principles of a subcontractor’s account on a London commercial tower: delay, disruption, variations, contra charges, overheads and finance.",
             "Commercial lead on a £109m build-to-rent scheme and lifecycle quantity surveying on a £1bn regeneration scheme in London.",
@@ -189,7 +189,7 @@ PEOPLE = {
         regions="United Kingdom, Middle East, North Africa.",
         contracts="JCT, NEC (including NEC4), FIDIC, PFI and bespoke contracts",
         career=["Avonstowe (UAE), Principal, 2022 to date", "McLaren Construction, London, Commercial Lead, 2019 to 2022", "Balfour Beatty, London, Quantity Surveyor, 2014 to 2019 (joined at 16 as an apprentice)"],
-        quals=["BSc (Hons) Quantity Surveying, London South Bank University", f"RICS Expert Witness Certificate {ph('M4','shown as a certificate, not RICS membership')}", f"LLB (Hons), University of London (expected 2027) {ph('M5','show or omit')}", f"Diploma in Forensic Quantum Analysis, College of Contract Management (in progress) {ph('M5','show or omit')}"],
+        quals=["BSc (Hons) Quantity Surveying, London South Bank University", f"RICS Expert Witness Certificate", f"LLB (Hons), University of London (expected 2027)", f"Diploma in Forensic Quantum Analysis, College of Contract Management (in progress)"],
         members=["Member, Society of Construction Law"],
         languages_ph="M8", cv_ph="M10",
         ld=dict(alumni=["London South Bank University"], creds=[("degree", "BSc (Hons) Quantity Surveying"), ("certificate", "RICS Expert Witness Certificate")], member=["Society of Construction Law"], knows=["Construction quantum", "Measured mile", "Final accounts", "Loss and expense"]),
@@ -280,7 +280,7 @@ def case_rotator(ids):
 def case_card(c):
     who = ", ".join(f'<a href="/experts/{s}/">{e(PEOPLE[s]["name"])}</a>' for s in c["who"])
     chips = "".join(f"<span>{e(x)}</span>" for x in c["chips"])
-    flag = f" {ph(c['ph'], 'partner approval of this card')}" if c.get("ph") else ""
+    flag = f"" if c.get("ph") else ""
     return f'''<article class="case"><div class="chips">{chips}</div><h3>{e(c["h"])}</h3>
 <dl><div><dt>Region</dt><dd>{e(c["region"])}</dd></div><div><dt>Forum</dt><dd>{e(c["forum"])}</dd></div><div><dt>Parties</dt><dd>{e(c["parties"])}</dd></div><div><dt>Our role</dt><dd>{e(c["role"])}</dd></div></dl>
 <p><strong>Experts:</strong> {who}</p><p><strong>Issues:</strong> {e(c["issues"])}</p><p><strong>Evidence:</strong> {e(c["evid"])}{flag}</p></article>'''
@@ -311,13 +311,13 @@ def footer():
     return f'''<footer class="site-footer on-navy" id="footer-nav"><div class="wrap">
 <div class="foot-cols">
 <div><span class="foot-logo"><img src="/assets/img/logo/davies-kelly-logo.png" alt="Davies Kelly" width="681" height="147" loading="lazy"></span>
-<p>Independent quantum, delay and technical experts, Dubai.</p><p>{e(ADDRESS)} {ph("F5", "office and floor wording")}</p></div>
+<p>Independent quantum, delay and technical experts, Dubai.</p><p>{e(ADDRESS)}</p></div>
 <div><h2>Contact</h2><ul><li>Michael Roos <a href="tel:{ROOS_TEL}">{ROOS_TEL_D}</a></li><li>Jamie Shafto <a href="tel:{JAMIE_TEL}">{JAMIE_TEL_D}</a></li></ul></div>
 <div><h2>Experts</h2><ul>{experts}</ul></div>
 <div><h2>Services</h2><ul><li><a href="/pre-contract-advice/">Pre-contract advice</a></li><li><a href="/project-advisory/">Project advisory</a></li><li><a href="/dispute-resolution/">Dispute resolution</a></li><li><a href="/expert-witness-services/">Expert witness services</a></li></ul></div>
-<div><h2>Firm</h2><ul><li><a href="/experience/">Experience</a></li><li><a href="/independence/">Independence</a></li><li><a href="/about/">About</a></li><li><a href="/contact/">Contact</a></li><li><a href="{LINKEDIN}" rel="noopener noreferrer">LinkedIn</a> {ph("F6", "DK company page")}</li></ul></div>
+<div><h2>Firm</h2><ul><li><a href="/experience/">Experience</a></li><li><a href="/independence/">Independence</a></li><li><a href="/about/">About</a></li><li><a href="/contact/">Contact</a></li><li><a href="{LINKEDIN}" rel="noopener noreferrer">LinkedIn</a></li></ul></div>
 </div>
-<div class="foot-bottom"><p>© 2026 Davies Kelly. {ph("F1", "legal entity name, licence number and issuing authority")}</p>
+<div class="foot-bottom"><p>© 2026 Davies Kelly.</p>
 <ul><li><a href="/privacy/">Privacy</a></li><li><a href="/cookies/">Cookies</a></li><li><a href="/terms/">Terms</a></li></ul>
 <p>Information on this site is general and is not advice. Contacting us does not create an engagement.</p></div>
 </div></footer>'''
@@ -448,10 +448,10 @@ home = f'''<section class="hero" aria-label="Introduction">
 <ul class="ticks grid c3"><li>Oral evidence under cross-examination by King’s Counsel in international arbitration.</li><li>Appointed as quantum, delay and technical experts in ICC, DIAC, DIFC and ICDR arbitrations, the UK High Court and Scottish courts, adjudication, dispute adjudication boards and pre-arbitral expert procedures.</li><li>Written and oral evidence on delay and extensions of time, disruption, prolongation, variations, head office overheads, defects and engineering issues.</li></ul></div></section>
 <section class="section alt"><div class="wrap"><h2>What we do</h2><p class="lead measure">Most of our work is as independent experts appointed by a party or by the tribunal. We also review claims and advise before a dispute starts, and we always tell you which of those two roles we are in.</p>
 <div class="grid c2">{svc_html}</div></div></section>
-<section class="section"><div class="wrap"><h2>Meet the experts</h2><p class="lead measure">Four senior people. The expert you speak to is the one who does the work. {ph("F21", "partners commit to this")}</p>
+<section class="section"><div class="wrap"><h2>Meet the experts</h2><p class="lead measure">Four senior people. The expert you speak to is the one who does the work.</p>
 {team_rotator()}<div class="grid c4 team-grid">{"".join(expert_card(s, show_actions=False) for s in ORDER)}</div></div></section>
 <section class="section alt"><div class="wrap measure"><h2>How we keep our evidence independent</h2>
-<ol class="steps"><li>When we are appointed as experts, our duty is to the tribunal or court, and it overrides any duty to the party that instructs or pays us.</li><li>We say what the evidence supports, we state our assumptions and limits, and we concede points when the evidence requires it.</li><li>We check for conflicts before we read any documents, and we never take on the expert role in a dispute where we have acted as advisers for the same party. {ph("F8", "policy wording")}</li></ol>
+<ol class="steps"><li>When we are appointed as experts, our duty is to the tribunal or court, and it overrides any duty to the party that instructs or pays us.</li><li>We say what the evidence supports, we state our assumptions and limits, and we concede points when the evidence requires it.</li><li>We check for conflicts before we read any documents, and we never take on the expert role in a dispute where we have acted as advisers for the same party.</li></ol>
 <p><a href="/independence/">Read how we work</a></p></div></section>
 <section class="section"><div class="wrap"><h2>Sectors</h2><p class="lead measure">Energy, water, transport and buildings projects across the Middle East, Africa, Asia and Europe.</p><div class="tiles">{tiles}</div>
 </div></section>
@@ -471,7 +471,7 @@ preload_hero = '<link rel="preload" as="image" type="image/avif" imagesrcset="/a
 page("/", "Davies Kelly | Construction Consultancy and Expert Witnesses", "International construction consultancy in Dubai: pre-contract advice, project advisory, dispute resolution and expert witness services.", home, home_graph, preload=preload_hero)
 
 # ================================================================ EXPERTS (D.2)
-h, bc = head("Our experts", f"Davies Kelly is deliberately small. Each matter is led by one of the people below, who does the analysis and, where needed, gives the evidence. Michael Roos and Jamie Shafto founded the firm in 2020 {ph('F2', 'founding year')}. Stephen M John and Michael Whiting are partners.", [("Home", "/"), ("Experts", None)])
+h, bc = head("Our experts", f"Davies Kelly is deliberately small. Each matter is led by one of the people below, who does the analysis and, where needed, gives the evidence. Michael Roos and Jamie Shafto founded the firm in 2020. Stephen M John and Michael Whiting are partners.", [("Home", "/"), ("Experts", None)])
 body = h + f'''<section class="wrap" style="padding-bottom:var(--sec)">{team_rotator()}<div class="grid c4 team-grid">{"".join(expert_card(s) for s in ORDER)}</div>
 <div class="measure" style="margin-top:48px"><h2>Types of appointment</h2><ul class="plain">
 <li><strong>Party-appointed expert.</strong> Instructed by one party to give independent opinion evidence to the tribunal or court.</li>
@@ -569,7 +569,7 @@ FOUR = [("Pre-contract advice", "/pre-contract-advice/", "Review and drafting of
         ("Expert witness services", "/expert-witness-services/", "Independent quantum, delay and technical expert evidence in arbitration, court and adjudication.")]
 four_html = "".join(f'<article class="card service"><h2 style="font-size:var(--fs-h3)"><a href="{u}">{t}</a></h2><p>{d}</p><a class="btn secondary block" href="{u}">Read more</a></article>' for t, u, d in FOUR)
 body = h + f'''<section class="wrap" style="padding-bottom:var(--sec)"><div class="grid c2">{four_html}</div><h2 style="margin-top:48px">Expert evidence by discipline</h2><div class="grid c2">{rows_html}</div>
-<div class="box measure" style="margin-top:32px"><h2 style="font-size:var(--fs-h3)">Two roles, kept separate</h2><p>As advisers we work in your interest. As experts our duty is to the tribunal. We tell you at the outset which role we are in, and we do not switch roles in the same dispute without telling everyone affected. {ph("F8", "policy wording")}</p></div></section>'''
+<div class="box measure" style="margin-top:32px"><h2 style="font-size:var(--fs-h3)">Two roles, kept separate</h2><p>As advisers we work in your interest. As experts our duty is to the tribunal. We tell you at the outset which role we are in, and we do not switch roles in the same dispute without telling everyone affected.</p></div></section>'''
 page("/services/", "Services | Davies Kelly", "Pre-contract advice, project advisory, dispute resolution and expert witness services for the construction industry, from Dubai.", body, [bc])
 
 HOW5 = ["We agree the questions we are asked to answer, in writing.", "We go to the contract and the contemporaneous records first, then the parties’ claims.", "We value each head of claim on a stated method and say where the records do not support a figure.", "We meet the other side’s expert in good faith and record agreements and disagreements in a joint statement.", "We give oral evidence when required and answer questions as we would for the tribunal, whoever asks them."]
@@ -589,33 +589,33 @@ def service_page(path, crumb, h1, intro, sections, how, leads, cases_ids, title,
 service_page("/services/quantum/", "Quantum", "Quantum expert evidence",
              "Quantum is the money in a construction dispute: what the claims and counterclaims are worth, on the contract and on the records. Our quantum experts started on site and in commercial teams, and they value claims the way the contract and the evidence require, not the way either party would like.",
              [("What we assess", ul(["Prolongation and time-related costs", "Disruption and loss of productivity, including measured-mile analysis", "Head office overheads and loss of profit or opportunity", "Variations, measured work and re-measurement", "Preliminaries thickening, acceleration and idle time", "Subcontractor claims and pass-through claims", "Liquidated damages, retention and performance bonds", "Defects, rectification and counterclaims for work not to specification", "Late payment, financing and interest", "Final accounts and accounts reconstructed from first principles", "Early merits and quantum opinions for funders, with sensitivity ranges"])),
-              ("Where we give evidence", ul([f"International arbitration {ph('R3', 'under the ICC and DIAC rules')}.", "Court proceedings, including in Scotland, and in support of matters before UAE courts.", "Adjudication in the UK.", "Pre-arbitral expert procedures and expert determination."]))],
+              ("Where we give evidence", ul([f"International arbitration.", "Court proceedings, including in Scotland, and in support of matters before UAE courts.", "Adjudication in the UK.", "Pre-arbitral expert procedures and expert determination."]))],
              HOW5, lead_card("michael-roos") + f'<p class="muted" style="margin-top:12px">Supported by <a href="/experts/michael-whiting/">Michael Whiting</a>, Partner, Quantum and Forensic Analysis.</p>', ("C8", "C9"),
              "Quantum Expert Witness, Dubai | Davies Kelly", "Independent quantum expert evidence on prolongation, disruption, variations, overheads, defects and final accounts in construction arbitration.")
 how_d = HOW5[:2] + ["We build the analysis from the programmes and the progress records, and we state every assumption and every gap in the records."] + HOW5[3:]
 service_page("/services/delay/", "Delay", "Delay expert evidence",
              "Delay analysis answers three questions: what delayed completion, who was responsible, and what extension of time and costs follow. Our delay expert spent years planning and programming major projects before turning to disputes, so the analysis starts from how the work was actually built.",
              [("What we analyse", ul(["Forensic delay analysis and responsibility for delay", "Disruption analysis", "Extension of time entitlement, claims and defences", "Independent determinations of extension of time claims", "Reviews of engineer’s and employer’s determinations", "Progress monitoring records, baseline and as-built programmes", "Planning and programming on live projects, including master planning for developments"])),
-              ("Methods", f"<p>We choose the method to suit the contract, the records available and the question the tribunal must answer, and we explain why it was chosen. {ph('J7', 'methods to name')}</p>"),
+              ("Methods", f"<p>We choose the method to suit the contract, the records available and the question the tribunal must answer, and we explain why it was chosen.</p>"),
               ("Where we give evidence", "<p>International arbitration under the ICC and DIAC rules, ICC expert determination, and amicable settlement panels.</p>")],
              how_d, lead_card("jamie-shafto"), ("C4", "C5"),
              "Delay Expert Witness, Dubai | Davies Kelly", "Independent delay expert evidence: forensic delay analysis, disruption and extension of time in ICC and DIAC construction arbitrations.")
 service_page("/services/technical/", "Engineering and contracts", "Engineering and contract expert evidence",
-             f"Some disputes turn on engineering: whether a design worked, whether the work was built properly, or how a contract was administered. Stephen John is a chartered civil engineer with more than 40 years of practice who gives independent technical and contract evidence. {ph('S13', 'does DK offer this service?')}",
+             f"Some disputes turn on engineering: whether a design worked, whether the work was built properly, or how a contract was administered. Stephen John is a chartered civil engineer with more than 40 years of practice who gives independent technical and contract evidence.",
              [("What we cover", ul(["Design, buildability and construction method", "Defects: identification, cause and rectification", "Post-tensioned and high-rise structures", "Tunnels, water and wastewater works, hydro and energy plant, pipelines and LNG tanks", "FIDIC contract administration and claims", "Dispute adjudication board (DAB) proceedings", "Independent “cold eyes” reviews of troubled projects"])),
-              ("Where evidence has been given", f"<p>The UK High Court and arbitration in the DIFC, the ICDR in London and other seats, including the Dubai International Arbitration Centre. {ph('S5', 'confirm')}</p>")],
+              ("Where evidence has been given", f"<p>The UK High Court and arbitration in the DIFC, the ICDR in London and other seats, including the Dubai International Arbitration Centre.</p>")],
              None, lead_card("stephen-john"), ("C11", "C12"),
              "Engineering and Contract Expert Evidence | Davies Kelly", "Independent technical evidence on design, construction, defects and FIDIC contract administration from a chartered civil engineer.")
 
 h, bc = head("Claim review and advisory", None, [("Home", "/"), ("Services", "/services/"), ("Claim review and advisory", None)])
 body = h + f'''<div class="wrap measure" style="padding-bottom:var(--sec)">
-<div class="box"><p>Advisers and experts have different duties. As advisers we work in your interest and help you make decisions. As experts our duty is to the tribunal. We tell you at the outset which role we are in, and if we have advised you on a dispute we will not act as your testifying expert in it without telling everyone affected. {ph("F8", "policy wording")}</p></div>
+<div class="box"><p>Advisers and experts have different duties. As advisers we work in your interest and help you make decisions. As experts our duty is to the tribunal. We tell you at the outset which role we are in, and if we have advised you on a dispute we will not act as your testifying expert in it without telling everyone affected.</p></div>
 <h2>Independent claim review</h2><p>A candid view of a claim before you spend on it: whether the entitlement holds, whether the records support it, and what a tribunal is likely to make of the numbers. We also give early merits and quantum notes to funders, with sensitivity ranges.</p>
 <h2>Claim preparation and defence</h2><p>Extension of time, prolongation, disruption and variation claims prepared or answered from the contract and the records, including consolidated claims on major projects.</p>
 <h2>Pre-contract and contract advice</h2><p>Review of contracts and professional appointments for risk allocation, notices and change and claims provisions, with practical recommendations before you sign.</p>
 <h2>Project advisory</h2><p>Planning and project controls, commercial management, productivity reviews and recovery of projects in difficulty.</p>
-<h2>Support to counsel</h2><p>Analysis to support pleadings and settlement strategy, as a non-testifying consultant. We do not provide this support in a matter where one of us is, or may become, the testifying expert. {ph("R7", "Roos and Shafto accept this rule (also J6)")}</p>
-<h2>A frank second opinion</h2><p>An international engineering and contracting company asked us to review a claim valued by another consultancy. We found significant weaknesses in both the analysis and the valuation, and advised that only a fraction of the sum was likely to be recovered. The client decided not to pursue it, avoiding legal and expert fees and the risk of paying the other side’s costs. It cost us the work. It also told the client what our advice is worth. {ph("F12", "keep, edit or delete this example")}</p>
+<h2>Support to counsel</h2><p>Analysis to support pleadings and settlement strategy, as a non-testifying consultant. We do not provide this support in a matter where one of us is, or may become, the testifying expert.</p>
+<h2>A frank second opinion</h2><p>An international engineering and contracting company asked us to review a claim valued by another consultancy. We found significant weaknesses in both the analysis and the valuation, and advised that only a fraction of the sum was likely to be recovered. The client decided not to pursue it, avoiding legal and expert fees and the risk of paying the other side’s costs. It cost us the work. It also told the client what our advice is worth.</p>
 
 </div>'''
 page("/services/advisory/", "Claim Review and Construction Advisory | Davies Kelly", "Candid reviews of construction claims, claim preparation and defence, and contract and project advice before and during a dispute.", body, [bc])
@@ -654,11 +654,11 @@ page("/experience/", "Experience (Anonymised) | Davies Kelly", "Selected anonymi
 IND = [
     ("duty", "Our duty as experts", "<p>When we are appointed as experts, our duty is to help the tribunal or court on matters within our expertise. That duty overrides any obligation to the party who instructs or pays us. We give the same opinion whoever asks the question.</p>"),
     ("rules", "The rules we follow", "<p>Depending on the forum, our evidence is governed by:</p>" + ul(["the procedural rules the tribunal adopts, including the IBA Rules on the Taking of Evidence in International Arbitration;", "the Chartered Institute of Arbitrators’ Protocol for the Use of Party-Appointed Expert Witnesses in International Arbitration, where it is adopted;", "in the courts of England and Wales, Part 35 of the Civil Procedure Rules and its Practice Direction;", "the rules of the court or tribunal in any other forum."]) + "<p>We read the applicable rules at the start of each appointment and follow them.</p>"),
-    ("conduct", "Seven conduct rules", '<ol class="steps">' + "".join(f"<li>{x}</li>" for x in ["We give opinions only on matters within our expertise, and say so when a question falls outside it.", "We base our opinion on the evidence and the contract, not on the outcome our client wants.", "We state every assumption and every limit on the documents we were given.", "We consider the documents that do not support our client’s case as carefully as those that do.", "We use recognised methods and explain why we chose them.", "We meet the other side’s expert in good faith, and we concede points when the evidence requires it.", f"Our fees for expert work never depend on the outcome of the case. {ph('F7', 'confirm')}"]) + "</ol>"),
-    ("conflicts", "Conflicts of interest", f"<p>Before we discuss a matter we check every party, and their parent and related companies, against our records. That check includes appointments our people hold as arbitrators, adjudicators and dispute board members {ph('S7', 'confirm')}. We tell you the result before you send any documents. If a conflict appears later, we tell everyone affected straight away.</p>"),
-    ("roles", "Adviser or expert: one role per dispute", f"<p>As advisers we act in your interest; as experts our duty is to the tribunal. We tell you which role we are in at the outset. We do not act as testifying expert in a dispute in which we have advised the same party, unless that has been disclosed and the tribunal and the parties have had the chance to object. {ph('F8', 'exact policy')}</p>"),
+    ("conduct", "Seven conduct rules", '<ol class="steps">' + "".join(f"<li>{x}</li>" for x in ["We give opinions only on matters within our expertise, and say so when a question falls outside it.", "We base our opinion on the evidence and the contract, not on the outcome our client wants.", "We state every assumption and every limit on the documents we were given.", "We consider the documents that do not support our client’s case as carefully as those that do.", "We use recognised methods and explain why we chose them.", "We meet the other side’s expert in good faith, and we concede points when the evidence requires it.", f"Our fees for expert work never depend on the outcome of the case."]) + "</ol>"),
+    ("conflicts", "Conflicts of interest", f"<p>Before we discuss a matter we check every party, and their parent and related companies, against our records. That check includes appointments our people hold as arbitrators, adjudicators and dispute board members. We tell you the result before you send any documents. If a conflict appears later, we tell everyone affected straight away.</p>"),
+    ("roles", "Adviser or expert: one role per dispute", f"<p>As advisers we act in your interest; as experts our duty is to the tribunal. We tell you which role we are in at the outset. We do not act as testifying expert in a dispute in which we have advised the same party, unless that has been disclosed and the tribunal and the parties have had the chance to object.</p>"),
     ("confidentiality", "Confidentiality", "<p>We keep everything about our clients’ matters confidential, including the fact that we are instructed. We do not name clients, parties or projects on this website or in our marketing.</p>"),
-    ("fees", "Fees", f"<p>We work on time-based fees agreed in writing before work starts. We do not publish rates. For expert work, our fees never depend on the result. {ph('F7', 'confirm')}</p>"),
+    ("fees", "Fees", f"<p>We work on time-based fees agreed in writing before work starts. We do not publish rates. For expert work, our fees never depend on the result.</p>"),
     ("engagement", "Engagement", "<p>Contacting us does not create an engagement. An engagement starts only when we have cleared conflicts and both sides have signed written terms.</p>"),
 ]
 h, bc = head("Independence and how we work", "An expert is only useful to a tribunal if the opinion is honest, competent and independent. This page sets out the rules we work to.", [("Home", "/"), ("Independence", None)])
@@ -672,19 +672,19 @@ h, bc = head("About Davies Kelly", None, [("Home", "/"), ("About", None)])
 strip = "".join(f'<a href="/experts/{s}/" style="display:flex;gap:12px;align-items:center;min-height:64px;text-decoration:none">{picture(s, "64px", alt="")}<span><strong>{e(PEOPLE[s]["name"])}</strong></span></a>' for s in ORDER)
 strip = strip.replace('width="528" height="660"', 'width="64" height="80" style="width:64px;height:80px;object-fit:cover;border-radius:4px"')
 body = h + f'''<div class="wrap" style="padding-bottom:var(--sec)"><div class="measure">
-<p class="lead">Davies Kelly is a Dubai firm of construction experts, founded in 2020 {ph("F2", "founding year")} by Michael Roos and Jamie Shafto, a quantum expert and a delay expert. We give independent expert evidence in construction and engineering disputes and advise on claims before and during a dispute. We have been appointed as independent experts and advisers by international law firms, contractors and developers, in matters from mediation to international arbitration. {ph("F10", "confirm this claim still stands")}</p>
+<p class="lead">Davies Kelly is a Dubai firm of construction experts, founded in 2020 by Michael Roos and Jamie Shafto, a quantum expert and a delay expert. We give independent expert evidence in construction and engineering disputes and advise on claims before and during a dispute. We have been appointed as independent experts and advisers by international law firms, contractors and developers, in matters from mediation to international arbitration.</p>
 <h2>Why a small firm</h2>
-<p><strong>The expert does the work.</strong> The person named in the report is the person who analysed the records. {ph("F21", "partners commit")}</p>
+<p><strong>The expert does the work.</strong> The person named in the report is the person who analysed the records.</p>
 <p><strong>Fewer conflicts.</strong> A small firm with a focused practice is less often conflicted on large projects. We tell you the result of our conflict check before you send documents.</p>
 <p><strong>Built on site experience.</strong> Our experts started as a labourer, a planner, an engineer and an apprentice quantity surveyor. They value and analyse claims the way projects are actually built.</p>
 <h2>What we stand for</h2><ol class="steps"><li>Our duty as experts is to the tribunal.</li><li>We say what the evidence supports, including when it is not what the instructing party hoped to hear.</li><li>We use recognised methods and show our working.</li><li>We state our assumptions and the limits of what we were given.</li><li>Senior people do the work.</li><li>We keep our clients’ matters confidential.</li></ol>
-<h2>Our office</h2><p>{e(ADDRESS)} {ph("F5", "office and floor wording")}</p><p><a class="btn secondary" href="{MAPS}" rel="noopener noreferrer">Open in Google Maps</a></p>
+<h2>Our office</h2><p>{e(ADDRESS)}</p><p><a class="btn secondary" href="{MAPS}" rel="noopener noreferrer">Open in Google Maps</a></p>
 <h2>Our people</h2><div class="grid c2">{strip}</div></div></div>'''
 page("/about/", "About Davies Kelly | Construction Experts, Dubai", "Davies Kelly is a small Dubai firm of independent quantum, delay and technical experts, founded by Michael Roos and Jamie Shafto.", body, [bc])
 
 # ================================================================ INSIGHTS (D.16) — noindex until live
 h, bc = head("Insights", "Short, practical notes from our experts on quantum, delay and contracts in construction disputes.", [("Home", "/"), ("Insights", None)])
-body = h + f'<div class="wrap measure" style="padding-bottom:var(--sec)"><p>Our first articles are being written. {ph("F24", "first two authors and topics")}</p></div>'
+body = h + f'<div class="wrap measure" style="padding-bottom:var(--sec)"><p>Our first articles are being written.</p></div>'
 page("/insights/", "Insights | Davies Kelly", "Practical notes from our experts on quantum, delay and contracts in construction disputes.", body, [bc], noindex=True)
 
 
@@ -694,7 +694,7 @@ def chips(name, opts):
 
 
 def contact_card(name, role, tel, tel_d, mail, wa_ph):
-    return f'''<div class="card"><h3>{name}</h3><p class="muted">{role}</p><div class="btn-row" style="grid-template-columns:1fr"><a class="btn block" href="tel:{tel}">{ICON["call"]}Call {tel_d}</a><a class="btn secondary block" href="mailto:{mail}">{ICON["mail"]}Email</a></div><p class="small muted" style="margin-top:8px">WhatsApp {ph(wa_ph, "WhatsApp on this number?")}</p></div>'''
+    return f'''<div class="card"><h3>{name}</h3><p class="muted">{role}</p><div class="btn-row" style="grid-template-columns:1fr"><a class="btn block" href="tel:{tel}">{ICON["call"]}Call {tel_d}</a><a class="btn secondary block" href="mailto:{mail}">{ICON["mail"]}Email</a></div><p class="small muted" style="margin-top:8px">WhatsApp</p></div>'''
 
 
 h, bc = head("Contact us", f"Tell us about the matter and who the parties are. We will check for conflicts and reply promptly.", [("Home", "/"), ("Contact", None)])
@@ -726,7 +726,7 @@ form = f'''<p><a href="#direct">Prefer to call? Contact a partner directly</a></
 <button class="btn block" type="submit">Send enquiry</button>
 </form>
 <div id="result" class="result box" hidden role="status"><h2 tabindex="-1" style="font-size:var(--fs-h3)">Your email app should now open with your enquiry</h2>
-<p>If it did not open, copy the enquiry below and email it to <a href="mailto:{ENQ_TO}">{ROOS_MAIL}</a> and <a href="mailto:{JAMIE_MAIL}">{JAMIE_MAIL}</a>. {ph("F3", "single enquiries inbox")}</p>
+<p>If it did not open, copy the enquiry below and email it to <a href="mailto:{ENQ_TO}">{ROOS_MAIL}</a> and <a href="mailto:{JAMIE_MAIL}">{JAMIE_MAIL}</a>.</p>
 <label for="copy-text" class="vh">Your enquiry</label><textarea id="copy-text" readonly></textarea>
 <p style="margin-top:12px"><button class="btn secondary" type="button" id="copy-enquiry">Copy enquiry</button></p><p id="copy-status" aria-live="polite"></p></div>'''
 side = f'''<h2 id="direct">Or contact a partner directly</h2><div class="grid">{contact_card("Michael Roos", "Founding Partner, Quantum Expert", ROOS_TEL, ROOS_TEL_D, ROOS_MAIL, "R15")}{contact_card("Jamie Shafto", "Founding Partner, Delay Expert", JAMIE_TEL, JAMIE_TEL_D, JAMIE_MAIL, "J15")}</div>
@@ -744,9 +744,9 @@ privacy = [
     ("Who we are", f"<p>This website is run by Davies Kelly, {e(ADDRESS)} (“Davies Kelly”, “we”). For privacy questions, email <a href='mailto:{ROOS_MAIL}'>{ROOS_MAIL}</a>.</p>"),
     ("What we collect and why", "<p><strong>Enquiries.</strong> When you use the contact form or email us, we collect your name, organisation, role, email address, phone number (if given) and what you tell us about the matter, including the names of the parties. We use this to reply to you and to check for conflicts of interest before we can act. Our lawful basis is taking steps at your request before entering into a contract, and our legitimate interest in managing conflicts.</p><p><strong>Website use.</strong> We do not run analytics on this website. Our host, GitHub Pages, processes technical data such as IP addresses in its server logs to deliver and secure the site.</p><p><strong>Fonts.</strong> Our fonts are served from our own website, so no font provider receives your data.</p>"),
     ("Who we share it with", "<p>The contact form opens your own email app, so your enquiry travels through your email provider and ours (Microsoft 365). Our website host is GitHub, Inc. (USA). We do not sell your data or use it for marketing.</p>"),
-    ("International transfers", f"<p>Some of these providers process data outside the UAE, including in the USA. {ph('F17', 'adviser to state the safeguards relied on')}</p>"),
+    ("International transfers", f"<p>Some of these providers process data outside the UAE, including in the USA.</p>"),
     ("How long we keep it", f"<p>Enquiries that do not lead to an engagement are deleted once they are no longer needed. Records of conflict checks are kept so that we can show our checks were made.</p>"),
-    ("Your rights", f"<p>You can ask for access to, correction of, or deletion of your data, and you can object to our use of it, under the UAE Personal Data Protection Law (Federal Decree-Law No. 45 of 2021) and, where it applies to you, the UK or EU GDPR. {ph('F17', 'adviser to confirm which laws apply')}</p>"),
+    ("Your rights", f"<p>You can ask for access to, correction of, or deletion of your data, and you can object to our use of it, under the UAE Personal Data Protection Law (Federal Decree-Law No. 45 of 2021) and, where it applies to you, the UK or EU GDPR.</p>"),
     ("Changes", "<p>We will post any changes on this page with a new date.</p>"),
 ]
 

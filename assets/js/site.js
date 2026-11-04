@@ -77,8 +77,8 @@
 })();
 
 /* Team rotator: random start, rotates every 5.5s, tap a thumbnail to feature a person */
-(function () {
-  var root = document.querySelector(".team-rot"); if (!root) return;
+window.DKteam = function (scope) {
+  var root = (scope || document).querySelector(".team-rot"); if (!root || root.dataset.on) return; root.dataset.on = "1";
   var feats = root.querySelectorAll(".tr-feature"), thumbs = root.querySelectorAll(".tr-thumb"), dets = root.querySelectorAll(".tr-detail");
   var n = feats.length, i = 0, timer = null, paused = false;
   var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -93,7 +93,8 @@
   root.addEventListener("focusin", function () { paused = true; });
   root.addEventListener("focusout", function () { paused = false; });
   show(0); start();
-})();
+};
+window.DKteam();
 
 /* Sticky CTA hides over the footer/contact areas */
 (function () {
@@ -104,8 +105,8 @@
 })();
 
 /* Selected experience rotator (phones): cycles every 7s, dots, swipe; pauses on interaction */
-(function () {
-  var root = document.querySelector(".case-rot"); if (!root) return;
+window.DKcases = function (scope) {
+  var root = (scope || document).querySelector(".case-rot"); if (!root || root.dataset.on) return; root.dataset.on = "1";
   var items = root.querySelectorAll(".cr-item"), dots = root.querySelectorAll(".cr-dot"), n = items.length, i = 0, timer, held = false;
   var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   function show(k) { i = (k + n) % n; items.forEach(function (el) { var on = +el.dataset.i === i; el.classList.toggle("on", on); el.setAttribute("aria-hidden", on ? "false" : "true"); }); dots.forEach(function (d) { d.classList.toggle("on", +d.dataset.i === i); }); }
@@ -116,4 +117,80 @@
   root.addEventListener("touchend", function (e) { held = false; if (x0 === null) return; var dx = e.changedTouches[0].clientX - x0; if (Math.abs(dx) > 40) { show(i + (dx < 0 ? 1 : -1)); start(); } x0 = null; });
   root.addEventListener("focusin", function () { held = true; }); root.addEventListener("focusout", function () { held = false; });
   start();
+};
+window.DKcases();
+
+
+/* One continuous scroll: internal pages open in a panel over the home page, with a large close (X).
+   Each page keeps its own address (deep links, search and no-JS still work). Back button and Esc close it. */
+(function () {
+  if (!window.fetch || !window.history || !history.pushState || !window.DOMParser) return;
+  var home = location.pathname === "/" || location.pathname === "/index.html";
+  var sheet = null, lastFocus = null, openedHere = false, scrollY = 0;
+  function sheetOpen() { return !!(sheet && sheet.classList.contains("open")); }
+  function eligible(a) {
+    if (!a || !a.href || a.target || a.hasAttribute("download")) return false;
+    var u; try { u = new URL(a.href, location.href); } catch (e) { return false; }
+    if (u.origin !== location.origin) return false;
+    if (u.pathname === "/" || u.pathname === "/index.html") return false;
+    if (u.pathname === location.pathname && !sheetOpen()) return false;
+    if (/\.(vcf|pdf|xml|txt|png|jpg|zip)$/i.test(u.pathname)) return false;
+    return true;
+  }
+  function build() {
+    sheet = document.createElement("div");
+    sheet.className = "sheet"; sheet.setAttribute("role", "dialog"); sheet.setAttribute("aria-modal", "true");
+    sheet.innerHTML = '<div class="sheet-panel" tabindex="-1"><button type="button" class="sheet-close" aria-label="Close and return to the home page"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></button><div class="sheet-body"></div></div>';
+    document.body.appendChild(sheet);
+    sheet.querySelector(".sheet-close").addEventListener("click", function () { close(true); });
+    sheet.addEventListener("click", function (e) { if (e.target === sheet) close(true); });
+    sheet.addEventListener("keydown", function (e) {
+      if (e.key === "Escape") { close(true); return; }
+      if (e.key !== "Tab") return;
+      var f = sheet.querySelectorAll('a[href],button:not([disabled]),input,select,textarea,[tabindex]:not([tabindex="-1"])');
+      if (!f.length) return; var first = f[0], last = f[f.length - 1];
+      if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+      else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+    });
+  }
+  function load(url, push) {
+    return fetch(url, { credentials: "same-origin" }).then(function (r) { if (!r.ok) throw 0; return r.text(); }).then(function (txt) {
+      var doc = new DOMParser().parseFromString(txt, "text/html");
+      var main = doc.querySelector("main"); if (!main) throw 0;
+      if (!sheet) build();
+      var body = sheet.querySelector(".sheet-body");
+      body.innerHTML = main.innerHTML;
+      body.querySelectorAll(".hero-media").forEach(function (h) { h.remove(); });
+      if (!document.body.classList.contains("sheet-open")) { scrollY = window.scrollY; lastFocus = document.activeElement; }
+      document.body.classList.add("sheet-open");
+      sheet.classList.add("open");
+      sheet.querySelector(".sheet-panel").scrollTop = 0;
+      document.title = doc.title;
+      if (push) { history.pushState({ sheet: url }, "", url); openedHere = true; }
+      if (window.DKteam) DKteam(body); if (window.DKcases) DKcases(body);
+      if (body.querySelector("#enquiry")) { var sc = document.createElement("script"); var src = (doc.querySelector('script[src*="contact.js"]') || {}).getAttribute; sc.src = src ? doc.querySelector('script[src*="contact.js"]').getAttribute("src") : "/assets/js/contact.js"; body.appendChild(sc); }
+      sheet.querySelector(".sheet-close").focus();
+    }).catch(function () { location.href = url; });
+  }
+  function close(viaUi) {
+    if (!sheet || !sheet.classList.contains("open")) return;
+    if (viaUi && openedHere && history.state && history.state.sheet) { history.back(); return; }
+    sheet.classList.remove("open"); document.body.classList.remove("sheet-open");
+    document.title = HOME_TITLE; var y = scrollY; requestAnimationFrame(function () { window.scrollTo(0, y); });
+    if (lastFocus && lastFocus.focus) lastFocus.focus();
+  }
+  var HOME_TITLE = document.title;
+  document.addEventListener("click", function (e) {
+    if (e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+    var a = e.target.closest && e.target.closest("a");
+    if (a && sheetOpen() && a.href) { try { var hu = new URL(a.href, location.href); if (hu.origin === location.origin && (hu.pathname === "/" || hu.pathname === "/index.html") && home) { e.preventDefault(); close(true); return; } } catch (x) {} }
+    if (!eligible(a)) return;
+    var u = new URL(a.href, location.href);
+    var drawer = document.getElementById("site-menu"); if (drawer && drawer.classList.contains("open")) { var mc = drawer.querySelector(".menu-close"); mc && mc.click(); }
+    e.preventDefault(); load(u.pathname + u.search + u.hash, true);
+  });
+  window.addEventListener("popstate", function (e) {
+    if (e.state && e.state.sheet) load(e.state.sheet, false);
+    else { openedHere = false; close(false); }
+  });
 })();
