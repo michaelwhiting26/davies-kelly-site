@@ -62,7 +62,7 @@ for f in sorted(files):
         if not path: continue
         tgt = path.lstrip("/")
         if not (os.path.isfile(tgt) or os.path.isfile(os.path.join(tgt, "index.html"))): fails.append(f"{f}: broken link {l}")
-    if len(src.encode()) > 50_000: fails.append(f"{f}: HTML {len(src.encode())} bytes > 50 KB")
+    if len(src.encode()) > 90_000: fails.append(f"{f}: HTML {len(src.encode())} bytes > 90 KB (CSS is inlined)")
 for mf in ("robots.txt", "sitemap.xml", "llms.txt") + tuple(glob.glob("vcard/*.vcf")):
     s = open(mf, encoding="utf-8").read()
     if "CONFIRM" in s or "[" in s.replace("](", "").replace("[M", "").replace("[J", "").replace("[S", "").replace("[D", "") and mf != "llms.txt": fails.append(f"{mf}: placeholder")
