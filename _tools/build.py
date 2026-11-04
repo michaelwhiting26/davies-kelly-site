@@ -5,6 +5,8 @@ Output is committed static HTML; GitHub Pages serves it with no build step.
 import json, os, html, datetime
 
 SITE = "https://davieskelly.com"
+import hashlib as _h
+ASSET_V = _h.md5((open("assets/css/site.css","rb").read()+open("assets/js/site.js","rb").read())).hexdigest()[:8]
 TODAY = "2026-11-04"
 ROOS_TEL, ROOS_TEL_D, ROOS_MAIL = "+971558695337", "+971 (0)55 869 5337", "michael.roos@davieskelly.com"
 JAMIE_TEL, JAMIE_TEL_D, JAMIE_MAIL = "+971585693416", "+971 (0)58 569 3416", "jamie.shafto@davieskelly.com"
@@ -349,8 +351,8 @@ def page(path, title, desc, body, graph=None, og="og-default.png", ogtype="websi
 <meta property="og:title" content="{e(title)}"><meta property="og:description" content="{e(desc)}"><meta property="og:url" content="{canon}"><meta property="og:type" content="{ogtype}"><meta property="og:image" content="{SITE}/og/{og}"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:site_name" content="Davies Kelly"><meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="/favicon.ico" sizes="any"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><meta name="theme-color" content="#14253D">
 <link rel="preload" href="/assets/fonts/source-sans-3.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="/assets/fonts/montserrat.woff2" as="font" type="font/woff2" crossorigin>{preload}
-<link rel="stylesheet" href="/assets/css/site.css">{ld}
-<script src="/assets/js/site.js" defer></script>{extra_js}
+<link rel="stylesheet" href="/assets/css/site.css?v={ASSET_V}">{ld}
+<script src="/assets/js/site.js?v={ASSET_V}" defer></script>{extra_js}
 </head><body>
 {header(path)}
 <main id="main">
@@ -721,7 +723,7 @@ side = f'''<h2 id="direct">Or contact a partner directly</h2><div class="grid">{
 <h2 style="margin-top:32px">Office</h2><p>{e(ADDRESS)}</p><p><a class="btn secondary block" href="{MAPS}" rel="noopener noreferrer">Open in Google Maps</a></p>
 <h2 style="margin-top:32px">What happens next</h2><ol class="steps"><li><strong>Conflict check.</strong> We check every party.</li><li><strong>Scope call.</strong> The issues, forum and timetable.</li><li><strong>Written terms.</strong> Scope, fees, independence, confidentiality.</li><li><strong>Documents.</strong> Only then.</li></ol>'''
 body = h + f'<div class="wrap"><div class="split form" style="padding-bottom:var(--sec)"><div>{form}</div><aside>{side}</aside></div></div>'
-page("/contact/", "Contact and Conflict Check | Davies Kelly", "Tell us the parties and the matter. We check for conflicts first. Please do not send confidential documents until we confirm.", body, [bc], cta=False, extra_js='<script src="/assets/js/contact.js" defer></script>')
+page("/contact/", "Contact and Conflict Check | Davies Kelly", "Tell us the parties and the matter. We check for conflicts first. Please do not send confidential documents until we confirm.", body, [bc], cta=False, extra_js='<script src="/assets/js/contact.js?v={ASSET_V}" defer></script>')
 
 body = head("Thank you", None)[0] + f'<div class="wrap measure" style="padding-bottom:var(--sec)"><p>Your enquiry has reached Davies Kelly. We will reply by email. If it is urgent, call Michael Roos on <a href="tel:{ROOS_TEL}">{ROOS_TEL_D}</a> or Jamie Shafto on <a href="tel:{JAMIE_TEL}">{JAMIE_TEL_D}</a>.</p></div>'
 page("/contact/thank-you/", "Thank you | Davies Kelly", "Your enquiry has reached Davies Kelly.", body, noindex=True, cta=False)
