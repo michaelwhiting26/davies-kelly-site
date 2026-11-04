@@ -165,11 +165,11 @@ PEOPLE = {
         name="Michael Whiting", honorific="", post="BSc (Hons) Quantity Surveying · RICS Expert Witness Certificate",
         role="Partner, Quantum and Forensic Analysis", role_ph=None, role_text="Partner, Quantum and Forensic Analysis", city=None, city_ph=("M2", "city shown"), testifying=False,
         tel="+447762124220", tel_d="+44 7762 124220", tel_ph="M6", mail=None, mail_ph="M6", wa_ph="M6", wa="447762124220", linkedin_ph="M7",
-        card_line="Quantum surveyor supporting our quantum experts with analysis of records, claims and accounts.",
+        card_line="Quantum and claims consultant supporting our quantum experts with analysis of records, claims and accounts.",
         alt="Michael Whiting, Davies Kelly",
         title="Michael Whiting – Quantum Analysis | Davies Kelly",
-        desc="Michael Whiting is a quantum surveyor supporting Davies Kelly’s quantum experts with analysis of project records, claims and accounts.",
-        summary=f"Michael Whiting is a quantum surveyor with over 12 years’ experience in construction and engineering, from commercial management on live projects to quantum work in disputes, across the United Kingdom, the Middle East and North Africa. At Davies Kelly he supports the quantum experts with quantum assessment, document review, analysis of project records and report drafting. He began his career at 16 as an apprentice quantity surveyor with Balfour Beatty.",
+        desc="Michael Whiting is a quantum and claims consultant supporting Davies Kelly’s quantum experts with analysis of project records, claims and accounts.",
+        summary=f"Michael Whiting is a quantum and claims consultant with over 12 years’ experience in construction and engineering, from commercial management on live projects to quantum work in disputes, across the United Kingdom, the Middle East and North Africa. At Davies Kelly he supports the quantum experts with quantum assessment, document review, analysis of project records and report drafting. He began his career at 16 as an apprentice quantity surveyor with Balfour Beatty.",
         highlights=[
             "Quantum analysis supporting appointed experts in arbitrations in North Africa, the UAE and Oman, in court proceedings in Scotland and in a UK adjudication.",
             "Interim disruption claim valued by measured mile for gas export pipelines in Saudi Arabia.",
@@ -202,7 +202,7 @@ BIO = {
     "michael-roos": "Testifying quantum expert with an LLM in construction law, arbitration and adjudication, appointed as lead quantum expert in international arbitration, court, adjudication and a pre-arbitral expert procedure. Started as a labourer at 16 and ran sites before moving into disputes.",
     "jamie-shafto": "Testifying delay expert with over 25 years in construction and disputes, regularly appointed in international arbitration and cross-examined by King’s Counsel. Planned major projects in London and the Gulf before turning to disputes.",
     "stephen-john": "Chartered civil engineer, European Engineer and Fellow of the Chartered Institute of Arbitrators, with more than 40 years of practice on four continents. Cross-examined in the UK High Court and in international arbitration.",
-    "michael-whiting": "Quantum surveyor with over 12 years from commercial management on live projects to quantum in disputes, across the UK, the Middle East and North Africa. Began at 16 as an apprentice quantity surveyor with Balfour Beatty.",
+    "michael-whiting": "Quantum and claims consultant with over 12 years from commercial management on live projects to quantum in disputes, across the UK, the Middle East and North Africa. Began at 16 as an apprentice quantity surveyor with Balfour Beatty.",
 }
 TALK = {
     "michael-roos": "quantum, variations, prolongation and final accounts",
@@ -861,7 +861,7 @@ open("llms.txt", "w").write(f"""# Davies Kelly
 - [Michael Roos]({SITE}/experts/michael-roos/): founding partner and testifying quantum expert; BSc (Hons) Quantity Surveying (Glasgow Caledonian University), LLM Construction Law, Arbitration and Adjudication (Robert Gordon University), MCIArb; prolongation, disruption, head office overheads, variations, defects and final accounts; Middle East, North Africa, UK and Europe.
 - [Jamie Shafto]({SITE}/experts/jamie-shafto/): founding partner and testifying delay expert; appointed in ICC and DIAC arbitrations; oral evidence under cross-examination by King's Counsel; forensic delay and disruption analysis; UK and MENA.
 - [Stephen M John]({SITE}/experts/stephen-john/): Eur Ing, chartered civil engineer, FICE, FCIArb, MCIHT; independent technical and FIDIC contract evidence.
-- [Michael Whiting]({SITE}/experts/michael-whiting/): quantum surveyor supporting the quantum experts; BSc (Hons) Quantity Surveying, RICS Expert Witness Certificate.
+- [Michael Whiting]({SITE}/experts/michael-whiting/): quantum and claims consultant supporting the quantum experts; BSc (Hons) Quantity Surveying, RICS Expert Witness Certificate.
 
 ## Services
 - [Pre-contract advice]({SITE}/pre-contract-advice/): review and drafting of construction contracts and professional services agreements; contractual risk.
