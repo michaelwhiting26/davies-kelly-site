@@ -102,3 +102,18 @@
   var io = new IntersectionObserver(function (es) { es.forEach(function (e) { if (e.isIntersecting) visible.add(e.target); else visible.delete(e.target); }); cta.classList.toggle("hide", visible.size > 0); });
   targets.forEach(function (t) { io.observe(t); });
 })();
+
+/* Selected experience rotator (phones): cycles every 7s, dots, swipe; pauses on interaction */
+(function () {
+  var root = document.querySelector(".case-rot"); if (!root) return;
+  var items = root.querySelectorAll(".cr-item"), dots = root.querySelectorAll(".cr-dot"), n = items.length, i = 0, timer, held = false;
+  var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  function show(k) { i = (k + n) % n; items.forEach(function (el) { var on = +el.dataset.i === i; el.classList.toggle("on", on); el.setAttribute("aria-hidden", on ? "false" : "true"); }); dots.forEach(function (d) { d.classList.toggle("on", +d.dataset.i === i); }); }
+  function start() { if (reduce) return; clearInterval(timer); timer = setInterval(function () { if (!held && !document.hidden) show(i + 1); }, 7000); }
+  dots.forEach(function (d) { d.addEventListener("click", function () { show(+d.dataset.i); start(); }); });
+  var x0 = null;
+  root.addEventListener("touchstart", function (e) { x0 = e.touches[0].clientX; held = true; }, { passive: true });
+  root.addEventListener("touchend", function (e) { held = false; if (x0 === null) return; var dx = e.changedTouches[0].clientX - x0; if (Math.abs(dx) > 40) { show(i + (dx < 0 ? 1 : -1)); start(); } x0 = null; });
+  root.addEventListener("focusin", function () { held = true; }); root.addEventListener("focusout", function () { held = false; });
+  start();
+})();

@@ -302,3 +302,17 @@ select{-webkit-appearance:none;appearance:none;padding-right:40px;background:#ff
 .sector-tile{display:flex;align-items:flex-end;border-radius:4px;overflow:hidden}
 .sector-tile span{position:relative;padding:16px;color:#fff;font:600 1.15rem var(--ff-h);line-height:1.25}
 @media (max-width:899px){.sticky-cta{right:12px;bottom:12px;min-height:44px;padding:0 16px;font-size:.92rem}}
+
+/* Selected experience on phones: one case at a time, fixed height, cycles */
+.case-rot{display:block}
+.case-grid{display:none}
+@media (min-width:900px){.case-rot{display:none}.case-grid{display:grid}}
+.cr-track{display:grid}
+.cr-item{grid-area:1/1;opacity:0;visibility:hidden;transition:opacity .5s ease,visibility 0s linear .5s}
+.cr-item.on{opacity:1;visibility:visible;transition:opacity .5s ease}
+.cr-item .case{height:100%;margin:0}
+.cr-dots{display:flex;justify-content:center;gap:0;margin-top:8px}
+.cr-dot{width:44px;height:44px;border:0;background:transparent;padding:0;cursor:pointer;display:inline-flex;align-items:center;justify-content:center}
+.cr-dot span{display:block;width:9px;height:9px;border-radius:999px;border:1.5px solid var(--navy-900);transition:width .25s,background .25s}
+.cr-dot.on span{width:24px;background:var(--navy-900)}
+@media (prefers-reduced-motion:reduce){.cr-item,.cr-item.on{transition:none}}

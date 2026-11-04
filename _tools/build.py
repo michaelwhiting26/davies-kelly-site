@@ -270,6 +270,13 @@ ADVISORY = [
 ]
 
 
+def case_rotator(ids):
+    cs = [c for i in ids for c in CASES if c["id"] == i]
+    cards = "".join(f'<div class="cr-item{" on" if k == 0 else ""}" data-i="{k}" aria-hidden="{"false" if k == 0 else "true"}">{case_card(c)}</div>' for k, c in enumerate(cs))
+    dots = "".join(f'<button type="button" class="cr-dot{" on" if k == 0 else ""}" data-i="{k}" aria-label="Show example {k+1} of {len(cs)}"><span></span></button>' for k in range(len(cs)))
+    return f'<div class="case-rot" aria-roledescription="carousel" aria-label="Selected experience"><div class="cr-track" aria-live="polite">{cards}</div><div class="cr-dots">{dots}</div></div>'
+
+
 def case_card(c):
     who = ", ".join(f'<a href="/experts/{s}/">{e(PEOPLE[s]["name"])}</a>' for s in c["who"])
     chips = "".join(f"<span>{e(x)}</span>" for x in c["chips"])
@@ -450,7 +457,7 @@ home = f'''<section class="hero" aria-label="Introduction">
 <section class="section"><div class="wrap"><h2>Sectors</h2><p class="lead measure">Energy, water, transport and buildings projects across the Middle East, Africa, Asia and Europe.</p><div class="tiles">{tiles}</div>
 </div></section>
 <section class="section alt"><div class="wrap"><h2>Selected experience</h2><p class="lead measure">We do not name clients or matters. Arbitration is usually confidential, and our clients’ disputes are not marketing material.</p>
-<div class="grid c3">{"".join(case_card(c) for c in CASES if c["id"] in ("C2", "C4", "C11"))}</div><p style="margin-top:20px"><a class="btn secondary" href="/experience/">See all experience</a></p></div></section>
+{case_rotator(("C2", "C4", "C11", "C8", "C5", "C3"))}<div class="grid c3 case-grid">{"".join(case_card(c) for c in CASES if c["id"] in ("C2", "C4", "C11"))}</div><p style="margin-top:20px"><a class="btn secondary" href="/experience/">See all experience</a></p></div></section>
 <section class="section"><div class="wrap"><h2>How an instruction starts</h2>{steps4}<p class="muted" style="margin-top:20px">We aim to reply to every enquiry promptly.</p></div></section>'''
 home_graph = [
     {"@type": "Organization", "@id": f"{SITE}/#org", "name": "Davies Kelly", "url": f"{SITE}/", "logo": {"@type": "ImageObject", "url": f"{SITE}/assets/img/logo/davies-kelly-logo-512.png"}, "image": f"{SITE}/og/og-default.png",
