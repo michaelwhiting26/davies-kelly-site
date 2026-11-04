@@ -455,7 +455,7 @@ home = f'''<section class="hero" aria-label="Introduction">
 <p><a href="/independence/">Read how we work</a></p></div></section>
 <section class="section"><div class="wrap"><h2>Sectors</h2><p class="lead measure">Energy, water, transport and buildings projects across the Middle East, Africa, Asia and Europe.</p><div class="tiles">{tiles}</div>
 </div></section>
-<section class="section alt"><div class="wrap"><h2>Selected experience</h2><p class="lead measure">We do not name clients or matters. Arbitration is usually confidential, and our clients’ disputes are not marketing material.</p>
+<section class="section alt"><div class="wrap"><h2>Selected experience</h2>
 {case_rotator(("C2", "C4", "C11", "C8", "C5", "C3"))}<div class="grid c3 case-grid">{"".join(case_card(c) for c in CASES if c["id"] in ("C2", "C4", "C11"))}</div><p style="margin-top:20px"><a class="btn secondary" href="/experience/">See all experience</a></p></div></section>
 <section class="section"><div class="wrap"><h2>How an instruction starts</h2>{steps4}<p class="muted" style="margin-top:20px">We aim to reply to every enquiry promptly.</p></div></section>'''
 home_graph = [
