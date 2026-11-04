@@ -337,3 +337,39 @@ body.sheet-open{overflow:hidden}
 .sheet-close:focus-visible{outline:3px solid #7FC4C4;outline-offset:3px}
 @media (min-width:900px){.sheet-panel{inset:28px 48px}.sheet-body{padding:28px 40px 80px}.sheet-close{top:16px;margin:16px 16px 0 0}}
 @media (prefers-reduced-motion:reduce){.sheet,.sheet-panel{transition:none}}
+
+/* Enquiry form (three steps, adapted from Avonstowe) */
+.cf{max-width:640px;margin-top:16px}
+.cf-progress{height:3px;background:var(--line);border-radius:3px;margin-bottom:12px;overflow:hidden}
+.cf-progress span{display:block;height:100%;width:33%;background:var(--teal-700);transition:width .35s ease}
+.cf-step{font:600 12px var(--ff-h);letter-spacing:.14em;text-transform:uppercase;color:var(--teal-700);margin-bottom:16px;outline:none}
+.cf-panel{animation:cfIn .3s ease both}
+@keyframes cfIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.cf-field{border:0;margin:0 0 20px;padding:0;min-width:0}
+.cf-field legend,.cf-field label{display:block;font-weight:600;color:var(--ink);margin-bottom:6px}
+.cf-opt{color:var(--muted);font-weight:400}
+.cf-hint{font-size:.9rem;color:var(--muted);margin:-2px 0 8px}
+.cf-err{font-size:.92rem;color:var(--error);font-weight:600;margin:0 0 8px}
+.cf-input{width:100%;min-height:48px;padding:10px 12px;font:inherit;font-size:16px;border:2px solid var(--field);border-radius:6px;background:#fff;color:var(--ink)}
+textarea.cf-input{resize:vertical;min-height:140px}
+.cf-input:focus{outline:3px solid var(--teal-300);outline-offset:1px;border-color:var(--teal-700)}
+.cf-input.cf-invalid{border-color:var(--error)}
+.cf-chips{display:flex;flex-wrap:wrap;gap:10px}
+.cf-chip{position:relative;margin:0!important;font-weight:400!important}
+.cf-chip input{position:absolute;opacity:0;inset:0;margin:0;cursor:pointer}
+.cf-chip span{display:inline-flex;align-items:center;min-height:44px;padding:8px 16px;border:2px solid var(--line);border-radius:999px;background:#fff;transition:border-color .2s,background .2s}
+.cf-chip:hover span{border-color:var(--teal-700)}
+.cf-chip.is-on span{background:var(--teal-50);border-color:var(--teal-700);color:var(--teal-800);font-weight:600}
+.cf-chip input:focus-visible+span{outline:3px solid var(--teal-300);outline-offset:2px}
+.cf-summary{border:2px solid var(--error);border-radius:8px;padding:14px 16px;margin-bottom:20px;outline:none}
+.cf-summary h3{font-size:1rem;margin:0 0 6px}
+.cf-summary a{color:var(--error);font-weight:600}
+.cf-review{margin:4px 0 16px;border-top:1px solid var(--line)}
+.cf-review div{padding:12px 0;border-bottom:1px solid var(--line)}
+.cf-review dt{font:600 11px var(--ff-h);letter-spacing:.14em;text-transform:uppercase;color:var(--teal-700);margin-bottom:4px}
+.cf-review dd{margin:0;overflow-wrap:anywhere}
+.cf-change{background:none;border:0;padding:0 0 0 6px;font:inherit;font-size:.9rem;color:var(--teal-700);text-decoration:underline;cursor:pointer;min-height:44px}
+.cf-nav{display:flex;gap:12px;margin-top:8px}
+.cf-nav .btn{flex:1 1 auto}
+.cf-nav [data-back]{flex:0 0 auto}
+.cf-hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}

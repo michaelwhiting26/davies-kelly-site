@@ -699,37 +699,34 @@ def contact_card(name, role, tel, tel_d, mail, wa_ph):
 
 
 h, bc = head("Contact us", f"Tell us about the matter and who the parties are. We will check for conflicts and reply promptly.", [("Home", "/"), ("Contact", None)])
-form = f'''<p><a href="#direct">Prefer to call? Contact a partner directly</a></p>
-<div class="box"><p><strong>Please do not send documents or confidential information yet.</strong> We need the names of the parties to check for conflicts before we can discuss the substance. A short, non-confidential outline is enough. The form does not accept attachments.</p></div>
-<form id="enquiry" action="mailto:{ENQ_TO}" method="post" enctype="text/plain" novalidate data-to="{ENQ_TO}">
-<fieldset class="group"><legend>About the matter</legend>
-<fieldset class="field" id="f-need"><legend>What do you need?</legend>{chips("need", ["Quantum expert", "Delay expert", "Quantum and delay", "Engineering or contract expert", "Claim review or advice", "Not sure"])}</fieldset>
-<fieldset class="field" id="f-appointment"><legend>What kind of appointment?</legend>{chips("appointment", ["Party-appointed expert", "Tribunal- or court-appointed", "Single joint expert", "Advice or review", "Not sure"])}</fieldset>
-<div class="field" id="f-forum"><label for="forum">Where is the matter?</label><select id="forum" name="forum" required><option value="">Select</option>{"".join(f"<option>{o}</option>" for o in ["ICC", "DIAC", "LCIA", "SIAC", "HKIAC", "Other arbitration", "Court", "Adjudication", "Dispute board", "Expert determination", "Not yet in a formal process", "Not sure"])}</select></div>
-</fieldset>
-<fieldset class="group"><legend>Conflict check</legend>
-<div class="field" id="f-parties"><label for="parties">Who are the parties?</label><span class="hint" id="h-parties">Name every party, including the other side and any parent or related companies.</span><textarea id="parties" name="parties" rows="3" maxlength="600" required aria-describedby="h-parties"></textarea></div>
-<div class="field" id="f-counsel"><label for="counsel">Law firm or counsel instructing (if any)</label><input type="text" id="counsel" name="counsel" maxlength="160"></div>
-<div class="field" id="f-project"><label for="project">Project and country</label><span class="hint" id="h-project">For example: hospital, Dubai, UAE</span><input type="text" id="project" name="project" maxlength="160" required aria-describedby="h-project"></div>
-<div class="field" id="f-keydate"><label for="keydate">Key date (optional)</label><span class="hint" id="h-keydate">For example: expert report due 15 January 2027</span><input type="text" id="keydate" name="keydate" maxlength="120" aria-describedby="h-keydate"></div>
-<div class="field" id="f-outline"><label for="outline">Short outline</label><span class="hint" id="h-outline">The issue, the stage, and what you need from us. Nothing confidential.</span><textarea id="outline" name="outline" rows="5" maxlength="1000" required aria-describedby="h-outline outline-count"></textarea><p class="count" id="outline-count" aria-live="polite">1000 characters left</p></div>
-</fieldset>
-<fieldset class="group"><legend>Your details</legend>
-<div class="field" id="f-name"><label for="name">Your name</label><input type="text" id="name" name="name" autocomplete="name" required enterkeyhint="next"></div>
-<div class="field" id="f-organisation"><label for="organisation">Organisation</label><input type="text" id="organisation" name="organisation" autocomplete="organization" required enterkeyhint="next"></div>
-<div class="field" id="f-role"><label for="role">Your role (optional)</label><input type="text" id="role" name="role" autocomplete="organization-title" enterkeyhint="next"></div>
-<div class="field" id="f-email"><label for="email">Email address</label><span class="hint" id="h-email">We will reply to this address.</span><input type="email" id="email" name="email" autocomplete="email" inputmode="email" spellcheck="false" autocapitalize="off" required aria-describedby="h-email" enterkeyhint="next"></div>
-<div class="field" id="f-phone"><label for="phone">Phone or WhatsApp (optional)</label><span class="hint" id="h-phone">Include the country code.</span><input type="tel" id="phone" name="phone" autocomplete="tel" inputmode="tel" aria-describedby="h-phone" enterkeyhint="done"></div>
-</fieldset>
-<div class="field" id="f-ack"><label class="check"><input type="checkbox" id="ack" name="ack" required> <span>I understand that sending this form does not create an engagement, and I have not included confidential or privileged information.</span></label></div>
-<div class="honey" aria-hidden="true"><label for="company_website">Leave this field empty</label><input type="text" id="company_website" name="company_website" tabindex="-1" autocomplete="off"></div>
-<p class="small muted">We use these details to reply to you and to check for conflicts, as explained in our <a href="/privacy/">privacy notice</a>.</p>
-<button class="btn block" type="submit">Send enquiry</button>
+form = f'''<div class="box"><p><strong>Please do not send documents or confidential information yet.</strong> Tell us who the parties are so we can check for conflicts first.</p></div>
+<form id="enquiry" class="cf" novalidate data-to="{ENQ_TO}">
+<div class="cf-progress" aria-hidden="true"><span></span></div>
+<div class="cf-step" tabindex="-1">Step <b>1</b> of 3</div>
+<div class="cf-summary" tabindex="-1" hidden><h3>There is a problem</h3><ul></ul></div>
+<div class="cf-panel" data-step="1">
+<fieldset class="cf-field" id="f-role"><legend>You are…</legend><p class="cf-err" hidden></p><div class="cf-chips">{"".join(f'<label class="cf-chip"><input type="radio" name="role" value="{e(o)}"><span>{e(o)}</span></label>' for o in ["A law firm", "A contractor", "A subcontractor", "An employer or developer", "A consultant", "Other"])}</div></fieldset>
+<fieldset class="cf-field" id="f-stage"><legend>Where is the matter now?</legend><p class="cf-err" hidden></p><div class="cf-chips">{"".join(f'<label class="cf-chip"><input type="radio" name="stage" value="{e(o)}"><span>{e(o)}</span></label>' for o in ["On a live project", "Claim being prepared", "Adjudication", "Arbitration", "Court proceedings", "Not sure yet"])}</div></fieldset>
+</div>
+<div class="cf-panel" data-step="2" hidden>
+<div class="cf-field" id="f-name"><label for="cf-name">Your name</label><p class="cf-err" hidden></p><input class="cf-input" id="cf-name" name="name" autocomplete="name" maxlength="120"></div>
+<div class="cf-field" id="f-organisation"><label for="cf-organisation">Organisation <span class="cf-opt">(optional)</span></label><input class="cf-input" id="cf-organisation" name="organisation" autocomplete="organization" maxlength="160"></div>
+<div class="cf-field" id="f-email"><label for="cf-email">Email address</label><p class="cf-hint">We will reply to this address.</p><p class="cf-err" hidden></p><input class="cf-input" id="cf-email" name="email" type="email" autocomplete="email" inputmode="email" spellcheck="false" autocapitalize="off" maxlength="200"></div>
+<div class="cf-field" id="f-phone"><label for="cf-phone">Phone or WhatsApp <span class="cf-opt">(optional)</span></label><p class="cf-hint">Include the country code.</p><p class="cf-err" hidden></p><input class="cf-input" id="cf-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" maxlength="30"></div>
+</div>
+<div class="cf-panel" data-step="3" hidden>
+<div class="cf-field" id="f-outline"><label for="cf-outline">Overview <span class="cf-opt">(optional)</span></label><p class="cf-hint">A few basic details: the parties (for our conflict check), the project and country, and what you need. Nothing confidential.</p><p class="cf-err" hidden></p><textarea class="cf-input" id="cf-outline" name="outline" rows="6" maxlength="1550"></textarea></div>
+<dl class="cf-review"><div><dt>You are</dt><dd><span data-r="who"></span> <button type="button" class="cf-change" data-go="1">Change</button></dd></div><div><dt>Your details</dt><dd><span data-r="details"></span> <button type="button" class="cf-change" data-go="2">Change</button></dd></div></dl>
+<p class="small muted">Sending opens your email app with your enquiry filled in, addressed to our partners. We use these details only to reply and to check for conflicts (<a href="/privacy/">privacy notice</a>). Sending this does not create an engagement.</p>
+</div>
+<div class="cf-hp" aria-hidden="true"><label for="cf-website">Website</label><input id="cf-website" name="website" tabindex="-1" autocomplete="off"></div>
+<div class="cf-nav"><button type="button" class="btn secondary" data-back hidden>Back</button><button type="submit" class="btn">Continue</button></div>
 </form>
 <div id="result" class="result box" hidden role="status"><h2 tabindex="-1" style="font-size:var(--fs-h3)">Your email app should now open with your enquiry</h2>
-<p>If it did not open, copy the enquiry below and email it to <a href="mailto:{ENQ_TO}">{ROOS_MAIL}</a> and <a href="mailto:{JAMIE_MAIL}">{JAMIE_MAIL}</a>.</p>
+<p>If it did not open, copy your enquiry and email it to <a href="mailto:{ENQ_TO}">{ROOS_MAIL}</a> and <a href="mailto:{JAMIE_MAIL}">{JAMIE_MAIL}</a>.</p>
 <label for="copy-text" class="vh">Your enquiry</label><textarea id="copy-text" readonly></textarea>
-<p style="margin-top:12px"><button class="btn secondary" type="button" id="copy-enquiry">Copy enquiry</button></p><p id="copy-status" aria-live="polite"></p></div>'''
+<p style="margin-top:12px"><button class="btn secondary" type="button" id="copy-enquiry">Copy my enquiry</button></p><p id="copy-status" aria-live="polite"></p></div>'''
+
 side = f'''<h2 id="direct">Or contact a partner directly</h2><div class="grid">{contact_card("Michael Roos", "Founding Partner, Quantum Expert", ROOS_TEL, ROOS_TEL_D, ROOS_MAIL, "R15")}{contact_card("Jamie Shafto", "Founding Partner, Delay Expert", JAMIE_TEL, JAMIE_TEL_D, JAMIE_MAIL, "J15")}</div>
 <h2 style="margin-top:32px">Office</h2><p>{e(ADDRESS)}</p><p><a class="btn secondary block" href="{MAPS}" rel="noopener noreferrer">Open in Google Maps</a></p>
 <h2 style="margin-top:32px">What happens next</h2><ol class="steps"><li><strong>Conflict check.</strong> We check every party.</li><li><strong>Scope call.</strong> The issues, forum and timetable.</li><li><strong>Written terms.</strong> Scope, fees, independence, confidentiality.</li><li><strong>Documents.</strong> Only then.</li></ol>'''
