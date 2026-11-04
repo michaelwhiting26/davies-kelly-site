@@ -175,7 +175,6 @@ PEOPLE = {
             "Interim disruption claim valued by measured mile for gas export pipelines in Saudi Arabia.",
             "Commercial lead for a main contractor on a £109m, 407-apartment build-to-rent scheme in London, from procurement to final account.",
         ],
-        role_note="Michael supports our appointed experts and does not act as a testifying expert.",
         experience=[
             "Quantum analysis for the appointed expert in an arbitration between contractor and subcontractor on phosphate plants in North Africa: prolongation, disruption, measured work, variations, loss of opportunity and head office overheads.",
             "Quantum analysis for the appointed expert in an arbitration between contractor and MEP subcontractor on a luxury hotel in the UAE.",
@@ -502,7 +501,7 @@ for slug in ORDER:
         btns.append(f'<a class="btn secondary" href="/contact/">{ICON["mail"]}Email</a>')
     contact_note = ph(p["tel_ph"], "publish mobile; WhatsApp on it?") if slug in ("michael-roos", "jamie-shafto") else (ph(p["mail_ph"], "email address to show") if p.get("mail_ph") else "")
     evidence = (f'<div class="evidence"><h2>Evidence given</h2>{ul(p["evidence"])}</div>' if p.get("evidence")
-                else f'<div class="evidence"><h2>Role</h2><p>{p["role_note"]}</p></div>')
+                else f'<div class="evidence"><h2>Role</h2><p>{p["role_note"]}</p></div>' if p.get("role_note") else "")
     tribunal = f'<h2>Tribunal appointments</h2>{ul(p["tribunal"])}' if p.get("tribunal") else ""
     career_extra = ""
     members = ul(p["members"]) if p.get("members") else ""
