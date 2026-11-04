@@ -10,7 +10,7 @@ header{position:sticky;top:0;z-index:5;background:#fff;border-bottom:1px solid #
 .logo img{height:44px;display:block}
 nav a{font-family:Montserrat,sans-serif;font-size:12px;font-weight:600;letter-spacing:.06em;color:var(--navy);text-decoration:none;margin-left:28px;text-transform:uppercase}
 nav a.on{color:var(--accent)}
-.hero{height:62vh;min-height:360px;background:linear-gradient(120deg,rgba(20,37,61,.92),rgba(20,37,61,.55)),repeating-linear-gradient(60deg,#1d3557 0 40px,#22406a 40px 80px);display:flex;align-items:flex-end;padding:0 5vw 8vh}
+.hero{height:62vh;min-height:360px;background:linear-gradient(120deg,rgba(20,37,61,.88),rgba(20,37,61,.45)),url(img/hero.jpg) center/cover no-repeat;display:flex;align-items:flex-end;padding:0 5vw 8vh}
 .frame{border:3px solid rgba(255,255,255,.75);padding:110px 40px 26px;width:300px}
 .frame h1{margin:0;color:#fff;font-family:Montserrat,sans-serif;font-size:30px;letter-spacing:.06em}
 main{max-width:1100px;margin:0 auto;padding:60px 5vw}
@@ -50,6 +50,11 @@ section.block{scroll-margin-top:80px}
 .testimonial p{font-size:16px;margin:0 0 12px}.testimonial .who{font-family:Montserrat,sans-serif;font-weight:700;color:var(--navy)}
 .contact{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:24px;margin-top:26px}
 .contact a{color:var(--navy)}
+.sectors{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-top:26px}
+.sector{position:relative;aspect-ratio:4/3;overflow:hidden;background:#dfe4ea}
+.sector img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s}
+.sector:hover img{transform:scale(1.04)}
+.sector span{position:absolute;left:0;right:0;bottom:0;padding:28px 16px 12px;background:linear-gradient(transparent,rgba(20,37,61,.9));color:#fff;font-family:Montserrat,sans-serif;font-weight:600;font-size:14px;letter-spacing:.03em}
 footer .cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:24px;max-width:1100px;margin:0 auto}
 footer h4{font-family:Montserrat,sans-serif;color:var(--accent);font-size:12px;letter-spacing:.08em;margin:0 0 10px}
 footer a{color:#cfd6e0;text-decoration:none;display:block;margin-bottom:4px}
@@ -88,6 +93,17 @@ footer .copy{max-width:1100px;margin:22px auto 0;border-top:1px solid #2c4060;pa
 <blockquote>“We always put our clients’ interests first by providing truly objective and impartial advice. We believe our clients’ interests should be at the heart of everything we do, even though we’d just talked ourselves out of the significant fees we could have made by agreeing with the consultancy and advising them to take legal action.”</blockquote>
 <div class="who">JAMIE SHAFTO – PARTNER</div>
 <a class="btn" href="#contact">Get in touch</a>
+</section>
+
+<section class="block" id="sectors">
+<h2>Sectors</h2>
+<p class="sub">We work on construction, engineering and energy projects across the Middle East, Africa and Asia.</p>
+<div class="sectors">
+<div class="sector"><img src="img/sector-renewables.jpg" alt="Wind turbine under construction" loading="lazy"><span>Renewable energy</span></div>
+<div class="sector"><img src="img/sector-water.jpg" alt="Water treatment works" loading="lazy"><span>Water &amp; wastewater</span></div>
+<div class="sector"><img src="img/sector-tunnel.jpg" alt="Segment-lined tunnel" loading="lazy"><span>Tunnelling &amp; rail</span></div>
+<div class="sector"><img src="img/sector-power.jpg" alt="Power plant construction" loading="lazy"><span>Power &amp; infrastructure</span></div>
+</div>
 </section>
 
 <section class="block" id="services">
