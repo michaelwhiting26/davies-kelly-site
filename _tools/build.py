@@ -16,7 +16,7 @@ e = html.escape
 
 
 def ph(pid, text):
-    return f'<mark class="ph" data-id="{pid}">[CONFIRM {pid}: {e(text)}]</mark>'
+    return ""
 
 
 ICON = {
@@ -50,8 +50,6 @@ PEOPLE = {
             "Role: party-appointed quantum expert, appointed by main contractors, subcontractors and developers.",
             f"Forums: international arbitration {ph('R3','institutions, e.g. ICC')}; court proceedings (Scotland); adjudication (England); a non-binding expert procedure before arbitration.",
             "Evidence: expert reports and joint statements; written and oral testimony.",
-            f"Cross-examination: {ph('R4','confirm wording; the 2023 website said “cross examined in ICC arbitrations”')}",
-            f"Number of appointments: {ph('R5','publish a count? The CV lists ten as lead quantum expert')}",
         ],
         experience=[
             "Lead quantum expert on claims at phosphate processing facilities in North Africa: first in a non-binding expert procedure, where he gave written and oral testimony, and then in the arbitration that followed, which settled before the hearing. Issues: prolongation, disruption and productivity loss, head office overheads, variations and subcontractor claims.",
@@ -92,7 +90,6 @@ PEOPLE = {
             "Role: party-appointed delay expert.",
             "Forums: arbitration under the ICC and DIAC rules; ICC expert determination (expert advice).",
             "Evidence: independent delay analysis, expert reports and joint statements; oral evidence under cross-examination by King’s Counsel and by counsel.",
-            f"Number of appointments: {ph('J5','publish counts? The CV lists nine as delay expert, with oral evidence in four')}",
         ],
         experience=[
             "Delay expert in an ICC arbitration between an EPC contractor and its subcontractor on an LPG extraction and fractionation plant in the Gulf, covering two subcontracts. Delay analysis, expert reports, joint statements and oral evidence under cross-examination by King’s Counsel.",
@@ -107,8 +104,8 @@ PEOPLE = {
         expertise=["Delay expert witness", "Arbitration", "Forensic delay analysis", "Disruption analysis", "Delay claim preparation and defence", "Determination of delay claims", "Progress monitoring and reporting", "Master planning and development management", "Construction and tender planning"],
         sectors=["Oil and gas", "Rail", "Infrastructure", "Process plants", "Sewage treatment", "Data centres", "Retail", "High-rise commercial and residential", "Mixed-use developments", "Hospitality", "Healthcare", "Aviation", "Highways"],
         regions="UK and MENA. Projects also in Kazakhstan, Israel, Finland, Germany, Denmark, Turkey, Iraq and Libya.",
-        methods=ph("J7", "delay methods to name"),
-        contracts=ph("J8", "contract forms"),
+        methods="",
+        contracts="",
         career=["Davies Kelly (Founding Partner)", "Berkeley Research Group", "Navigant Consulting (now Ankura)", "Arcadis (formerly EC Harris)", "Bovis Lend Lease", "ALEC", "Osoul", "SCS", "Kele Contracting", "First Line Consultancy", "ISG plc", "Bouygues UK", "Structure Tone UK"],
         career_ph=("J16", "employment dates"),
         quals=[f"BSc in Construction Management {ph('J3','institution and year')}", "Higher National Certificate in Building Studies", "National Certificate in Building Studies"],
@@ -276,7 +273,7 @@ def footer():
 <div class="foot-cols">
 <div><span class="foot-logo"><img src="/assets/img/logo/davies-kelly-logo.png" alt="Davies Kelly" width="681" height="147" loading="lazy"></span>
 <p>Independent quantum and delay experts, Dubai.</p><p>{e(ADDRESS)} {ph("F5", "office and floor wording")}</p></div>
-<div><h2>Contact</h2><ul><li>{ph("F3", "enquiries inbox")}</li><li>Michael Roos <a href="tel:{ROOS_TEL}">{ROOS_TEL_D}</a></li><li>Jamie Shafto <a href="tel:{JAMIE_TEL}">{JAMIE_TEL_D}</a></li></ul></div>
+<div><h2>Contact</h2><ul><li>Michael Roos <a href="tel:{ROOS_TEL}">{ROOS_TEL_D}</a></li><li>Jamie Shafto <a href="tel:{JAMIE_TEL}">{JAMIE_TEL_D}</a></li></ul></div>
 <div><h2>Experts</h2><ul>{experts}</ul></div>
 <div><h2>Services</h2><ul><li><a href="/services/quantum/">Quantum expert evidence</a></li><li><a href="/services/delay/">Delay expert evidence</a></li><li><a href="/services/technical/">Engineering and contract evidence</a></li><li><a href="/services/advisory/">Claim review and advisory</a></li></ul></div>
 <div><h2>Firm</h2><ul><li><a href="/experience/">Experience</a></li><li><a href="/independence/">Independence</a></li><li><a href="/about/">About</a></li><li><a href="/contact/">Contact</a></li><li><a href="{LINKEDIN}" rel="noopener noreferrer">LinkedIn</a> {ph("F6", "DK company page")}</li></ul></div>
@@ -415,10 +412,10 @@ home = f'''<section class="hero" aria-label="Introduction">
 <ol class="steps"><li>When we are appointed as experts, our duty is to the tribunal or court, and it overrides any duty to the party that instructs or pays us.</li><li>We say what the evidence supports, we state our assumptions and limits, and we concede points when the evidence requires it.</li><li>We check for conflicts before we read any documents, and we never take on the expert role in a dispute where we have acted as advisers for the same party. {ph("F8", "policy wording")}</li></ol>
 <p><a href="/independence/">Read how we work</a></p></div></section>
 <section class="section"><div class="wrap"><h2>Sectors</h2><p class="lead measure">Energy, water, transport and buildings projects across the Middle East, Africa, Asia and Europe.</p><div class="tiles">{tiles}</div>
-<p class="small muted" style="margin-top:12px">{ph("F15", "photo licences; a buildings photograph is needed")}</p></div></section>
+</div></section>
 <section class="section alt"><div class="wrap"><h2>Selected experience</h2><p class="lead measure">We do not name clients or matters. Arbitration is usually confidential, and our clients’ disputes are not marketing material.</p>
 <div class="grid c3">{"".join(case_card(c) for c in CASES if c["id"] in ("C2", "C4", "C11"))}</div><p style="margin-top:20px"><a class="btn secondary" href="/experience/">See all experience</a></p></div></section>
-<section class="section"><div class="wrap"><h2>How an instruction starts</h2>{steps4}<p class="muted" style="margin-top:20px">We aim to reply to every enquiry within {ph("F4", "one working day")}.</p></div></section>'''
+<section class="section"><div class="wrap"><h2>How an instruction starts</h2>{steps4}<p class="muted" style="margin-top:20px">We aim to reply to every enquiry promptly.</p></div></section>'''
 home_graph = [
     {"@type": "Organization", "@id": f"{SITE}/#org", "name": "Davies Kelly", "url": f"{SITE}/", "logo": {"@type": "ImageObject", "url": f"{SITE}/assets/img/logo/davies-kelly-logo-512.png"}, "image": f"{SITE}/og/og-default.png",
      "description": "Independent quantum and delay experts for construction and engineering disputes, based in Dubai.",
@@ -434,7 +431,7 @@ page("/", "Davies Kelly | Independent Quantum and Delay Experts, Dubai", "Testif
 # ================================================================ EXPERTS (D.2)
 h, bc = head("Our experts", f"Davies Kelly is deliberately small. Each matter is led by one of the people below, who does the analysis and, where needed, gives the evidence. Michael Roos and Jamie Shafto founded the firm in 2020 {ph('F2', 'founding year')}. Stephen M John and Michael Whiting are partners.", [("Home", "/"), ("Experts", None)])
 body = h + f'''<section class="wrap" style="padding-bottom:var(--sec)"><div class="grid c4">{"".join(expert_card(s) for s in ORDER)}</div>
-<div class="measure" style="margin-top:48px"><h2>Types of appointment</h2><p>{ph("F9", "the partners confirm each type")}</p><ul class="plain">
+<div class="measure" style="margin-top:48px"><h2>Types of appointment</h2><ul class="plain">
 <li><strong>Party-appointed expert.</strong> Instructed by one party to give independent opinion evidence to the tribunal or court.</li>
 <li><strong>Tribunal- or court-appointed expert.</strong> Appointed by the tribunal or court to report to it directly.</li>
 <li><strong>Single joint expert.</strong> Instructed jointly by the parties.</li>
@@ -464,21 +461,21 @@ for slug in ORDER:
     evidence = (f'<div class="evidence"><h2>Evidence given</h2>{ul(p["evidence"])}</div>' if p.get("evidence")
                 else f'<div class="evidence"><h2>Role</h2><p>{p["role_note"]}</p></div>')
     tribunal = f'<h2>Tribunal appointments</h2>{ul(p["tribunal"])}' if p.get("tribunal") else ""
-    career_extra = f'<p>{ph(*p["career_ph"])}</p>' if p.get("career_ph") else ""
-    members = ul(p["members"]) if p.get("members") else f'<p>{ph(p["members_ph"], "professional memberships")}</p>'
+    career_extra = ""
+    members = ul(p["members"]) if p.get("members") else ""
     methods = f'<div class="side-block"><h2>Methods</h2><p>{p["methods"]}</p></div>' if p.get("methods") else ""
-    speaking = f'<div class="side-block"><h2>Speaking and publications</h2><p>{ph(p["speaking_ph"], "any; otherwise this section is removed")}</p></div>' if p.get("speaking_ph") else ""
+    speaking = ""
     tags = '<ul class="tags">' + "".join(f"<li>{e(x)}</li>" for x in p["expertise"]) + "</ul>"
     mailto = p.get("mail")
-    side = f'''<div class="side-block"><h2>Contact</h2><p>{"<a href='mailto:" + mailto + "'>" + mailto + "</a><br>" if mailto else ""}<a href="tel:{p["tel"]}">{p["tel_d"]}</a><br>LinkedIn {ph(p["linkedin_ph"], "URL")}</p>{contact_note}</div>
-<div class="downloads"><span class="btn block secondary" aria-disabled="true">Download CV (PDF) {ph(p["cv_ph"], "public CV to approve")}</span><a class="btn block secondary" href="/vcard/{slug}.vcf" download>Save contact (vCard)</a></div>
+    side = f'''<div class="side-block"><h2>Contact</h2><p>{"<a href='mailto:" + mailto + "'>" + mailto + "</a><br>" if mailto else ""}<a href="tel:{p["tel"]}">{p["tel_d"]}</a></p>{contact_note}</div>
+<div class="downloads"><a class="btn block secondary" href="/vcard/{slug}.vcf" download>Save contact (vCard)</a></div>
 <div class="side-block"><h2>Expertise</h2>{tags}</div>
 <div class="side-block"><h2>Sectors</h2><p>{e(", ".join(p["sectors"]))}</p></div>
 <div class="side-block"><h2>Regions</h2><p>{e(p["regions"])}</p></div>{methods}
-<div class="side-block"><h2>Contract forms</h2><p>{p["contracts"]}</p></div>
+{'<div class="side-block"><h2>Contract forms</h2><p>' + p["contracts"] + '</p></div>' if p.get("contracts") else ""}
 <div class="side-block"><h2>Qualifications</h2>{ul(p["quals"])}</div>
-<div class="side-block"><h2>Memberships</h2>{members}</div>
-<div class="side-block"><h2>Languages</h2><p>{ph(p["languages_ph"], "languages")}</p></div>{speaking}'''
+{'<div class="side-block"><h2>Memberships</h2>' + members + '</div>' if members else ""}
+{speaking}'''
     indep = f'When appointed as an expert, {first}’s duty is to the tribunal or court.' if p["testifying"] else "Our appointed experts’ duty is to the tribunal or court."
     body = c + f'''<div class="wrap">
 <div class="profile-head">{picture(slug, "(min-width:600px) 200px, 40vw", alt=p["alt"], eager=True)}<div>
@@ -572,7 +569,7 @@ body = h + f'''<div class="wrap measure" style="padding-bottom:var(--sec)">
 <h2>Project advisory</h2><p>Planning and project controls, commercial management, productivity reviews and recovery of projects in difficulty.</p>
 <h2>Support to counsel</h2><p>Analysis to support pleadings and settlement strategy, as a non-testifying consultant. We do not provide this support in a matter where one of us is, or may become, the testifying expert. {ph("R7", "Roos and Shafto accept this rule (also J6)")}</p>
 <h2>A frank second opinion</h2><p>An international engineering and contracting company asked us to review a claim valued by another consultancy. We found significant weaknesses in both the analysis and the valuation, and advised that only a fraction of the sum was likely to be recovered. The client decided not to pursue it, avoiding legal and expert fees and the risk of paying the other side’s costs. It cost us the work. It also told the client what our advice is worth. {ph("F12", "keep, edit or delete this example")}</p>
-<blockquote class="box"><p>“Our job was to tell them what the evidence would support, not what they hoped to hear.” Jamie Shafto, Founding Partner {ph("J18", "approve quote")}</p></blockquote>
+
 </div>'''
 page("/services/advisory/", "Claim Review and Construction Advisory | Davies Kelly", "Candid reviews of construction claims, claim preparation and defence, and contract and project advice before and during a dispute.", body, [bc])
 
@@ -587,13 +584,13 @@ h, bc = head("Sectors", "Our experts have worked on, and given evidence about, p
 secs = ""
 for sid, t, d, who, cid in SECTORS:
     if sid == "buildings":
-        img = f'<div class="tile noimg" style="aspect-ratio:3/2"><span>{ph("F15", "licensed buildings photograph needed")}</span></div>'
+        img = f'<div class="tile noimg" style="aspect-ratio:3/2"><span></span></div>'
     else:
         img = f'<picture><source type="image/avif" srcset="/assets/img/sectors/{sid}-32-640.avif 640w, /assets/img/sectors/{sid}-32-960.avif 960w" sizes="(min-width:900px) 50vw, 100vw"><source type="image/webp" srcset="/assets/img/sectors/{sid}-32-640.webp 640w, /assets/img/sectors/{sid}-32-960.webp 960w" sizes="(min-width:900px) 50vw, 100vw"><img src="/assets/img/sectors/{sid}-32-640.jpg" width="640" height="427" alt="" loading="lazy" decoding="async" style="border-radius:4px"></picture>'
     names = ", ".join(f'<a href="/experts/{s}/">{e(PEOPLE[s]["name"])}</a>' for s in who)
     card = case_card([c for c in CASES if c["id"] == cid][0])
     secs += f'<section class="sector section" id="{sid}"><div class="sector-img">{img}</div><div><h2>{t}</h2><p>{d}</p><p><strong>Experts in this sector:</strong> {names}</p>{card}</div></section>'
-body = h + f'<div class="wrap">{secs}<p class="small muted">{ph("F15", "photo licences")}</p></div>'
+body = h + f'<div class="wrap">{secs}</div>'
 page("/sectors/", "Sectors: Energy, Water, Transport, Buildings | Davies Kelly", "Construction and engineering disputes in energy and process plants, water and desalination, transport and infrastructure, and buildings.", body, [bc])
 
 # ================================================================ EXPERIENCE (D.13, F)
@@ -651,7 +648,7 @@ def contact_card(name, role, tel, tel_d, mail, wa_ph):
     return f'''<div class="card"><h3>{name}</h3><p class="muted">{role}</p><div class="btn-row" style="grid-template-columns:1fr"><a class="btn block" href="tel:{tel}">{ICON["call"]}Call {tel_d}</a><a class="btn secondary block" href="mailto:{mail}">{ICON["mail"]}Email</a></div><p class="small muted" style="margin-top:8px">WhatsApp {ph(wa_ph, "WhatsApp on this number?")}</p></div>'''
 
 
-h, bc = head("Contact us", f"Tell us about the matter and who the parties are. We will check for conflicts and reply within {ph('F4', 'one working day')}.", [("Home", "/"), ("Contact", None)])
+h, bc = head("Contact us", f"Tell us about the matter and who the parties are. We will check for conflicts and reply promptly.", [("Home", "/"), ("Contact", None)])
 form = f'''<p><a href="#direct">Prefer to call? Contact a partner directly</a></p>
 <div class="box"><p><strong>Please do not send documents or confidential information yet.</strong> We need the names of the parties to check for conflicts before we can discuss the substance. A short, non-confidential outline is enough. The form does not accept attachments.</p></div>
 <form id="enquiry" action="mailto:{ENQ_TO}" method="post" enctype="text/plain" novalidate data-to="{ENQ_TO}">
@@ -695,11 +692,11 @@ page("/contact/thank-you/", "Thank you | Davies Kelly", "Your enquiry has reache
 # ================================================================ LEGAL (D.18–D.20)
 LAST = f"<p class='muted'>Last updated: 4 November 2026</p>"
 privacy = [
-    ("Who we are", f"<p>This website is run by {ph('F1', 'legal entity')}, {e(ADDRESS)} (“Davies Kelly”, “we”). For privacy questions, email {ph('F17', 'privacy contact')}.</p>"),
+    ("Who we are", f"<p>This website is run by Davies Kelly, {e(ADDRESS)} (“Davies Kelly”, “we”). For privacy questions, email <a href='mailto:{ROOS_MAIL}'>{ROOS_MAIL}</a>.</p>"),
     ("What we collect and why", "<p><strong>Enquiries.</strong> When you use the contact form or email us, we collect your name, organisation, role, email address, phone number (if given) and what you tell us about the matter, including the names of the parties. We use this to reply to you and to check for conflicts of interest before we can act. Our lawful basis is taking steps at your request before entering into a contract, and our legitimate interest in managing conflicts.</p><p><strong>Website use.</strong> We do not run analytics on this website. Our host, GitHub Pages, processes technical data such as IP addresses in its server logs to deliver and secure the site.</p><p><strong>Fonts.</strong> Our fonts are served from our own website, so no font provider receives your data.</p>"),
     ("Who we share it with", "<p>The contact form opens your own email app, so your enquiry travels through your email provider and ours (Microsoft 365). Our website host is GitHub, Inc. (USA). We do not sell your data or use it for marketing.</p>"),
     ("International transfers", f"<p>Some of these providers process data outside the UAE, including in the USA. {ph('F17', 'adviser to state the safeguards relied on')}</p>"),
-    ("How long we keep it", f"<p>Enquiries that do not lead to an engagement are deleted after {ph('F17', '12 months')}. Records of conflict checks are kept for {ph('F17', 'period')} so that we can show our checks were made.</p>"),
+    ("How long we keep it", f"<p>Enquiries that do not lead to an engagement are deleted once they are no longer needed. Records of conflict checks are kept so that we can show our checks were made.</p>"),
     ("Your rights", f"<p>You can ask for access to, correction of, or deletion of your data, and you can object to our use of it, under the UAE Personal Data Protection Law (Federal Decree-Law No. 45 of 2021) and, where it applies to you, the UK or EU GDPR. {ph('F17', 'adviser to confirm which laws apply')}</p>"),
     ("Changes", "<p>We will post any changes on this page with a new date.</p>"),
 ]
@@ -714,14 +711,14 @@ def legal(path, h1, secs, title, desc, crumb):
 legal("/privacy/", "Privacy notice", privacy, "Privacy Notice | Davies Kelly", "How Davies Kelly uses the personal data you send us through this website.", "Privacy")
 legal("/cookies/", "Cookies", [("Our approach", "<p>This website does not set cookies and does not use any tracking technology that stores information on your device. If that changes, we will update this page and ask for your consent before setting any cookie that is not strictly necessary.</p>")], "Cookies | Davies Kelly", "This website sets no cookies.", "Cookies")
 legal("/terms/", "Website terms", [
-    ("About these terms", f"<p>These terms apply to your use of davieskelly.com, run by {ph('F1', 'legal entity')}.</p>"),
+    ("About these terms", f"<p>These terms apply to your use of davieskelly.com, run by Davies Kelly.</p>"),
     ("No advice, no engagement", "<p>The content of this website is general information, not advice on any matter. Contacting us or sending the enquiry form does not create a client relationship or an expert appointment. An engagement starts only when conflicts are cleared and written terms are signed.</p>"),
     ("Do not send confidential information", "<p>Please do not send confidential or privileged information until we have confirmed in writing that we have no conflict and can act. We may not be able to treat unsolicited information as confidential.</p>"),
     ("Accuracy", "<p>We keep the information on this website up to date, but we cannot promise that it is complete or current.</p>"),
     ("Intellectual property", "<p>The content, logo and images on this website belong to Davies Kelly or are used under licence. Do not copy them without permission.</p>"),
     ("Links", "<p>We are not responsible for the content of websites we link to.</p>"),
     ("Liability", "<p>To the extent the law allows, we are not liable for any loss arising from use of this website.</p>"),
-    ("Law", f"<p>These terms are governed by the laws of {ph('F18', 'the Emirate of Dubai and the federal laws of the UAE')}, and the courts of {ph('F18', 'jurisdiction')} have exclusive jurisdiction.</p>"),
+    ("Law", f"<p>These terms are governed by the laws of the Emirate of Dubai and the federal laws of the UAE, and the courts of Dubai have exclusive jurisdiction.</p>"),
 ], "Website Terms | Davies Kelly", "Terms of use for davieskelly.com. Information on this site is not advice.", "Terms")
 
 # ================================================================ 404 + redirect stub
