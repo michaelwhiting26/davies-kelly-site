@@ -169,7 +169,7 @@ PEOPLE = {
         alt="Michael Whiting, Davies Kelly",
         title="Michael Whiting – Quantum Analysis | Davies Kelly",
         desc="Michael Whiting is a quantum and claims consultant supporting Davies Kelly’s quantum experts with analysis of project records, claims and accounts.",
-        summary=f"Michael Whiting is a quantum and claims consultant with over 12 years’ experience in construction and engineering, from commercial management on live projects to quantum work in disputes, across the United Kingdom, the Middle East and North Africa. At Davies Kelly he supports the quantum experts with quantum assessment, document review, analysis of project records and report drafting. He began his career at 16 as an apprentice quantity surveyor with Balfour Beatty.",
+        summary=f"Michael Whiting is a quantum expert with over 12 years’ experience in construction and engineering, from commercial management on live projects to quantum work in disputes, across the United Kingdom, the Middle East and North Africa. At Davies Kelly he supports the quantum experts with quantum assessment, document review, analysis of project records and report drafting. He began his career at 16 as an apprentice quantity surveyor with Balfour Beatty.",
         highlights=[
             "Quantum analysis supporting appointed experts in arbitrations in North Africa, the UAE and Oman, in court proceedings in Scotland and in a UK adjudication.",
             "Interim disruption claim valued by measured mile for gas export pipelines in Saudi Arabia.",
