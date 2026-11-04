@@ -421,10 +421,13 @@ services_cards = [
     ("Claim review and advisory", "A frank second opinion on a claim before you spend on it, and contract and project advice before a dispute starts.", "/services/advisory/", ""),
 ]
 svc_html = "".join(f'<article class="card service"><h3><a href="{u}">{t}</a></h3><p>{d} {flag}</p><a class="more" href="{u}" aria-label="More about {t}">Read more</a></article>' for t, d, u, flag in services_cards)
-tiles = '''<a class="tile" href="/sectors/#energy"><picture><source media="(min-width:900px)" type="image/avif" srcset="/assets/img/sectors/energy-43-640.avif"><source type="image/avif" srcset="/assets/img/sectors/energy-sq-480.avif"><source type="image/webp" srcset="/assets/img/sectors/energy-sq-480.webp"><img src="/assets/img/sectors/energy-sq-480.jpg" width="480" height="480" alt="" loading="lazy" decoding="async"></picture><span>Energy and process plants</span></a>
+tiles = '''<a class="tile" href="/sectors/#energy"><picture><source media="(min-width:900px)" type="image/avif" srcset="/assets/img/sectors/energy-43-640.avif"><source type="image/avif" srcset="/assets/img/sectors/energy-sq-480.avif"><source type="image/webp" srcset="/assets/img/sectors/energy-sq-480.webp"><img src="/assets/img/sectors/energy-sq-480.jpg" width="480" height="480" alt="" loading="lazy" decoding="async"></picture><span>Energy and power</span></a>
 <a class="tile" href="/sectors/#water"><picture><source media="(min-width:900px)" type="image/avif" srcset="/assets/img/sectors/water-43-640.avif"><source type="image/avif" srcset="/assets/img/sectors/water-sq-480.avif"><source type="image/webp" srcset="/assets/img/sectors/water-sq-480.webp"><img src="/assets/img/sectors/water-sq-480.jpg" width="480" height="480" alt="" loading="lazy" decoding="async"></picture><span>Water and desalination</span></a>
 <a class="tile" href="/sectors/#transport"><picture><source media="(min-width:900px)" type="image/avif" srcset="/assets/img/sectors/transport-43-640.avif"><source type="image/avif" srcset="/assets/img/sectors/transport-sq-480.avif"><source type="image/webp" srcset="/assets/img/sectors/transport-sq-480.webp"><img src="/assets/img/sectors/transport-sq-480.jpg" width="480" height="480" alt="" loading="lazy" decoding="async"></picture><span>Transport and infrastructure</span></a>
-<a class="tile noimg" href="/sectors/#buildings"><span>Buildings, hotels and hospitals</span></a>'''
+<a class="tile noimg" href="/sectors/#oil-gas"><span>Oil, gas, process and industrial</span></a>
+<a class="tile noimg" href="/sectors/#buildings"><span>Commercial and residential buildings</span></a>
+<a class="tile noimg" href="/sectors/#hospitality"><span>Hospitality and leisure</span></a>
+<a class="tile noimg" href="/sectors/#healthcare"><span>Healthcare, education and public buildings</span></a>'''
 steps4 = '''<ol class="steps row grid"><li><strong>Conflict check.</strong> Tell us the parties. We check every name before we discuss the substance.</li><li><strong>Scope call.</strong> A short call to understand the issues, the forum and the timetable.</li><li><strong>Written terms.</strong> Scope, fees, independence and confidentiality agreed in writing.</li><li><strong>Documents.</strong> Only then do we receive documents and start work.</li></ol>'''
 home = f'''<section class="hero" aria-label="Introduction">
 <div class="hero-media" aria-roledescription="carousel" aria-label="Project photographs">{slides}<div class="hero-controls">{dots}</div>{pause_btn}</div>
@@ -606,23 +609,26 @@ page("/services/advisory/", "Claim Review and Construction Advisory | Davies Kel
 
 # ================================================================ SECTORS (D.12)
 SECTORS = [
-    ("energy", "Energy, oil and gas, and process plants", "LPG extraction and fractionation, crude oil refining, gas processing and pipelines, gas-to-liquids, LNG plant and tanks, phosphate processing, power stations, solar plant and hydro-electric refurbishment, in the Gulf, North Africa, Europe, Australia and Central Asia.", ["michael-roos", "jamie-shafto", "stephen-john"], "C2"),
-    ("water", "Water, wastewater and desalination", "Desalination plants, power and water plants, water distribution and wastewater treatment, and a 28 km water tunnel.", ["michael-roos", "jamie-shafto", "stephen-john"], "C8"),
-    ("transport", "Transport and infrastructure", "Railways, metro and tram, highways and expressways, airports, marine infrastructure, ports and tunnels.", ORDER, "C5"),
-    ("buildings", "Buildings, hotels and hospitals", "Hotels, hospitals, high-rise residential and commercial towers, mixed-use developments, data centres, retail, offices, retirement and student housing, and stadiums.", ORDER, "C4"),
+    ("energy", "Energy and power", "Power stations, solar plant, hydro-electric refurbishment and wider energy projects.", ["jamie-shafto", "stephen-john", "michael-whiting"], "C6", "energy"),
+    ("oil-gas", "Oil, gas, process and industrial", "Oil and gas, LNG plant and tanks, LPG extraction and fractionation, crude oil refining, gas processing and pipelines, process plants, phosphate processing and industrial facilities.", ORDER, "C2", None),
+    ("water", "Water, wastewater and desalination", "Desalination plants, water distribution, sewage and wastewater treatment, and water tunnels.", ["michael-roos", "jamie-shafto", "stephen-john"], "C8", "water"),
+    ("transport", "Transport and infrastructure", "Rail, metro and tram, highways and roads, airports and aviation, marine infrastructure, ports and tunnels.", ORDER, "C5", "transport"),
+    ("buildings", "Commercial and residential buildings", "High-rise commercial and residential towers, residential complexes, mixed-use developments, offices, retail and data centres.", ORDER, "C11", None),
+    ("hospitality", "Hospitality and leisure", "Hotels and resorts, and works for major international sporting events.", ORDER, "C3", None),
+    ("healthcare", "Healthcare, education and public buildings", "Hospitals and healthcare facilities, education and PFI projects.", ["michael-roos", "jamie-shafto", "michael-whiting"], "C4", None),
 ]
-h, bc = head("Sectors", "Our experts have worked on, and given evidence about, projects in four broad sectors. The examples below come from the projects in our CVs.", [("Home", "/"), ("Sectors", None)])
+h, bc = head("Sectors", "Our experts have worked on, and given evidence about, projects across seven broad sectors in the Middle East, Africa, the UK, Europe, Central Asia and Australia.", [("Home", "/"), ("Sectors", None)])
 secs = ""
-for sid, t, d, who, cid in SECTORS:
-    if sid == "buildings":
-        img = f'<div class="tile noimg" style="aspect-ratio:3/2"><span></span></div>'
+for sid, t, d, who, cid, photo in SECTORS:
+    if not photo:
+        img = f'<div class="tile noimg sector-tile" style="aspect-ratio:3/2"><span>{t}</span></div>'
     else:
-        img = f'<picture><source type="image/avif" srcset="/assets/img/sectors/{sid}-32-640.avif 640w, /assets/img/sectors/{sid}-32-960.avif 960w" sizes="(min-width:900px) 50vw, 100vw"><source type="image/webp" srcset="/assets/img/sectors/{sid}-32-640.webp 640w, /assets/img/sectors/{sid}-32-960.webp 960w" sizes="(min-width:900px) 50vw, 100vw"><img src="/assets/img/sectors/{sid}-32-640.jpg" width="640" height="427" alt="" loading="lazy" decoding="async" style="border-radius:4px"></picture>'
+        img = f'<picture><source type="image/avif" srcset="/assets/img/sectors/{photo}-32-640.avif 640w, /assets/img/sectors/{photo}-32-960.avif 960w" sizes="(min-width:900px) 50vw, 100vw"><source type="image/webp" srcset="/assets/img/sectors/{photo}-32-640.webp 640w, /assets/img/sectors/{photo}-32-960.webp 960w" sizes="(min-width:900px) 50vw, 100vw"><img src="/assets/img/sectors/{photo}-32-640.jpg" width="640" height="427" alt="" loading="lazy" decoding="async"></picture>'
     names = ", ".join(f'<a href="/experts/{s}/">{e(PEOPLE[s]["name"])}</a>' for s in who)
     card = case_card([c for c in CASES if c["id"] == cid][0])
     secs += f'<section class="sector section" id="{sid}"><div class="sector-img">{img}</div><div><h2>{t}</h2><p>{d}</p><p><strong>Experts in this sector:</strong> {names}</p>{card}</div></section>'
 body = h + f'<div class="wrap">{secs}</div>'
-page("/sectors/", "Sectors: Energy, Water, Transport, Buildings | Davies Kelly", "Construction and engineering disputes in energy and process plants, water and desalination, transport and infrastructure, and buildings.", body, [bc])
+page("/sectors/", "Sectors | Davies Kelly", "Construction disputes in energy, oil and gas, water, transport, buildings, hospitality, healthcare and education, from Dubai.", body, [bc])
 
 # ================================================================ EXPERIENCE (D.13, F)
 h, bc = head("Experience", "A selection of matters from our experts’ CVs. Each is described by sector, region, forum, our role and the issues. We do not name parties, projects or values.", [("Home", "/"), ("Experience", None)])

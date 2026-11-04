@@ -294,3 +294,9 @@ select{-webkit-appearance:none;appearance:none;padding-right:40px;background:#ff
 .sticky-cta{position:fixed;right:14px;bottom:14px;z-index:40;display:inline-flex;align-items:center;min-height:44px;padding:0 18px;border-radius:999px;background:var(--teal,#286465);color:#fff;font-weight:700;text-decoration:none;box-shadow:0 6px 20px rgba(20,37,61,.25);transition:opacity .3s,transform .3s}
 .sticky-cta.hide{opacity:0;transform:translateY(12px);pointer-events:none}
 @media (prefers-reduced-motion:reduce){.sticky-cta{transition:none}}
+
+/* Sector tiles without a photo: deliberate brand tile */
+.tile.noimg,.sector-tile{background:linear-gradient(135deg,#286465 0%,#1d3a4f 55%,#14253d 100%);position:relative}
+.tile.noimg::before,.sector-tile::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(135deg,rgba(255,255,255,.05) 0 2px,transparent 2px 14px)}
+.sector-tile{display:flex;align-items:flex-end;border-radius:4px;overflow:hidden}
+.sector-tile span{position:relative;padding:16px;color:#fff;font:600 1.15rem var(--ff-h);line-height:1.25}
