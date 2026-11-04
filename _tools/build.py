@@ -117,7 +117,7 @@ PEOPLE = {
     ),
     "stephen-john": dict(
         name="Stephen M John", honorific="Eur Ing", post="BEng (Hons), MBA, LLM, CEng, FICE, FCIArb, MCIHT",
-        role=None, role_ph="S1", role_text="Consultant, Engineering and Contracts Expert", city=None, city_ph=("S3", "United Kingdom"), testifying=True,
+        role="Partner", role_ph=None, role_text="Partner", city=None, city_ph=("S3", "United Kingdom"), testifying=True,
         tel="+447891784891", tel_d="+44 (0)7891 784 891", tel_ph="S3", mail=None, mail_ph="S3", wa_ph=None, linkedin_ph="S3",
         card_line="Chartered civil engineer, FICE and FCIArb; experienced testifying expert.",
         alt="Stephen M John, Davies Kelly",
@@ -163,7 +163,7 @@ PEOPLE = {
     ),
     "michael-whiting": dict(
         name="Michael Whiting", honorific="", post="BSc (Hons) Quantity Surveying · RICS Expert Witness Certificate",
-        role=None, role_ph="M1", role_text="Senior Consultant, Quantum Analysis", city=None, city_ph=("M2", "city shown"), testifying=False,
+        role="Partner", role_ph=None, role_text="Partner", city=None, city_ph=("M2", "city shown"), testifying=False,
         tel="+447762124220", tel_d="+44 7762 124220", tel_ph="M6", mail=None, mail_ph="M6", wa_ph="M6", wa="447762124220", linkedin_ph="M7",
         card_line="Quantity surveyor supporting our quantum experts with analysis of records, claims and accounts.",
         alt="Michael Whiting, Davies Kelly",
@@ -175,7 +175,7 @@ PEOPLE = {
             "Interim disruption claim valued by measured mile for gas export pipelines in Saudi Arabia.",
             "Commercial lead for a main contractor on a £109m, 407-apartment build-to-rent scheme in London, from procurement to final account.",
         ],
-        role_note=f"Michael supports our appointed experts and does not act as a testifying expert {ph('M1','confirm')}.",
+        role_note="Michael supports our appointed experts and does not act as a testifying expert.",
         experience=[
             "Quantum analysis for the appointed expert in an arbitration between contractor and subcontractor on phosphate plants in North Africa: prolongation, disruption, measured work, variations, loss of opportunity and head office overheads.",
             "Quantum analysis for the appointed expert in an arbitration between contractor and MEP subcontractor on a luxury hotel in the UAE.",
@@ -200,6 +200,8 @@ ORDER = ["michael-roos", "jamie-shafto", "stephen-john", "michael-whiting"]
 
 
 def role_html(p):
+    if p.get("role") and not p.get("role_ph"):
+        return e(p["role"])
     return e(p["role"]) + " " + ph(p["role_ph"], "title") if p.get("role") else ph(p["role_ph"], f"title, e.g. {p['role_text']}")
 
 
@@ -430,7 +432,7 @@ preload_hero = '<link rel="preload" as="image" type="image/avif" imagesrcset="/a
 page("/", "Davies Kelly | Independent Quantum and Delay Experts, Dubai", "Testifying quantum and delay experts for construction and engineering disputes in arbitration, court and adjudication across the Middle East, Africa and Asia.", home, home_graph, preload=preload_hero)
 
 # ================================================================ EXPERTS (D.2)
-h, bc = head("Our experts", f"Davies Kelly is deliberately small. Each matter is led by one of the people below, who does the analysis and, where needed, gives the evidence. Michael Roos and Jamie Shafto founded the firm in 2020 {ph('F2', 'founding year')}. {ph('F23', 'how Stephen John and Michael Whiting work with the firm')}", [("Home", "/"), ("Experts", None)])
+h, bc = head("Our experts", f"Davies Kelly is deliberately small. Each matter is led by one of the people below, who does the analysis and, where needed, gives the evidence. Michael Roos and Jamie Shafto founded the firm in 2020 {ph('F2', 'founding year')}. Stephen M John and Michael Whiting are partners.", [("Home", "/"), ("Experts", None)])
 body = h + f'''<section class="wrap" style="padding-bottom:var(--sec)"><div class="grid c4">{"".join(expert_card(s) for s in ORDER)}</div>
 <div class="measure" style="margin-top:48px"><h2>Types of appointment</h2><p>{ph("F9", "the partners confirm each type")}</p><ul class="plain">
 <li><strong>Party-appointed expert.</strong> Instructed by one party to give independent opinion evidence to the tribunal or court.</li>
@@ -496,6 +498,8 @@ for slug in ORDER:
               "hasCredential": [{"@type": "EducationalOccupationalCredential", "credentialCategory": cat, "name": n} for cat, n in ld["creds"]], "knowsAbout": ld["knows"]}
     if p["honorific"]:
         person["honorificPrefix"] = p["honorific"]
+    if p.get("role") and not p.get("role_ph"):
+        person["jobTitle"] = p["role"]
     if slug != "michael-whiting":
         person["honorificSuffix"] = p["post"]
     if ld["alumni"]:
@@ -542,7 +546,7 @@ service_page("/services/quantum/", "Quantum", "Quantum expert evidence",
              "Quantum is the money in a construction dispute: what the claims and counterclaims are worth, on the contract and on the records. Our quantum experts started on site and in commercial teams, and they value claims the way the contract and the evidence require, not the way either party would like.",
              [("What we assess", ul(["Prolongation and time-related costs", "Disruption and loss of productivity, including measured-mile analysis", "Head office overheads and loss of profit or opportunity", "Variations, measured work and re-measurement", "Preliminaries thickening, acceleration and idle time", "Subcontractor claims and pass-through claims", "Liquidated damages, retention and performance bonds", "Defects, rectification and counterclaims for work not to specification", "Late payment, financing and interest", "Final accounts and accounts reconstructed from first principles", "Early merits and quantum opinions for funders, with sensitivity ranges"])),
               ("Where we give evidence", ul([f"International arbitration {ph('R3', 'under the ICC and DIAC rules')}.", "Court proceedings, including in Scotland, and in support of matters before UAE courts.", "Adjudication in the UK.", "Pre-arbitral expert procedures and expert determination."]))],
-             HOW5, lead_card("michael-roos") + f'<p class="muted" style="margin-top:12px">Supported by <a href="/experts/michael-whiting/">Michael Whiting</a> {ph("M1", "title")}.</p>', ("C8", "C9"),
+             HOW5, lead_card("michael-roos") + f'<p class="muted" style="margin-top:12px">Supported by <a href="/experts/michael-whiting/">Michael Whiting</a>, Partner.</p>', ("C8", "C9"),
              "Quantum Expert Witness, Dubai | Davies Kelly", "Independent quantum expert evidence on prolongation, disruption, variations, overheads, defects and final accounts in construction arbitration.")
 how_d = HOW5[:2] + ["We build the analysis from the programmes and the progress records, and we state every assumption and every gap in the records."] + HOW5[3:]
 service_page("/services/delay/", "Delay", "Delay expert evidence",
