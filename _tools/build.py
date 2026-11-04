@@ -195,6 +195,36 @@ PEOPLE = {
 }
 ORDER = ["michael-roos", "jamie-shafto", "stephen-john", "michael-whiting"]
 
+BIO = {
+    "michael-roos": "Quantum expert with an LLM in construction law, arbitration and adjudication, appointed as lead quantum expert in international arbitration, court, adjudication and a pre-arbitral expert procedure. Started as a labourer at 16 and ran sites before moving into disputes.",
+    "jamie-shafto": "Testifying delay expert with over 25 years in construction and disputes, regularly appointed in international arbitration and cross-examined by King’s Counsel. Planned major projects in London and the Gulf before turning to disputes.",
+    "stephen-john": "Chartered civil engineer, European Engineer and Fellow of the Chartered Institute of Arbitrators, with more than 40 years of practice on four continents. Cross-examined in the UK High Court and in international arbitration.",
+    "michael-whiting": "Quantity surveyor with over 12 years from commercial management on live projects to quantum in disputes, across the UK, the Middle East and North Africa. Began at 16 as an apprentice quantity surveyor with Balfour Beatty.",
+}
+TALK = {
+    "michael-roos": "quantum, variations, prolongation and final accounts",
+    "jamie-shafto": "delay, extensions of time and disruption",
+    "stephen-john": "engineering, defects and contract administration",
+    "michael-whiting": "quantum analysis of records, claims and accounts",
+}
+
+
+def first_name(slug):
+    return {"stephen-john": "Stephen", "jamie-shafto": "Jamie", "michael-roos": "Michael Roos", "michael-whiting": "Michael Whiting"}[slug]
+
+
+def team_rotator():
+    feats, thumbs, details = [], [], []
+    for k, slug in enumerate(ORDER):
+        p = PEOPLE[slug]; on = " on" if k == 0 else ""
+        feats.append(f'<div class="tr-feature{on}" data-i="{k}">{picture(slug, "92vw", alt=p["alt"], eager=(k == 0))}<span class="tr-name">{e(p["name"])}</span></div>')
+        thumbs.append(f'<button type="button" class="tr-thumb{on}" data-i="{k}" aria-label="Show {e(p["name"])}">{picture(slug, "30vw", alt="", eager=True)}<span>{e(first_name(slug).split()[-1] if slug.startswith("michael") else first_name(slug))}</span></button>')
+        mail = f'<a class="btn secondary" href="mailto:{p["mail"]}">{ICON["mail"]}Email</a>' if p.get("mail") else f'<a class="btn secondary" href="/contact/">{ICON["mail"]}Email</a>'
+        call = f'<a class="btn secondary" href="tel:{p["tel"]}">{ICON["call"]}Call</a>' if p.get("tel") else ""
+        details.append(f'<div class="tr-detail{on}" data-i="{k}"><p class="role">{role_html(p)}</p><p class="meta">{e(p["post"])}</p><p class="tr-bio">{e(BIO[slug])}</p><p class="tr-talk"><span>Talk to {e(first_name(slug))} about</span> {e(TALK[slug])}</p><div class="tr-acts"><a class="btn" href="/experts/{slug}/">View profile</a>{mail}{call}</div></div>')
+    return f'<div class="team-rot" aria-label="Our experts"><div class="tr-stage">{"".join(feats)}</div><div class="tr-thumbs">{"".join(thumbs)}</div><div class="tr-details" aria-live="polite">{"".join(details)}</div></div>'
+
+
 
 def role_html(p):
     if p.get("role") and not p.get("role_ph"):
@@ -328,6 +358,7 @@ def page(path, title, desc, body, graph=None, og="og-default.png", ogtype="websi
 </main>
 {CTA if cta else ""}
 {footer()}
+{'' if path.startswith('/contact') else '<a class="sticky-cta" href="/contact/">Discuss a matter</a>'}
 </body></html>
 '''
     out = "404.html" if path == "/404.html" else path.strip("/") + "/index.html" if path != "/" else "index.html"
@@ -351,7 +382,7 @@ def expert_card(slug, sizes="(min-width:1200px) 25vw, (min-width:600px) 50vw, 10
     acts = f'<div class="actions"><a class="btn" href="/experts/{slug}/" tabindex="-1" aria-hidden="true">Profile</a>{mail}</div>' if show_actions else ""
     city = city_html(p)
     return f'''<article class="expert-card">{picture(slug, sizes, alt=p["alt"])}<div class="body">
-<h3><a href="/experts/{slug}/">{e(p["name"])}</a></h3><p class="role">{role_html(p)}</p><p class="meta">{city} · {e(p["post"])}</p><p class="meta">{e(p["card_line"])}</p>{acts}</div></article>'''
+<h3><a href="/experts/{slug}/">{e(p["name"])}</a></h3><p class="role">{role_html(p)}</p><p class="meta">{city} · {e(p["post"])}</p><p class="meta">{e(p["card_line"])}</p><p class="card-bio">{e(BIO[slug])}</p><p class="tr-talk"><span>Talk to {e(first_name(slug))} about</span> {e(TALK[slug])}</p>{acts}</div></article>'''
 
 
 # ================================================================ HOME (D.1)
@@ -407,7 +438,7 @@ home = f'''<section class="hero" aria-label="Introduction">
 <section class="section alt"><div class="wrap"><h2>What we do</h2><p class="lead measure">Most of our work is as independent experts appointed by a party or by the tribunal. We also review claims and advise before a dispute starts, and we always tell you which of those two roles we are in.</p>
 <div class="grid c2">{svc_html}</div></div></section>
 <section class="section"><div class="wrap"><h2>Meet the experts</h2><p class="lead measure">Four senior people. The expert you speak to is the one who does the work. {ph("F21", "partners commit to this")}</p>
-<div class="grid c4">{"".join(expert_card(s, show_actions=False) for s in ORDER)}</div></div></section>
+{team_rotator()}<div class="grid c4 team-grid">{"".join(expert_card(s, show_actions=False) for s in ORDER)}</div></div></section>
 <section class="section alt"><div class="wrap measure"><h2>How we keep our evidence independent</h2>
 <ol class="steps"><li>When we are appointed as experts, our duty is to the tribunal or court, and it overrides any duty to the party that instructs or pays us.</li><li>We say what the evidence supports, we state our assumptions and limits, and we concede points when the evidence requires it.</li><li>We check for conflicts before we read any documents, and we never take on the expert role in a dispute where we have acted as advisers for the same party. {ph("F8", "policy wording")}</li></ol>
 <p><a href="/independence/">Read how we work</a></p></div></section>
@@ -430,7 +461,7 @@ page("/", "Davies Kelly | Quantum, Delay and Technical Experts, Dubai", "Testify
 
 # ================================================================ EXPERTS (D.2)
 h, bc = head("Our experts", f"Davies Kelly is deliberately small. Each matter is led by one of the people below, who does the analysis and, where needed, gives the evidence. Michael Roos and Jamie Shafto founded the firm in 2020 {ph('F2', 'founding year')}. Stephen M John and Michael Whiting are partners.", [("Home", "/"), ("Experts", None)])
-body = h + f'''<section class="wrap" style="padding-bottom:var(--sec)"><div class="grid c4">{"".join(expert_card(s) for s in ORDER)}</div>
+body = h + f'''<section class="wrap" style="padding-bottom:var(--sec)">{team_rotator()}<div class="grid c4 team-grid">{"".join(expert_card(s) for s in ORDER)}</div>
 <div class="measure" style="margin-top:48px"><h2>Types of appointment</h2><ul class="plain">
 <li><strong>Party-appointed expert.</strong> Instructed by one party to give independent opinion evidence to the tribunal or court.</li>
 <li><strong>Tribunal- or court-appointed expert.</strong> Appointed by the tribunal or court to report to it directly.</li>

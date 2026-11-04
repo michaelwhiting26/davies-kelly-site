@@ -75,3 +75,30 @@
     play();
   });
 })();
+
+/* Team rotator: random start, rotates every 5.5s, tap a thumbnail to feature a person */
+(function () {
+  var root = document.querySelector(".team-rot"); if (!root) return;
+  var feats = root.querySelectorAll(".tr-feature"), thumbs = root.querySelectorAll(".tr-thumb"), dets = root.querySelectorAll(".tr-detail");
+  var n = feats.length, i = 0, timer = null, paused = false;
+  var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  function show(k) {
+    i = (k + n) % n;
+    [feats, thumbs, dets].forEach(function (list) { list.forEach(function (el) { el.classList.toggle("on", +el.dataset.i === i); }); });
+  }
+  function start() { if (reduce) return; clearInterval(timer); timer = setInterval(function () { if (!paused && !document.hidden) show(i + 1); }, 5500); }
+  thumbs.forEach(function (b) { b.addEventListener("click", function () { show(+b.dataset.i); start(); }); });
+  root.addEventListener("pointerenter", function (e) { if (e.pointerType === "mouse") paused = true; });
+  root.addEventListener("pointerleave", function (e) { if (e.pointerType === "mouse") paused = false; });
+  root.addEventListener("focusin", function () { paused = true; });
+  root.addEventListener("focusout", function () { paused = false; });
+  show(Math.floor(Math.random() * n)); start();
+})();
+
+/* Sticky CTA hides over the footer/contact areas */
+(function () {
+  var cta = document.querySelector(".sticky-cta"); if (!cta || !("IntersectionObserver" in window)) return;
+  var targets = document.querySelectorAll("footer, .cta-band, form"); var visible = new Set();
+  var io = new IntersectionObserver(function (es) { es.forEach(function (e) { if (e.isIntersecting) visible.add(e.target); else visible.delete(e.target); }); cta.classList.toggle("hide", visible.size > 0); });
+  targets.forEach(function (t) { io.observe(t); });
+})();
