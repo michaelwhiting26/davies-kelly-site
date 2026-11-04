@@ -163,7 +163,7 @@ PEOPLE = {
     ),
     "michael-whiting": dict(
         name="Michael Whiting", honorific="", post="BSc (Hons) Quantity Surveying · RICS Expert Witness Certificate",
-        role="Partner, Quantum and Forensic Analysis", role_ph=None, role_text="Partner, Quantum and Forensic Analysis", city=None, city_ph=("M2", "city shown"), testifying=False,
+        role="Partner, Quantum Expert", role_ph=None, role_text="Partner, Quantum Expert", city=None, city_ph=("M2", "city shown"), testifying=False,
         tel="+447762124220", tel_d="+44 7762 124220", tel_ph="M6", mail=None, mail_ph="M6", wa_ph="M6", wa="447762124220", linkedin_ph="M7",
         card_line="Quantum and claims consultant supporting our quantum experts with analysis of records, claims and accounts.",
         alt="Michael Whiting, Davies Kelly",
@@ -591,7 +591,7 @@ service_page("/services/quantum/", "Quantum", "Quantum expert evidence",
              "Quantum is the money in a construction dispute: what the claims and counterclaims are worth, on the contract and on the records. Our quantum experts started on site and in commercial teams, and they value claims the way the contract and the evidence require, not the way either party would like.",
              [("What we assess", ul(["Prolongation and time-related costs", "Disruption and loss of productivity, including measured-mile analysis", "Head office overheads and loss of profit or opportunity", "Variations, measured work and re-measurement", "Preliminaries thickening, acceleration and idle time", "Subcontractor claims and pass-through claims", "Liquidated damages, retention and performance bonds", "Defects, rectification and counterclaims for work not to specification", "Late payment, financing and interest", "Final accounts and accounts reconstructed from first principles", "Early merits and quantum opinions for funders, with sensitivity ranges"])),
               ("Where we give evidence", ul([f"International arbitration.", "Court proceedings, including in Scotland, and in support of matters before UAE courts.", "Adjudication in the UK.", "Pre-arbitral expert procedures and expert determination."]))],
-             HOW5, lead_card("michael-roos") + f'<p class="muted" style="margin-top:12px">Supported by <a href="/experts/michael-whiting/">Michael Whiting</a>, Partner, Quantum and Forensic Analysis.</p>', ("C8", "C9"),
+             HOW5, lead_card("michael-roos") + f'<p class="muted" style="margin-top:12px">Supported by <a href="/experts/michael-whiting/">Michael Whiting</a>, Partner, Quantum Expert.</p>', ("C8", "C9"),
              "Quantum Expert Witness, Dubai | Davies Kelly", "Independent quantum expert evidence on prolongation, disruption, variations, overheads, defects and final accounts in construction arbitration.")
 how_d = HOW5[:2] + ["We build the analysis from the programmes and the progress records, and we state every assumption and every gap in the records."] + HOW5[3:]
 service_page("/services/delay/", "Delay", "Delay expert evidence",
