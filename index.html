@@ -10,7 +10,16 @@ header{position:sticky;top:0;z-index:5;background:#fff;border-bottom:1px solid #
 .logo img{height:44px;display:block}
 nav a{font-family:Montserrat,sans-serif;font-size:12px;font-weight:600;letter-spacing:.06em;color:var(--navy);text-decoration:none;margin-left:28px;text-transform:uppercase}
 nav a.on{color:var(--accent)}
-.hero{height:62vh;min-height:360px;background:linear-gradient(120deg,rgba(20,37,61,.88),rgba(20,37,61,.45)),url(img/hero.jpg) center/cover no-repeat;display:flex;align-items:flex-end;padding:0 5vw 8vh}
+.hero{position:relative;height:62vh;min-height:360px;display:flex;align-items:flex-end;padding:0 5vw 8vh;overflow:hidden;background:var(--navy)}
+.hero .slide{position:absolute;inset:0;background-size:cover;background-position:center;opacity:0;transition:opacity 1.6s ease;transform:scale(1.03)}
+.hero .slide.on{opacity:1;animation:kb 9s ease-out forwards}
+@keyframes kb{from{transform:scale(1.03)}to{transform:scale(1.09)}}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(120deg,rgba(20,37,61,.88),rgba(20,37,61,.45));z-index:1}
+.hero .frame{position:relative;z-index:2}
+.dots{position:absolute;left:50%;bottom:22px;transform:translateX(-50%);display:flex;gap:10px;z-index:3}
+.dots button{width:10px;height:10px;border-radius:50%;border:1.5px solid #fff;background:transparent;padding:0;cursor:pointer;transition:background .3s,width .3s}
+.dots button.on{background:#fff;width:26px;border-radius:5px}
+@media(prefers-reduced-motion:reduce){.hero .slide{transition:none}.hero .slide.on{animation:none}}
 .frame{border:3px solid rgba(255,255,255,.75);padding:110px 40px 26px;width:300px}
 .frame h1{margin:0;color:#fff;font-family:Montserrat,sans-serif;font-size:30px;letter-spacing:.06em}
 main{max-width:1100px;margin:0 auto;padding:60px 5vw}
@@ -62,7 +71,7 @@ footer .copy{max-width:1100px;margin:22px auto 0;border-top:1px solid #2c4060;pa
 </style></head><body>
 <header><a class="logo" href="#"><img src="img/davies-kelly-logo.png" alt="Davies Kelly"></a>
 <nav><a class="on" href="#about">About us</a><a href="#principles">Our principles</a><a href="#services">Services</a><a href="#experts">Our experts</a><a href="#contact">Contact us</a></nav></header>
-<section class="hero"><div class="frame"><h1>ABOUT US</h1></div></section>
+<section class="hero"><div class="slide on" style="background-image:url(img/hero.jpg)"></div><div class="slide" style="background-image:url(img/hero-2.jpg)"></div><div class="slide" style="background-image:url(img/hero-3.jpg)"></div><div class="slide" style="background-image:url(img/hero-4.jpg)"></div><div class="frame"><h1>ABOUT US</h1></div><div class="dots"><button aria-label="Show image 1" class="on"></button><button aria-label="Show image 2"></button><button aria-label="Show image 3"></button><button aria-label="Show image 4"></button></div></section>
 <main>
 <section class="block intro" id="about">
 <p class="lead">Exceeding your expectations</p>
@@ -169,4 +178,10 @@ footer .copy{max-width:1100px;margin:22px auto 0;border-top:1px solid #2c4060;pa
 <div><h4>SERVICES</h4><a href="#services">Pre-Contract Advice</a><a href="#services">Project Advisory</a><a href="#services">Dispute Resolution</a><a href="#services">Expert Witness Services</a></div>
 <div><h4>CONTACT</h4>48 Burj Gate Tower, Sheikh Zayed Road, Downtown, PO Box 116171, Dubai, UAE<br>+971 (0)58 569 3416<br>+971 (0)55 869 5337</div>
 </div><div class="copy">© 2026 Davies Kelly. All rights reserved.</div></footer>
+<script>
+(function(){var h=document.querySelector('.hero');if(!h)return;var s=h.querySelectorAll('.slide'),d=h.querySelectorAll('.dots button'),i=0,t;
+function go(n){s[i].classList.remove('on');d[i].classList.remove('on');i=(n+s.length)%s.length;void s[i].offsetWidth;s[i].classList.add('on');d[i].classList.add('on');}
+function start(){clearInterval(t);t=setInterval(function(){go(i+1)},7000);}
+d.forEach(function(b,k){b.addEventListener('click',function(){go(k);start();});});start();})();
+</script>
 </body></html>
