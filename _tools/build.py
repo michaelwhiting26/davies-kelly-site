@@ -36,7 +36,7 @@ NAV = [("Experts", "/experts/"), ("Services", "/services/"), ("Sectors", "/secto
 PEOPLE = {
     "michael-roos": dict(
         name="Michael Roos", honorific="", post="BSc (Hons), LLM, MCIArb",
-        role="Founding Partner, Quantum Expert", role_ph="R1", city="Dubai", testifying=True,
+        role="Founding Partner, Testifying Quantum Expert", role_ph="R1", city="Dubai", testifying=True,
         tel=ROOS_TEL, tel_d=ROOS_TEL_D, tel_ph="R15", mail=ROOS_MAIL, wa_ph="R15", linkedin_ph="R9",
         card_line="Testifying quantum expert; LLM in Construction Law, Arbitration and Adjudication.",
         alt="Michael Roos, Founding Partner, Davies Kelly",
@@ -76,7 +76,7 @@ PEOPLE = {
     ),
     "jamie-shafto": dict(
         name="Jamie Shafto", honorific="", post="BSc Construction Management",
-        role="Founding Partner, Delay Expert", role_ph="J1", city="Dubai", testifying=True,
+        role="Founding Partner, Testifying Delay Expert", role_ph="J1", city="Dubai", testifying=True,
         tel=JAMIE_TEL, tel_d=JAMIE_TEL_D, tel_ph="J15", mail=JAMIE_MAIL, wa_ph="J15", linkedin_ph="J10",
         card_line="Testifying delay expert; over 25 years in construction and disputes.",
         alt="Jamie Shafto, Founding Partner, Davies Kelly",
@@ -727,7 +727,7 @@ form = f'''<div class="box"><p><strong>Please do not send documents or confident
 <label for="copy-text" class="vh">Your enquiry</label><textarea id="copy-text" readonly></textarea>
 <p style="margin-top:12px"><button class="btn secondary" type="button" id="copy-enquiry">Copy my enquiry</button></p><p id="copy-status" aria-live="polite"></p></div>'''
 
-side = f'''<h2 id="direct">Or contact a partner directly</h2><div class="grid">{contact_card("Michael Roos", "Founding Partner, Quantum Expert", ROOS_TEL, ROOS_TEL_D, ROOS_MAIL, "R15")}{contact_card("Jamie Shafto", "Founding Partner, Delay Expert", JAMIE_TEL, JAMIE_TEL_D, JAMIE_MAIL, "J15")}</div>
+side = f'''<h2 id="direct">Or contact a partner directly</h2><div class="grid">{contact_card("Michael Roos", "Founding Partner, Testifying Quantum Expert", ROOS_TEL, ROOS_TEL_D, ROOS_MAIL, "R15")}{contact_card("Jamie Shafto", "Founding Partner, Testifying Delay Expert", JAMIE_TEL, JAMIE_TEL_D, JAMIE_MAIL, "J15")}</div>
 <h2 style="margin-top:32px">Office</h2><p>{e(ADDRESS)}</p><p><a class="btn secondary block" href="{MAPS}" rel="noopener noreferrer">Open in Google Maps</a></p>
 <h2 style="margin-top:32px">What happens next</h2><ol class="steps"><li><strong>Conflict check.</strong> We check every party.</li><li><strong>Scope call.</strong> The issues, forum and timetable.</li><li><strong>Written terms.</strong> Scope, fees, independence, confidentiality.</li><li><strong>Documents.</strong> Only then.</li></ol>'''
 body = h + f'<div class="wrap"><div class="split form" style="padding-bottom:var(--sec)"><div>{form}</div><aside>{side}</aside></div></div>'
