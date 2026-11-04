@@ -199,7 +199,7 @@ PEOPLE = {
 ORDER = ["michael-roos", "jamie-shafto", "stephen-john", "michael-whiting"]
 
 BIO = {
-    "michael-roos": "Quantum expert with an LLM in construction law, arbitration and adjudication, appointed as lead quantum expert in international arbitration, court, adjudication and a pre-arbitral expert procedure. Started as a labourer at 16 and ran sites before moving into disputes.",
+    "michael-roos": "Testifying quantum expert with an LLM in construction law, arbitration and adjudication, appointed as lead quantum expert in international arbitration, court, adjudication and a pre-arbitral expert procedure. Started as a labourer at 16 and ran sites before moving into disputes.",
     "jamie-shafto": "Testifying delay expert with over 25 years in construction and disputes, regularly appointed in international arbitration and cross-examined by King’s Counsel. Planned major projects in London and the Gulf before turning to disputes.",
     "stephen-john": "Chartered civil engineer, European Engineer and Fellow of the Chartered Institute of Arbitrators, with more than 40 years of practice on four continents. Cross-examined in the UK High Court and in international arbitration.",
     "michael-whiting": "Quantity surveyor with over 12 years from commercial management on live projects to quantum in disputes, across the UK, the Middle East and North Africa. Began at 16 as an apprentice quantity surveyor with Balfour Beatty.",
