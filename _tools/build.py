@@ -6,7 +6,7 @@ import json, os, html, datetime
 
 SITE = "https://davieskelly.com"
 import hashlib as _h
-INLINE_CSS = open("assets/css/site.css").read().replace("\n", "") + ".hero-media{background:#173E3F url(data:image/jpeg;base64," + open("_tools/hero_lqip.txt").read().strip() + ") center/cover no-repeat}"
+INLINE_CSS = open("assets/js/vendor/lenis.css").read().replace("\n", "") + open("assets/css/site.css").read().replace("\n", "") + ".hero-media{background:#173E3F url(data:image/jpeg;base64," + open("_tools/hero_lqip.txt").read().strip() + ") center/cover no-repeat}"
 ASSET_V = _h.md5((open("assets/css/site.css","rb").read()+open("assets/js/site.js","rb").read())).hexdigest()[:8]
 TODAY = "2026-11-04"
 ROOS_TEL, ROOS_TEL_D, ROOS_MAIL = "+971558695337", "+971 (0)55 869 5337", "michael.roos@davieskelly.com"
@@ -299,7 +299,7 @@ def header(path):
 <nav class="nav-desktop" aria-label="Main">{desk}<a class="btn" href="/contact/">Make an enquiry</a></nav>
 <a class="menu-btn" href="#footer-nav" aria-expanded="false" aria-controls="site-menu" role="button">{ICON["menu"]}<span>Menu</span></a>
 </div></header>
-<div class="drawer" id="site-menu" role="dialog" aria-modal="true" aria-label="Site menu" hidden>
+<div class="drawer" id="site-menu" data-lenis-prevent role="dialog" aria-modal="true" aria-label="Site menu" hidden>
 <div class="drawer-top"><img src="/assets/img/logo/davies-kelly-logo.png" alt="" width="681" height="147" style="height:32px;width:auto"><button class="menu-btn menu-close" type="button" style="display:inline-flex">{ICON["close"]}<span>Close</span></button></div>
 <nav aria-label="Main"><ul>{mob}</ul></nav>
 <div class="drawer-actions"><a class="btn block" href="/contact/">Make an enquiry</a>
@@ -360,7 +360,7 @@ def page(path, title, desc, body, graph=None, og="og-default.png", ogtype="websi
 <link rel="icon" href="/favicon.ico" sizes="any"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><meta name="theme-color" content="#173E3F">
 <link rel="preload" href="/assets/fonts/source-sans-3.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="/assets/fonts/montserrat.woff2" as="font" type="font/woff2" crossorigin>{preload}
 <style>{INLINE_CSS}</style>{ld}
-<script src="/assets/js/site.js?v={ASSET_V}" defer></script>{extra_js}
+<script src="/assets/js/vendor/lenis.min.js?v=1.3.4" defer></script><script src="/assets/js/site.js?v={ASSET_V}" defer></script>{extra_js}
 </head><body>
 {header(path)}
 <main id="main">

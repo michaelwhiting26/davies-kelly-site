@@ -1,3 +1,18 @@
+/* Lenis smooth scroll (darkroom.engineering, MIT, self-hosted 1.3.4). Wheel/trackpad only; touch stays native.
+   Off for reduced-motion users. Panels and the menu opt out with data-lenis-prevent; it pauses while a panel is open. */
+(function () {
+  if (!window.Lenis || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  var lenis = new Lenis({ lerp: 0.1, smoothWheel: true, syncTouch: false, anchors: { offset: -72 } });
+  window.DKlenis = lenis;
+  function raf(t) { lenis.raf(t); requestAnimationFrame(raf); }
+  requestAnimationFrame(raf);
+  var mo = new MutationObserver(function () {
+    var locked = document.body.classList.contains("sheet-open") || document.body.classList.contains("menu-open");
+    if (locked) lenis.stop(); else lenis.start();
+  });
+  mo.observe(document.body, { attributes: true, attributeFilter: ["class"] });
+})();
+
 /* Menu drawer + hero slideshow. No dependencies. */
 (function () {
   "use strict";
@@ -140,7 +155,7 @@ window.DKcases();
   function build() {
     sheet = document.createElement("div");
     sheet.className = "sheet"; sheet.setAttribute("role", "dialog"); sheet.setAttribute("aria-modal", "true");
-    sheet.innerHTML = '<div class="sheet-panel" tabindex="-1"><button type="button" class="sheet-close" aria-label="Close and return to the home page"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></button><div class="sheet-body"></div></div>';
+    sheet.innerHTML = '<div class="sheet-panel" tabindex="-1" data-lenis-prevent><button type="button" class="sheet-close" aria-label="Close and return to the home page"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></button><div class="sheet-body"></div></div>';
     document.body.appendChild(sheet);
     sheet.querySelector(".sheet-close").addEventListener("click", function () { close(true); });
     sheet.addEventListener("click", function (e) { if (e.target === sheet) close(true); });
