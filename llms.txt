@@ -1,6 +1,6 @@
 # Davies Kelly
 
-> Davies Kelly is a Dubai-based firm of independent quantum, delay and technical experts for construction and engineering disputes. Its experts give written and oral expert evidence in international arbitration, court proceedings and adjudication across the Middle East, Africa, Asia and Europe, and it also reviews claims and advises on contracts before and during disputes. When appointed as experts, its people owe their duty to the tribunal or court.
+> Davies Kelly is an international construction consultancy in Dubai providing pre-contract advice, project advisory, dispute resolution and expert witness services (independent quantum, delay and technical experts) for construction and engineering disputes. Its experts give written and oral expert evidence in international arbitration, court proceedings and adjudication across the Middle East, Africa, Asia and Europe, and it also reviews claims and advises on contracts before and during disputes. When appointed as experts, its people owe their duty to the tribunal or court.
 
 ## Experts
 - [Michael Roos](https://davieskelly.com/experts/michael-roos/): founding partner and testifying quantum expert; BSc (Hons) Quantity Surveying (Glasgow Caledonian University), LLM Construction Law, Arbitration and Adjudication (Robert Gordon University), MCIArb; prolongation, disruption, head office overheads, variations, defects and final accounts; Middle East, North Africa, UK and Europe.
@@ -9,6 +9,10 @@
 - [Michael Whiting](https://davieskelly.com/experts/michael-whiting/): quantity surveyor supporting the quantum experts; BSc (Hons) Quantity Surveying, RICS Expert Witness Certificate.
 
 ## Services
+- [Pre-contract advice](https://davieskelly.com/pre-contract-advice/): review and drafting of construction contracts and professional services agreements; contractual risk.
+- [Project advisory](https://davieskelly.com/project-advisory/): project controls, planning and scheduling, cost and change management, commercial and risk management.
+- [Dispute resolution](https://davieskelly.com/dispute-resolution/): preparation and defence of extension of time and cost claims; independent determinations.
+- [Expert witness services](https://davieskelly.com/expert-witness-services/): independent quantum, delay, disruption and technical expert evidence in arbitration, court and adjudication.
 - [Quantum expert evidence](https://davieskelly.com/services/quantum/): prolongation, disruption (including measured mile), head office overheads, variations, liquidated damages, defects counterclaims, final accounts.
 - [Delay expert evidence](https://davieskelly.com/services/delay/): forensic delay analysis, disruption, extension of time entitlement, independent determinations.
 - [Claim review and advisory](https://davieskelly.com/services/advisory/): independent claim reviews, claim preparation and defence, contract and project advice. Kept separate from expert appointments.

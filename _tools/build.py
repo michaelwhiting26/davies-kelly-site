@@ -314,7 +314,7 @@ def footer():
 <p>Independent quantum, delay and technical experts, Dubai.</p><p>{e(ADDRESS)} {ph("F5", "office and floor wording")}</p></div>
 <div><h2>Contact</h2><ul><li>Michael Roos <a href="tel:{ROOS_TEL}">{ROOS_TEL_D}</a></li><li>Jamie Shafto <a href="tel:{JAMIE_TEL}">{JAMIE_TEL_D}</a></li></ul></div>
 <div><h2>Experts</h2><ul>{experts}</ul></div>
-<div><h2>Services</h2><ul><li><a href="/services/quantum/">Quantum expert evidence</a></li><li><a href="/services/delay/">Delay expert evidence</a></li><li><a href="/services/technical/">Engineering and contract evidence</a></li><li><a href="/services/advisory/">Claim review and advisory</a></li></ul></div>
+<div><h2>Services</h2><ul><li><a href="/pre-contract-advice/">Pre-contract advice</a></li><li><a href="/project-advisory/">Project advisory</a></li><li><a href="/dispute-resolution/">Dispute resolution</a></li><li><a href="/expert-witness-services/">Expert witness services</a></li></ul></div>
 <div><h2>Firm</h2><ul><li><a href="/experience/">Experience</a></li><li><a href="/independence/">Independence</a></li><li><a href="/about/">About</a></li><li><a href="/contact/">Contact</a></li><li><a href="{LINKEDIN}" rel="noopener noreferrer">LinkedIn</a> {ph("F6", "DK company page")}</li></ul></div>
 </div>
 <div class="foot-bottom"><p>© 2026 Davies Kelly. {ph("F1", "legal entity name, licence number and issuing authority")}</p>
@@ -461,15 +461,15 @@ home = f'''<section class="hero" aria-label="Introduction">
 <section class="section"><div class="wrap"><h2>How an instruction starts</h2>{steps4}<p class="muted" style="margin-top:20px">We aim to reply to every enquiry promptly.</p></div></section>'''
 home_graph = [
     {"@type": "Organization", "@id": f"{SITE}/#org", "name": "Davies Kelly", "url": f"{SITE}/", "logo": {"@type": "ImageObject", "url": f"{SITE}/assets/img/logo/davies-kelly-logo-512.png"}, "image": f"{SITE}/og/og-default.png",
-     "description": "Independent quantum, delay and technical experts for construction and engineering disputes, based in Dubai.",
+     "description": "Davies Kelly is an international construction consultancy specialising in pre-contract advice, project advisory, dispute resolution and expert witness services (quantum, delay and technical) for the construction industry.", "slogan": "Independent quantum, delay and technical experts for construction disputes", "hasOfferCatalog": {"@type": "OfferCatalog", "name": "Services", "itemListElement": [{"@type": "Offer", "itemOffered": {"@type": "Service", "name": n, "url": SITE + u}} for n, u in [("Pre-contract advice", "/pre-contract-advice/"), ("Project advisory", "/project-advisory/"), ("Dispute resolution", "/dispute-resolution/"), ("Expert witness services", "/expert-witness-services/")]]},
      "address": {"@type": "PostalAddress", "streetAddress": "48 Burj Gate Tower, Sheikh Zayed Road, Downtown", "postOfficeBoxNumber": "116171", "addressLocality": "Dubai", "addressCountry": "AE"},
      "areaServed": [{"@type": "Place", "name": n} for n in ("Middle East", "Africa", "Asia", "Europe")],
-     "knowsAbout": ["Construction quantum", "Delay analysis", "Expert witness evidence", "International arbitration", "FIDIC contracts", "Construction claims"],
+     "knowsAbout": ["Pre-contract advice", "Project advisory", "Dispute resolution", "Expert witness services", "Construction quantum", "Delay analysis", "Technical and engineering expert evidence", "International arbitration", "FIDIC contracts", "Construction claims"],
      "founder": [{"@id": f"{SITE}/experts/michael-roos/#person"}, {"@id": f"{SITE}/experts/jamie-shafto/#person"}]},
     {"@type": "WebSite", "@id": f"{SITE}/#website", "url": f"{SITE}/", "name": "Davies Kelly", "publisher": ORG, "inLanguage": "en-GB"},
 ]
 preload_hero = '<link rel="preload" as="image" type="image/avif" imagesrcset="/assets/img/hero/wind-p-480.avif 480w" imagesizes="100vw" media="(max-width:599px)">'
-page("/", "Davies Kelly | Quantum, Delay and Technical Experts, Dubai", "Testifying quantum and delay experts for construction and engineering disputes in arbitration, court and adjudication across the Middle East, Africa and Asia.", home, home_graph, preload=preload_hero)
+page("/", "Davies Kelly | Construction Consultancy and Expert Witnesses", "International construction consultancy in Dubai: pre-contract advice, project advisory, dispute resolution and expert witness services.", home, home_graph, preload=preload_hero)
 
 # ================================================================ EXPERTS (D.2)
 h, bc = head("Our experts", f"Davies Kelly is deliberately small. Each matter is led by one of the people below, who does the analysis and, where needed, gives the evidence. Michael Roos and Jamie Shafto founded the firm in 2020 {ph('F2', 'founding year')}. Stephen M John and Michael Whiting are partners.", [("Home", "/"), ("Experts", None)])
@@ -558,15 +558,20 @@ def lead_card(slug, extra=""):
 <div class="btn-row"><a class="btn" href="tel:{p["tel"]}">{ICON["call"]}Call</a>{mail}</div>{extra}</div></div>'''
 
 
-h, bc = head("Services", "We give independent expert evidence on quantum, delay and engineering issues, and we advise on claims before and during a dispute. Expert and adviser are different roles with different duties, so we keep them apart.", [("Home", "/"), ("Services", None)])
+h, bc = head("Services", "Davies Kelly is an international construction consultancy providing pre-contract advice, project advisory, dispute resolution and expert witness services. We give independent expert evidence on quantum, delay and engineering issues, and we advise on claims before and during a dispute. Expert and adviser are different roles with different duties, so we keep them apart.", [("Home", "/"), ("Services", None)])
 rows = [("Quantum expert evidence", "/services/quantum/", "michael-roos", "Opinion on the value of claims and counterclaims, from prolongation and disruption to variations, overheads and defects. For arbitration, court, adjudication and expert procedures.", ""),
         ("Delay expert evidence", "/services/delay/", "jamie-shafto", "Forensic analysis of delay and disruption: what happened, why, who was responsible and what time follows.", ""),
         ("Engineering and contract evidence", "/services/technical/", "stephen-john", "Technical opinion on design, construction methods and defects, and on how a FIDIC contract was administered.", ph("S13", "does DK offer this service?")),
         ("Claim review and advisory", "/services/advisory/", None, "Independent reviews of claims before you commit to them, claim preparation and defence, contract and risk advice, and planning and commercial support on live projects.", "")]
 rows_html = "".join(f'''<article class="card service"><h2 style="font-size:var(--fs-h3)"><a href="{u}">{t}</a></h2><p>{d} {f}</p><p class="muted">{"Led by " + e(PEOPLE[s]["name"]) if s else "Led by all our experts"}</p><a class="btn secondary block" href="{u}">Read more</a></article>''' for t, u, s, d, f in rows)
-body = h + f'''<section class="wrap" style="padding-bottom:var(--sec)"><div class="grid c2">{rows_html}</div>
+FOUR = [("Pre-contract advice", "/pre-contract-advice/", "Review and drafting of construction contracts and professional services agreements, and identification of contractual risk before you sign."),
+        ("Project advisory", "/project-advisory/", "Project controls, planning, cost and change management, and commercial and risk management on live projects."),
+        ("Dispute resolution", "/dispute-resolution/", "Preparation and defence of extension of time and cost claims, and impartial advice and determinations to resolve them."),
+        ("Expert witness services", "/expert-witness-services/", "Independent quantum, delay and technical expert evidence in arbitration, court and adjudication.")]
+four_html = "".join(f'<article class="card service"><h2 style="font-size:var(--fs-h3)"><a href="{u}">{t}</a></h2><p>{d}</p><a class="btn secondary block" href="{u}">Read more</a></article>' for t, u, d in FOUR)
+body = h + f'''<section class="wrap" style="padding-bottom:var(--sec)"><div class="grid c2">{four_html}</div><h2 style="margin-top:48px">Expert evidence by discipline</h2><div class="grid c2">{rows_html}</div>
 <div class="box measure" style="margin-top:32px"><h2 style="font-size:var(--fs-h3)">Two roles, kept separate</h2><p>As advisers we work in your interest. As experts our duty is to the tribunal. We tell you at the outset which role we are in, and we do not switch roles in the same dispute without telling everyone affected. {ph("F8", "policy wording")}</p></div></section>'''
-page("/services/", "Services: Quantum, Delay and Advisory | Davies Kelly", "Independent quantum, delay and engineering expert evidence, plus claim review and advisory work, kept separate from our expert role.", body, [bc])
+page("/services/", "Services | Davies Kelly", "Pre-contract advice, project advisory, dispute resolution and expert witness services for the construction industry, from Dubai.", body, [bc])
 
 HOW5 = ["We agree the questions we are asked to answer, in writing.", "We go to the contract and the contemporaneous records first, then the parties’ claims.", "We value each head of claim on a stated method and say where the records do not support a figure.", "We meet the other side’s expert in good faith and record agreements and disagreements in a joint statement.", "We give oral evidence when required and answer questions as we would for the tribunal, whoever asks them."]
 
@@ -784,6 +789,48 @@ for slug in ORDER:
     lines += [f"URL:{SITE}/experts/{slug}/", "END:VCARD"]
     open(f"vcard/{slug}.vcf", "w", encoding="utf-8", newline="\r\n").write("\n".join(lines) + "\n")
 
+# ================================================================ FOUR CORE SERVICES (old WordPress addresses kept)
+def core_page(path, name, lead, blocks, related, title, desc):
+    h, bc = head(name, lead, [("Home", "/"), ("Services", "/services/"), (name, None)])
+    inner = "".join(f"<h2>{t}</h2>{c}" for t, c in blocks)
+    rel = "".join(f'<li><a href="{u}">{t}</a></li>' for t, u in related)
+    body = h + f'<section class="wrap measure" style="padding-bottom:var(--sec)">{inner}<h2>Related</h2><ul class="plain">{rel}</ul><p style="margin-top:28px"><a class="btn" href="/contact/">Discuss a matter</a></p></section>'
+    page(path, title, desc, body, [bc])
+
+
+core_page("/pre-contract-advice/", "Pre-contract advice",
+    "Before a construction project starts, contractors and employers need a clear understanding of the objectives, and a contract that defines each party’s obligations and works in practice.",
+    [("What we do", "<p>We review and draft construction contracts and professional services agreements, and identify contractual risk. We check that obligations and responsibilities are clearly defined and that the contract’s mechanisms and provisions are workable.</p>"),
+     ("Why it matters", "<p>We highlight adverse risks and explain their consequences, so they can be removed or managed before you sign. Time spent on the contract at the start is usually far cheaper than resolving a dispute later.</p>"),
+     ("Example", "<p>A UAE civil engineering contractor asked us to review the contract for a large infrastructure project. We found ambiguities and inconsistencies and a risk that could have led to a loss of around USD 1 million. Our client renegotiated and agreed revised terms.</p>")],
+    [("Project advisory", "/project-advisory/"), ("Claim review and advisory", "/services/advisory/")],
+    "Pre-Contract Advice | Davies Kelly", "Review and drafting of construction contracts and professional services agreements, and identification of contractual risk, from Dubai.")
+
+core_page("/project-advisory/", "Project advisory",
+    "Time, cost and quality are the three key variables on any construction project. We help contractors and employers deliver on time and on budget without compromising quality.",
+    [("What we do", "<p>Drawing on our experience at project level, we put in place processes, procedures and tools that let our clients manage and reduce risk.</p>"),
+     ("Our expertise", ul(["Project controls", "Planning and scheduling", "Cost estimating and management", "Scope and change management", "Earned value management", "Document control", "Project and progress reporting", "Schedule management", "Commercial management", "Risk management and mitigation"])),
+     ("Example", "<p>We reviewed a contractor’s project systems, processes and procedures against its contractual obligations, put in place procedures to manage the commercial and contractual risks that had not been addressed, and reported on progress throughout construction.</p>")],
+    [("Pre-contract advice", "/pre-contract-advice/"), ("Delay expert evidence", "/services/delay/")],
+    "Project Advisory | Davies Kelly", "Project controls, planning and scheduling, cost and change management, and commercial and risk management for construction projects.")
+
+core_page("/dispute-resolution/", "Dispute resolution",
+    "Prevention is better than cure, but claims for time and money often arise during construction and too often become disputes. We help clients identify and resolve them, before and after they arise.",
+    [("What we do", "<p>We act for employers, main contractors and subcontractors in preparing and defending extension of time and cost claims, and we help parties resolve claims through impartial third-party advice and determinations.</p>"),
+     ("Our expertise", ul(["Claim preparation", "Claim defence", "Independent determinations"])),
+     ("Example", "<p>For a UAE main contractor we built a consolidated extension of time and cost claim from first principles, focused on the issues with the greatest impact, and managed it through to the engineer’s determination. The contractor was awarded an extension of time of about a year and around USD 10 million.</p>"),
+     ("Advice and evidence are different roles", "<p>When we advise on a claim we work in your interest. If we are later asked to act as the independent expert in the same dispute, we tell you at the outset, because an expert’s duty is to the tribunal.</p>")],
+    [("Expert witness services", "/expert-witness-services/"), ("Independence", "/independence/")],
+    "Dispute Resolution | Davies Kelly", "Preparation and defence of extension of time and cost claims, and independent determinations, for construction disputes.")
+
+core_page("/expert-witness-services/", "Expert witness services",
+    "Expert evidence is a key element of any formal dispute. Our experts are appointed by international law firms and contractors to give independent opinion evidence.",
+    [("What we do", "<p>We give written and oral expert evidence in international arbitration, court proceedings and adjudication. Our experts have given evidence in ICC and DIAC arbitrations and have been cross-examined by King’s Counsel.</p>"),
+     ("Our disciplines", ul(['<a href="/services/quantum/">Quantum</a>', '<a href="/services/delay/">Delay</a>', "Disruption", '<a href="/services/technical/">Technical and engineering</a>'])),
+     ("Our duty", "<p>An expert’s overriding duty is to the tribunal or court, not to the party that instructs or pays them. Our opinions are reasoned, evidence-based and independent. <a href='/independence/'>How we keep our evidence independent</a>.</p>")],
+    [("Our experts", "/experts/"), ("Selected experience", "/experience/")],
+    "Expert Witness Services | Davies Kelly", "Independent quantum, delay, disruption and technical expert witness services in ICC and DIAC arbitration, court and adjudication.")
+
 # ================================================================ robots, sitemap, llms (H.6–H.8)
 open("robots.txt", "w").write("""# davieskelly.com: open to all crawlers, including AI search and assistant crawlers
 User-agent: *
@@ -812,7 +859,7 @@ sm = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps
 open("sitemap.xml", "w").write(sm)
 open("llms.txt", "w").write(f"""# Davies Kelly
 
-> Davies Kelly is a Dubai-based firm of independent quantum, delay and technical experts for construction and engineering disputes. Its experts give written and oral expert evidence in international arbitration, court proceedings and adjudication across the Middle East, Africa, Asia and Europe, and it also reviews claims and advises on contracts before and during disputes. When appointed as experts, its people owe their duty to the tribunal or court.
+> Davies Kelly is an international construction consultancy in Dubai providing pre-contract advice, project advisory, dispute resolution and expert witness services (independent quantum, delay and technical experts) for construction and engineering disputes. Its experts give written and oral expert evidence in international arbitration, court proceedings and adjudication across the Middle East, Africa, Asia and Europe, and it also reviews claims and advises on contracts before and during disputes. When appointed as experts, its people owe their duty to the tribunal or court.
 
 ## Experts
 - [Michael Roos]({SITE}/experts/michael-roos/): founding partner and testifying quantum expert; BSc (Hons) Quantity Surveying (Glasgow Caledonian University), LLM Construction Law, Arbitration and Adjudication (Robert Gordon University), MCIArb; prolongation, disruption, head office overheads, variations, defects and final accounts; Middle East, North Africa, UK and Europe.
@@ -821,6 +868,10 @@ open("llms.txt", "w").write(f"""# Davies Kelly
 - [Michael Whiting]({SITE}/experts/michael-whiting/): quantity surveyor supporting the quantum experts; BSc (Hons) Quantity Surveying, RICS Expert Witness Certificate.
 
 ## Services
+- [Pre-contract advice]({SITE}/pre-contract-advice/): review and drafting of construction contracts and professional services agreements; contractual risk.
+- [Project advisory]({SITE}/project-advisory/): project controls, planning and scheduling, cost and change management, commercial and risk management.
+- [Dispute resolution]({SITE}/dispute-resolution/): preparation and defence of extension of time and cost claims; independent determinations.
+- [Expert witness services]({SITE}/expert-witness-services/): independent quantum, delay, disruption and technical expert evidence in arbitration, court and adjudication.
 - [Quantum expert evidence]({SITE}/services/quantum/): prolongation, disruption (including measured mile), head office overheads, variations, liquidated damages, defects counterclaims, final accounts.
 - [Delay expert evidence]({SITE}/services/delay/): forensic delay analysis, disruption, extension of time entitlement, independent determinations.
 - [Claim review and advisory]({SITE}/services/advisory/): independent claim reviews, claim preparation and defence, contract and project advice. Kept separate from expert appointments.
