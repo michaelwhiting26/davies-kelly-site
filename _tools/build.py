@@ -356,7 +356,7 @@ def page(path, title, desc, body, graph=None, og="og-default.png", ogtype="websi
 <title>{e(title)}</title><meta name="description" content="{e(desc)}">{robots}
 <link rel="canonical" href="{canon}">
 <meta property="og:title" content="{e(title)}"><meta property="og:description" content="{e(desc)}"><meta property="og:url" content="{canon}"><meta property="og:type" content="{ogtype}"><meta property="og:image" content="{SITE}/og/{og}"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:site_name" content="Davies Kelly"><meta name="twitter:card" content="summary_large_image">
-<link rel="icon" href="/favicon.ico" sizes="any"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><meta name="theme-color" content="#14253D">
+<link rel="icon" href="/favicon.ico" sizes="any"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><meta name="theme-color" content="#173E3F">
 <link rel="preload" href="/assets/fonts/source-sans-3.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="/assets/fonts/montserrat.woff2" as="font" type="font/woff2" crossorigin>{preload}
 <link rel="stylesheet" href="/assets/css/site.css?v={ASSET_V}">{ld}
 <script src="/assets/js/site.js?v={ASSET_V}" defer></script>{extra_js}
